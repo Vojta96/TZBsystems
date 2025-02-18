@@ -46,7 +46,7 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   min-height: 100vh;
-  background: url(./img/hero-bg.png);
+  background: url(./img/hero-bg.webp);
   background-size: cover;
   position: relative;
   overflow: hidden;
@@ -333,7 +333,7 @@ body {
 }
 
 .nzu::before {
-  background: url("./img/nzu.jpg");
+  background: url("./img/nzu.webp");
   opacity: 0.25;
   background-color: #000000;
   background-position: 50% 35%;
