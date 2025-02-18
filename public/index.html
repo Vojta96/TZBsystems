@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="TZBsystems" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TZBsystems - Chytré projekty, úsporná řešení pro moderní technologie" />
+  <meta name="keywords" content="projekce, vytápění, vzduchotechnika, fotovoltaika, dotace NZU, financování" />
+  <title>TZBsystems - Chytré projekty pro budoucnost</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/11.3.1/firebase-app-compat.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/11.3.1/firebase-auth-compat.js"></script>
+  <script defer src="/__/firebase/11.3.1/firebase-database-compat.js"></script>
+  <script defer src="/__/firebase/11.3.1/firebase-firestore-compat.js"></script>
+  <script defer src="/__/firebase/11.3.1/firebase-functions-compat.js"></script>
+  <script defer src="/__/firebase/11.3.1/firebase-messaging-compat.js"></script>
+  <script defer src="/__/firebase/11.3.1/firebase-storage-compat.js"></script>
+  <script defer src="/__/firebase/11.3.1/firebase-analytics-compat.js"></script>
+  <script defer src="/__/firebase/11.3.1/firebase-remote-config-compat.js"></script>
+  <script defer src="/__/firebase/11.3.1/firebase-performance-compat.js"></script>
+  <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+  <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+  <style media="screen"></style>
+</head>
+
+<body>
+  <div class="cHeader">
+    <span class="cHeader__logo"><strong>TZB</strong>systems</span>
+    <span class="mainNav">
+      <div class="nav">
+        <a>Služby</a>
+        <a>O nás</a>
+      </div>
+      <div><a>Poptávka</a></div>
+  </div>
+  </span>
+  <section class="row--hero">
+    <h1>
+      <strong>CHYTRÉ</strong><br />PROJEKTY PRO<strong><br />BUDOUCNOST</strong>
+    </h1>
+    <ul>
+      <li>
+        Navrhujeme a projektujeme komplexní TZB systémy pro budovy všech typů.
+      </li>
+      <li>
+        Zajišťujeme realizaci a servis TZB systémů s důrazem na kvalitu a
+        spolehlivost.
+      </li>
+      <li>
+        Podporujeme Vaše projekty odbornými znalostmi a zkušenostmi v oblasti
+        TZB.
+      </li>
+    </ul>
+  </section>
+  <section>
+    <p class="row--fact">
+      Průměrná česká domácnost utratí ročně za vytápění a ohřev vody přibližně
+      35 000 až 40 000 Kč (zdroj: TV Bydlení, 2024). Díky efektivním systémům
+      technických zařízení budov (TZB) lze tyto náklady snížit až o 40 %, což
+      znamená úsporu až 16 000 Kč ročně a výrazné snížení uhlíkové stopy.
+    </p>
+  </section>
+  <section class="arguments">
+    <div class="arguments__item">
+      <div class="arguments__item__icon savings">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_13_107)">
+            <path
+              d="M46.6667 18.3333V21.6666H41.6667V26.6666H38.3333V21.6666H33.3333V18.3333H38.3333V13.3333H41.6667V18.3333H46.6667ZM41.6667 41.6666H18.3333V18.3333H28.3333V15H18.3333C16.5 15 15 16.5 15 18.3333V41.6666C15 43.5 16.5 45 18.3333 45H41.6667C43.5 45 45 43.5 45 41.6666V31.6666H41.6667V41.6666ZM35 31.6666V38.3333H38.3333V31.6666H35ZM28.3333 38.3333H31.6667V25H28.3333V38.3333ZM25 38.3333V28.3333H21.6667V38.3333H25Z"
+              fill="white" />
+          </g>
+          <defs>
+            <clipPath id="clip0_13_107">
+              <rect width="40" height="40" fill="white" transform="translate(10 10)" />
+            </clipPath>
+          </defs>
+        </svg>
+
+      </div>
+      <h3>Úspora</h3>
+      <p class="arguments__item__desc">
+        Naše projekty zlepší energetickou účinnost a výrazně sníží náklady na
+        provoz vaší budovy, což vám umožní dlouhodobě šetřit a přispět k
+        rozvoji ekologických technologií.
+      </p>
+    </div>
+    <div class="arguments__item">
+      <div class="arguments__item__icon attitute">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_13_97)">
+            <path
+              d="M29.9833 19.2833H33.3333V0L0 33.3333H19.2667V30H8.05L29.9833 8.05V19.2833ZM39.6167 33.8667L37.8333 32.4833C37.8667 32.2167 37.9 31.95 37.9 31.6667C37.9 31.3833 37.8833 31.1167 37.8333 30.85L39.6 29.4667C39.75 29.3333 39.8 29.1167 39.7 28.9333L38.0333 26.05C37.9333 25.8667 37.7167 25.8 37.5167 25.8667L35.45 26.7C35.0167 26.3667 34.55 26.0833 34.0333 25.8833L33.7167 23.6833C33.7 23.4833 33.5167 23.3333 33.3167 23.3333H29.9833C29.7833 23.3333 29.6 23.4833 29.5667 23.6833L29.25 25.8833C28.75 26.1 28.2667 26.3667 27.8333 26.7L25.7667 25.8667C25.5833 25.8 25.3667 25.8667 25.25 26.05L23.5833 28.9333C23.4833 29.1167 23.5167 29.3333 23.6833 29.4667L25.45 30.85C25.4167 31.1167 25.4 31.3833 25.4 31.6667C25.4 31.95 25.4167 32.2167 25.45 32.4833L23.6833 33.8667C23.5333 34 23.4833 34.2167 23.5833 34.4L25.25 37.2833C25.35 37.4667 25.5667 37.5333 25.7667 37.4667L27.8333 36.6333C28.2667 36.9667 28.7333 37.25 29.25 37.45L29.5667 39.65C29.6 39.85 29.7667 40 29.9833 40H33.3167C33.5167 40 33.7 39.85 33.7333 39.65L34.05 37.45C34.55 37.2333 35.0333 36.9667 35.45 36.6333L37.5333 37.4667C37.7167 37.5333 37.9333 37.4667 38.05 37.2833L39.7167 34.4C39.8167 34.2167 39.7667 34 39.6167 33.8667ZM31.65 34.1667C30.2667 34.1667 29.15 33.05 29.15 31.6667C29.15 30.2833 30.2667 29.1667 31.65 29.1667C33.0333 29.1667 34.15 30.2833 34.15 31.6667C34.15 33.05 33.0333 34.1667 31.65 34.1667Z"
+              fill="white" />
+          </g>
+          <defs>
+            <clipPath id="clip0_13_97">
+              <rect width="40" height="40" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <h3>Přístup</h3>
+      <p class="arguments__item__desc">
+        Navrhneme komplexní a efektivní řešení, která zajistí ideální
+        propojení všech systémů a jejich optimální spolupráci pro dlouhodobý
+        bezproblémový chod a úsporu energie
+      </p>
+    </div>
+    <div class="arguments__item">
+      <div class="arguments__item__icon eco">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_13_82)">
+            <path
+              d="M10.0832 13.4167C5.53318 17.9667 5.53318 25.3334 10.0498 29.8834C12.4998 24.2167 16.8665 19.4834 22.3165 16.6667C17.6998 20.5667 14.4665 26.0167 13.3332 32.2C17.6665 34.25 22.9998 33.5 26.5832 29.9167C32.3832 24.1167 33.3332 6.66669 33.3332 6.66669C33.3332 6.66669 15.8832 7.61669 10.0832 13.4167Z"
+              fill="white" />
+          </g>
+          <defs>
+            <clipPath id="clip0_13_82">
+              <rect width="40" height="40" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <h3>Udržitelnost</h3>
+      <p class="arguments__item__desc">
+        Zohledňujeme ekologická řešení jako obnovitelné zdroje a úsporné
+        technologie, které šetří energii, náklady a zároveň přispívají k
+        ochraně životního prostředí pro budoucí generace.
+      </p>
+    </div>
+    <div class="arguments__item">
+      <div class="arguments__item__icon quality">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_13_76)">
+            <path
+              d="M38.3332 20L34.2665 15.35L34.8332 9.2L28.8165 7.83333L25.6665 2.5L19.9998 4.93333L14.3332 2.5L11.1832 7.81667L5.1665 9.16667L5.73317 15.3333L1.6665 20L5.73317 24.65L5.1665 30.8167L11.1832 32.1833L14.3332 37.5L19.9998 35.05L25.6665 37.4833L28.8165 32.1667L34.8332 30.8L34.2665 24.65L38.3332 20ZM16.8165 27.8667L10.4832 21.5167L12.9498 19.05L16.8165 22.9333L26.5665 13.15L29.0332 15.6167L16.8165 27.8667Z"
+              fill="white" />
+          </g>
+          <defs>
+            <clipPath id="clip0_13_76">
+              <rect width="40" height="40" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <h3>Kvalita</h3>
+      <p class="arguments__item__desc">
+        Postaráme se o veškerou dokumentaci, vyřízení potřebných povolení a
+        soulad s předpisy, což zajistí bezproblémovou realizaci a hladký
+        průběh celého projektu.
+      </p>
+    </div>
+  </section>
+  <section class="services">
+    <span class="services__title">
+      <h2>Navrhujeme efektivní systémy, které splňují vaše potřeby</h2>
+      <p>Prozkoumejte, jak naše projekční služby TZB pomáhají s úsporami a dlouhodobou efektivitou pro všechny typy
+        budov.</p>
+    </span>
+    <div class="services--esi">
+      <div class="imgContainer">
+        <img src="./img/electric-pole.jpg" alt="electric-pole" />
+      </div>
+      <div class="services--desc">
+        <div class="services--desc--icon"><svg width="70" height="64" viewBox="0 0 70 64" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1.45496" width="68" height="61.0901" rx="14" fill="#FF5722" />
+            <rect x="1" y="1.45496" width="68" height="61.0901" rx="14" stroke="#ECECEC" stroke-width="2" />
+            <g clip-path="url(#clip0_9_280)">
+              <path d="M55 39.5H50V34.5H55C56.375 34.5 57.5 35.625 57.5 37C57.5 38.375 56.375 39.5 55 39.5Z"
+                fill="white" />
+              <path d="M55 49.5H50V44.5H55C56.375 44.5 57.5 45.625 57.5 47C57.5 48.375 56.375 49.5 55 49.5Z"
+                fill="white" />
+              <path d="M40 32C37.25 32 35 34.25 35 37H30V47H35C35 49.75 37.25 52 40 52H47.5V32H40Z" fill="white" />
+              <path
+                d="M15 14.5C15 15.875 16.125 17 17.5 17H26.25C28.325 17 30 18.675 30 20.75C30 22.825 28.325 24.5 26.25 24.5H22.5C16.975 24.5 12.5 28.975 12.5 34.5C12.5 40.025 16.975 44.5 22.5 44.5H27.5V39.5H22.5C19.75 39.5 17.5 37.25 17.5 34.5C17.5 31.75 19.75 29.5 22.5 29.5H26.25C31.075 29.5 35 25.575 35 20.75C35 15.925 31.075 12 26.25 12H17.5C16.125 12 15 13.125 15 14.5Z"
+                fill="white" />
+            </g>
+            <defs>
+              <clipPath id="clip0_9_280">
+                <rect width="60" height="60" fill="white" transform="translate(5 2)" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="services--desc--title">SILNOPROUDÁ ELEKTROINSTALACE</div>
+        <div class="services--desc--perex">
+          Navrhujeme silnoproudé elektroinstalace, které zajistí bezpečný a
+          efektivní přenos elektrické energie do všech částí vaší budovy.
+          Důraz klademe na spolehlivost, bezpečnost a energetickou efektivitu.
+          Naše systémy splňují všechny normy a přispívají k maximální provozní
+          bezpečnosti.
+        </div>
+      </div>
+    </div>
+    <div class="services--eL">
+      <div class="imgContainer">
+        <img src="./img/electric-board.jpg" alt="electric-board" />
+      </div>
+      <div class="services--desc">
+        <div class="services--desc--icon">
+          <svg width="70" height="64" viewBox="0 0 70 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1.45483" width="68" height="61.0901" rx="14" fill="#2196F3" />
+            <rect x="1" y="1.45483" width="68" height="61.0901" rx="14" stroke="#ECECEC" stroke-width="2" />
+            <g clip-path="url(#clip0_14_88)">
+              <path opacity="0.3" d="M47.5 27H57.5V47H47.5V27Z" fill="#323232" />
+              <path opacity="0.3"
+                d="M32.5 45.75C34.5711 45.75 36.25 44.0711 36.25 42C36.25 39.9289 34.5711 38.25 32.5 38.25C30.4289 38.25 28.75 39.9289 28.75 42C28.75 44.0711 30.4289 45.75 32.5 45.75Z"
+                fill="#323232" />
+              <path
+                d="M12.5 17H57.5V12H12.5C9.75 12 7.5 14.25 7.5 17V47C7.5 49.75 9.75 52 12.5 52H22.5V47H12.5V17ZM60 22H45C43.75 22 42.5 23.25 42.5 24.5V49.5C42.5 50.75 43.75 52 45 52H60C61.25 52 62.5 50.75 62.5 49.5V24.5C62.5 23.25 61.25 22 60 22ZM57.5 47H47.5V27H57.5V47ZM37.5 32H27.5V36.45C25.975 37.825 25 39.775 25 42C25 44.225 25.975 46.175 27.5 47.55V52H37.5V47.55C39.025 46.175 40 44.2 40 42C40 39.8 39.025 37.825 37.5 36.45V32ZM32.5 45.75C30.425 45.75 28.75 44.075 28.75 42C28.75 39.925 30.425 38.25 32.5 38.25C34.575 38.25 36.25 39.925 36.25 42C36.25 44.075 34.575 45.75 32.5 45.75Z"
+                fill="white" />
+            </g>
+            <defs>
+              <clipPath id="clip0_14_88">
+                <rect width="60" height="60" fill="white" transform="translate(5 2)" />
+              </clipPath>
+            </defs>
+          </svg>
+
+        </div>
+        <div class="services--desc--title">SLABOPROUDÁ ELEKTROINSTALACE</div>
+        <div class="services--desc--perex">
+          Navrhujeme slaboproudé elektroinstalace, které zahrnují systémy pro
+          bezpečnost, komunikaci, datové přenosy a další pokročilé
+          technologie. Naší prioritou je optimální výkon a nízké náklady na
+          provoz. Všechny systémy jsou navrženy pro maximální integraci a
+          flexibilitu v rámci moderního řízení budov.
+        </div>
+      </div>
+    </div>
+    <div class="services--smart">
+      <div class="imgContainer">
+        <img src="./img/smartHouse.jpg" alt="smartHouse" />
+      </div>
+      <div class="services--desc">
+        <div class="services--desc--icon">
+          <svg width="70" height="64" viewBox="0 0 70 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1.45483" width="68" height="61.0901" rx="14" fill="#4CAF50" />
+            <rect x="1" y="1.45483" width="68" height="61.0901" rx="14" stroke="#ECECEC" stroke-width="2" />
+            <g clip-path="url(#clip0_14_105)">
+              <path
+                d="M27.5 54.5C27.5 55.875 28.625 57 30 57H40C41.375 57 42.5 55.875 42.5 54.5V52H27.5V54.5ZM35 7C25.35 7 17.5 14.85 17.5 24.5C17.5 30.45 20.475 35.675 25 38.85V44.5C25 45.875 26.125 47 27.5 47H42.5C43.875 47 45 45.875 45 44.5V38.85C49.525 35.675 52.5 30.45 52.5 24.5C52.5 14.85 44.65 7 35 7ZM42.125 34.75L40 36.25V42H30V36.25L27.875 34.75C24.5 32.4 22.5 28.575 22.5 24.5C22.5 17.6 28.1 12 35 12C41.9 12 47.5 17.6 47.5 24.5C47.5 28.575 45.5 32.4 42.125 34.75Z"
+                fill="white" />
+            </g>
+            <defs>
+              <clipPath id="clip0_14_105">
+                <rect width="60" height="60" fill="white" transform="translate(5 2)" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="services--desc--title">INTELIGENTNÍ ELEKTROINSTALACE</div>
+        <div class="services--desc--perex">
+          Vytváříme chytré elektroinstalace pro automatizované řízení
+          osvětlení, vytápění, klimatizace a dalších systémů. Naše
+          inteligentní technologie přinášejí komfort, bezpečnost a výrazné
+          úspory energie. Systémy umožňují snadné ovládání a monitorování
+          prostředí pomocí moderního softwaru.
+        </div>
+      </div>
+    </div>
+    <div class="services--mar">
+      <div class="imgContainer">
+        <img src="./img/circuit-board.jpg" alt="circuit-board" />
+      </div>
+      <div class="services--desc">
+        <div class="services--desc--icon">
+          <svg width="70" height="64" viewBox="0 0 70 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1.45483" width="68" height="61.0901" rx="14" fill="#9E9E9E" />
+            <rect x="1" y="1.45483" width="68" height="61.0901" rx="14" stroke="#ECECEC" stroke-width="2" />
+            <g clip-path="url(#clip0_14_600)">
+              <path
+                d="M12.5 14.5H37.5V19.5H12.5V14.5ZM22.5 29.5H12.5V34.5H22.5V39.5H27.5V24.5H22.5V29.5ZM37.5 39.5H32.5V54.5H37.5V49.5H57.5V44.5H37.5V39.5ZM12.5 44.5H27.5V49.5H12.5V44.5ZM32.5 29.5H57.5V34.5H32.5V29.5ZM47.5 9.5H42.5V24.5H47.5V19.5H57.5V14.5H47.5V9.5Z"
+                fill="white" />
+            </g>
+            <defs>
+              <clipPath id="clip0_14_600">
+                <rect width="60" height="60" fill="white" transform="translate(5 2)" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="services--desc--title">MĚŘENÍ A REGULACE</div>
+        <div class="services--desc--perex">
+          Naše projekty zahrnují pokročilé měřicí a regulační systémy, které
+          zajišťují optimální provoz budov. Automatizujeme regulaci teploty,
+          vlhkosti a dalších parametrů pro zvýšení energetické účinnosti.
+          Důraz klademe na přesnost měření a spolehlivost, což šetří náklady a
+          zajišťuje dlouhodobou efektivitu.
+        </div>
+      </div>
+    </div>
+    <div class="services--fve">
+
+      <div class="imgContainer">
+        <img src="./img/fotovolt.webp" alt="fotovolt" />
+      </div>
+      <div class="services--desc">
+        <div class="services--desc--icon"><svg width="70" height="64" viewBox="0 0 70 64" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1.45483" width="68" height="61.0901" rx="14" fill="#FFEB3B" />
+            <rect x="1" y="1.45483" width="68" height="61.0901" rx="14" stroke="#ECECEC" stroke-width="2" />
+            <g clip-path="url(#clip0_14_607)">
+              <path
+                d="M44.175 12H40V7H30V12H25.825C24 12 22.5 13.5 22.5 15.325V53.65C22.5 55.5 24 57 25.825 57H44.15C46 57 47.5 55.5 47.5 53.675V15.325C47.5 13.5 46 12 44.175 12ZM32.5 52V38.25H27.5L37.5 19.5V33.25H42.5L32.5 52Z"
+                fill="white" />
+            </g>
+            <defs>
+              <clipPath id="clip0_14_607">
+                <rect width="60" height="60" fill="white" transform="translate(5 2)" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="services--desc--title">FOTOVOLTAIKA</div>
+        <div class="services--desc--perex">
+          Navrhujeme fotovoltaické systémy pro efektivní využívání sluneční
+          energie. Naše projekty zahrnují vše od instalace solárních panelů po
+          připojení k síti a monitorování výkonu. Systémy jsou navrženy pro
+          maximální energetickou úspornost a ochranu životního prostředí,
+          přičemž přinášejí významné úspory nákladů.
+        </div>
+      </div>
+    </div>
+    <div class="services--lightning">
+
+      <div class="imgContainer">
+        <img src="./img/lightning.jpg" alt="lightning" />
+      </div>
+      <div class="services--desc">
+        <div class="services--desc--icon"><svg width="70" height="64" viewBox="0 0 70 64" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1.45483" width="68" height="61.0901" rx="14" fill="#F44336" />
+            <rect x="1" y="1.45483" width="68" height="61.0901" rx="14" stroke="#ECECEC" stroke-width="2" />
+            <g clip-path="url(#clip0_14_625)">
+              <path d="M47.5 27H37.5L45 7H22.5V34.5H30V57L47.5 27Z" fill="white" />
+            </g>
+            <defs>
+              <clipPath id="clip0_14_625">
+                <rect width="60" height="60" fill="white" transform="translate(5 2)" />
+              </clipPath>
+            </defs>
+          </svg>
+
+        </div>
+        <div class="services--desc--title">SYSTÉM OCHRANY PŘED BLESKEM</div>
+        <div class="services--desc--perex">
+          Navrhujeme komplexní systémy ochrany před bleskem, které chrání vaši
+          budovu a její technologické vybavení před škodami způsobenými
+          atmosférickými jevy. Naše řešení splňují všechny normy a zajišťují
+          bezpečný provoz i v extrémních podmínkách.
+        </div>
+      </div>
+    </div>
+    <div class="services--ventilation">
+      <div class="imgContainer">
+        <img src="./img/ventilation.jpg" alt="ventilation" />¨
+      </div>
+      <div class="services--desc">
+        <div class="services--desc--icon"><svg width="70" height="64" viewBox="0 0 70 64" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1.45483" width="68" height="61.0901" rx="14" fill="#03A9F4" />
+            <rect x="1" y="1.45483" width="68" height="61.0901" rx="14" stroke="#ECECEC" stroke-width="2" />
+            <g clip-path="url(#clip0_14_632)">
+              <path opacity="0.3"
+                d="M22.5002 42C27.0502 42 31.0252 38.75 32.1752 34.5H12.8252C13.9752 38.75 17.9502 42 22.5002 42ZM25.0002 19.5C25.0002 24.05 28.2502 28.025 32.5002 29.1749V9.82495C28.2502 10.975 25.0002 14.95 25.0002 19.5ZM47.5002 22C42.9502 22 38.9752 25.25 37.8252 29.5H57.1752C56.0252 25.25 52.0502 22 47.5002 22ZM37.5002 34.825V54.175C41.7502 53.025 45.0002 49.075 45.0002 44.5C45.0002 39.925 41.7502 35.975 37.5002 34.825Z"
+                fill="white" />
+              <path
+                d="M62.5 32C62.5 23.875 55.625 17 47.5 17C43.7 17 40.175 18.5 37.5 20.925V4.5H35C26.875 4.5 20 11.375 20 19.5C20 23.3 21.5 26.825 23.925 29.5H7.5V32C7.5 40.125 14.375 47 22.5 47C26.3 47 29.825 45.5 32.5 43.075V59.5H35C43.125 59.5 50 52.625 50 44.5C50 40.7 48.5 37.175 46.075 34.5H62.5V32ZM22.5 42C17.95 42 13.975 38.75 12.825 34.5H32.175C31.025 38.75 27.05 42 22.5 42ZM32.5 29.175C28.25 28.025 25 24.05 25 19.5C25 14.95 28.25 10.975 32.5 9.825V29.175ZM37.5 54.175V34.825C41.75 35.975 45 39.925 45 44.5C45 49.075 41.75 53.025 37.5 54.175ZM37.825 29.5C38.975 25.25 42.925 22 47.5 22C52.075 22 56.025 25.25 57.175 29.5H37.825Z"
+                fill="white" />
+            </g>
+            <defs>
+              <clipPath id="clip0_14_632">
+                <rect width="60" height="60" fill="white" transform="translate(5 2)" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="services--desc--title">VZDUCHOTECHNIKA</div>
+        <div class="services--desc--perex">
+          Navrhujeme vzduchotechnické systémy pro efektivní větrání, chlazení
+          a vytápění. Naše řešení zajišťují kvalitní vnitřní prostředí a
+          optimální distribuci vzduchu, což zvyšuje komfort uživatelů a
+          snižuje energetické náklady. Klademe důraz na šetrnost k životnímu
+          prostředí a dlouhodobou spolehlivost.
+        </div>
+      </div>
+    </div>
+    <div class="services--heating">
+      <div class="imgContainer">
+        <img src="./img/heating.jpg" alt="heating" />
+      </div>
+      <div class="services--desc">
+        <div class="services--desc--icon"><svg width="153" height="64" viewBox="0 0 153 64" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1.45508" width="68" height="61.0901" rx="14" fill="white" />
+            <rect x="1" y="1.45508" width="68" height="61.0901" rx="14" stroke="#ECECEC" stroke-width="2" />
+            <g clip-path="url(#clip0_14_799)">
+              <path opacity="0.3"
+                d="M11.0005 56H17.0005V50H23.6905C21.4405 47.21 20.0905 43.88 20.0005 41C19.9405 39.41 17.8105 27.71 38.0005 17C38.0005 17 35.6005 24.83 44.4505 30.89C46.7305 32.45 50.0005 35.33 50.0005 41C50.0005 44.39 48.8305 47.48 46.9405 50H53.0005V56H59.0005V8H11.0005V56Z"
+                fill="#E2111B" />
+              <path
+                d="M35.0303 33.3799C34.5803 34.6399 34.5803 35.8399 34.7903 37.2199C35.0903 38.8699 35.7803 40.3399 35.3903 42.0199C35.0003 43.7899 33.0803 46.1599 30.8003 46.9099C34.6403 50.0599 40.4003 48.0199 40.9703 42.9499C41.4803 38.3299 36.6503 37.0099 35.0303 33.3799Z"
+                fill="#E2111B" />
+              <path
+                d="M5 2V62H65V2H5ZM35 50C30.26 50 26.09 44.36 26 40.82C26 40.67 25.97 40.43 25.97 40.16C25.58 34.97 28.97 30.56 33.38 27.05C34.79 30.08 37.19 33.14 41.09 35.81C42.83 37.07 44 38.39 44 41C44 45.95 39.95 50 35 50ZM59 56H53V50H46.94C48.83 47.48 50 44.39 50 41C50 35.33 46.73 32.45 44.45 30.89C35.6 24.83 38 17 38 17C17.81 27.71 19.94 39.41 20 41C20.09 43.88 21.47 47.21 23.69 50H17V56H11V8H59V56Z"
+                fill="#E2111B" />
+            </g>
+            <rect x="84" y="1.45508" width="68" height="61.0901" rx="14" fill="#2196F3" />
+            <rect x="84" y="1.45508" width="68" height="61.0901" rx="14" stroke="#ECECEC" stroke-width="2" />
+            <path
+              d="M143 29.5H132.575L140.675 21.4L137.15 17.85L125.5 29.5H120.5V24.5L132.15 12.85L128.6 9.325L120.5 17.425V7H115.5V17.425L107.4 9.325L103.85 12.85L115.5 24.5V29.5H110.5L98.85 17.85L95.325 21.4L103.425 29.5H93V34.5H103.425L95.325 42.6L98.85 46.15L110.5 34.5H115.5V39.5L103.85 51.15L107.4 54.675L115.5 46.575V57H120.5V46.575L128.6 54.675L132.15 51.15L120.5 39.5V34.5H125.5L137.15 46.15L140.675 42.6L132.575 34.5H143V29.5Z"
+              fill="white" />
+            <defs>
+              <clipPath id="clip0_14_799">
+                <rect x="5" y="2" width="60" height="60" rx="8" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="services--desc--title">VYTÁPĚNÍ / CHLAZENÍ</div>
+        <div class="services--desc--perex">
+          Navrhujeme pokročilé systémy vytápění a chlazení, které kombinují
+          ekologické technologie, jako jsou tepelná čerpadla, a moderní metody
+          distribuce tepla, jako podlahové vytápění. Naše řešení zajišťují
+          ideální komfort a výrazné úspory energie v každé budově.
+        </div>
+      </div>
+    </div>
+    <div class="services--rainWater">
+      <div class="imgContainer">
+        <img src="./img/waterDrop.jpg" alt="waterDrop" />
+      </div>
+      <div class="services--desc">
+        <div class="services--desc--icon"><svg width="70" height="64" viewBox="0 0 70 64" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1.45508" width="68" height="61.0901" rx="14" fill="#03DAC5" />
+            <rect x="1" y="1.45508" width="68" height="61.0901" rx="14" stroke="#ECECEC" stroke-width="2" />
+            <g clip-path="url(#clip0_14_657)">
+              <path opacity="0.3"
+                d="M35 16.2251L22.5 27.4751V47.0001H47.5V27.4751L35 16.2251ZM35 42.0001C32.25 42.0001 30 39.7501 30 37.0001C30 34.2501 35 27.0001 35 27.0001C35 27.0001 40 34.2501 40 37.0001C40 39.7501 37.75 42.0001 35 42.0001Z"
+                fill="white" />
+              <path
+                d="M35 9.5L10 32H17.5V52H52.5V32H60L35 9.5ZM22.5 47V27.475L35 16.225L47.5 27.475V47H22.5ZM40 37C40 39.75 37.75 42 35 42C32.25 42 30 39.75 30 37C30 34.25 35 27 35 27C35 27 40 34.25 40 37Z"
+                fill="white" />
+            </g>
+            <defs>
+              <clipPath id="clip0_14_657">
+                <rect width="60" height="60" fill="white" transform="translate(5 2)" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="services--desc--title">
+          VYUŽÍVÁNÍ A LIKVIDACE DEŠŤOVÉ VODY
+        </div>
+        <div class="services--desc--perex">
+          Navrhujeme systémy pro sběr a efektivní využívání dešťové vody na
+          zalévání, splachování a jiné technické účely. Naše řešení pomáhají
+          šetřit pitnou vodu a snižují náklady na její spotřebu. Důraz klademe
+          na ekologickou efektivitu a minimální ekologickou stopu.
+        </div>
+      </div>
+    </div>
+    <div class="services--watering">
+
+      <div class="imgContainer">
+        <img src="./img/tap.jpg" alt="tap" />
+      </div>
+      <div class="services--desc">
+        <div class="services--desc--icon"><svg width="70" height="64" viewBox="0 0 70 64" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1.45508" width="68" height="61.0901" rx="14" fill="#00BCD4" />
+            <rect x="1" y="1.45508" width="68" height="61.0901" rx="14" stroke="#ECECEC" stroke-width="2" />
+            <g clip-path="url(#clip0_14_682)">
+              <path opacity="0.3"
+                d="M22.5001 52.025L47.5001 52L50.2501 27H19.7251L22.5001 52.025ZM35.0001 28.5C35.0001 28.5 42.5001 37 42.5001 42C42.5001 46.15 39.1501 49.5 35.0001 49.5C30.8501 49.5 27.5001 46.15 27.5001 42C27.5001 37 35.0001 28.5 35.0001 28.5Z"
+                fill="white" />
+              <path
+                d="M17.525 52.575C17.825 55.075 19.925 57 22.5 57H47.5C50.075 57 52.175 55.075 52.475 52.575L57.5 7H12.5L17.525 52.575ZM47.5 52L22.5 52.025L19.725 27H50.25L47.5 52ZM51.9 12L50.825 22H19.175L18.075 12H51.9ZM35 49.5C39.15 49.5 42.5 46.15 42.5 42C42.5 37 35 28.5 35 28.5C35 28.5 27.5 37 27.5 42C27.5 46.15 30.85 49.5 35 49.5ZM35 36.775C36.475 39.05 37.5 41.1 37.5 42C37.5 43.375 36.375 44.5 35 44.5C33.625 44.5 32.5 43.375 32.5 42C32.5 41.075 33.525 39.025 35 36.775Z"
+                fill="white" />
+            </g>
+            <defs>
+              <clipPath id="clip0_14_682">
+                <rect width="60" height="60" fill="white" transform="translate(5 2)" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="services--desc--title">VODOVOD</div>
+        <div class="services--desc--perex">
+          Navrhujeme moderní vodovodní systémy, které zajistí efektivní
+          distribuci pitné vody do všech částí budovy. Naše řešení se zaměřují
+          na úsporu vody, energetickou efektivitu a zajištění dlouhodobé
+          spolehlivosti a hygienických standardů.
+        </div>
+      </div>
+    </div>
+    <div class="services--sewering">
+      <div class="imgContainer">
+        <img src="./img/kg-pipe.jpg" alt="kg-pipe" />
+      </div>
+      <div class="services--desc">
+        <div class="services--desc--icon"><svg width="70" height="64" viewBox="0 0 70 64" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1.45508" width="68" height="61.0901" rx="14" fill="#795548" />
+            <rect x="1" y="1.45508" width="68" height="61.0901" rx="14" stroke="#ECECEC" stroke-width="2" />
+            <g clip-path="url(#clip0_14_675)">
+              <path opacity="0.3" d="M55 39.5H15V49.5H55V39.5Z" fill="white" />
+              <path
+                d="M22.5 24.5C25.2614 24.5 27.5 22.2614 27.5 19.5C27.5 16.7386 25.2614 14.5 22.5 14.5C19.7386 14.5 17.5 16.7386 17.5 19.5C17.5 22.2614 19.7386 24.5 22.5 24.5Z"
+                fill="white" />
+              <path
+                d="M55 34.5V14.075C55 10.175 51.825 7 47.925 7C46.05 7 44.25 7.75 42.925 9.075L39.8 12.2C39.4 12.075 38.975 12 38.525 12C37.525 12 36.6 12.3 35.825 12.8L42.725 19.7C43.225 18.925 43.525 18 43.525 17C43.525 16.55 43.45 16.15 43.35 15.725L46.475 12.6C46.85 12.225 47.375 12 47.925 12C49.075 12 50 12.925 50 14.075V34.5H32.875C32.125 33.975 31.45 33.375 30.825 32.7L27.325 28.825C26.85 28.3 26.25 27.875 25.6 27.575C24.825 27.2 23.975 27 23.1 27C20 27.025 17.5 29.525 17.5 32.625V34.5H10V49.5C10 52.25 12.25 54.5 15 54.5C15 55.875 16.125 57 17.5 57H52.5C53.875 57 55 55.875 55 54.5C57.75 54.5 60 52.25 60 49.5V34.5H55ZM55 49.5H15V39.5H55V49.5Z"
+                fill="white" />
+            </g>
+            <defs>
+              <clipPath id="clip0_14_675">
+                <rect width="60" height="60" fill="white" transform="translate(5 2)" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="services--desc--title">SPLAŠKOVÁ KANALIZACE</div>
+        <div class="services--desc--perex">
+          Navrhujeme splaškovou kanalizaci, která zajišťuje bezpečný a
+          efektivní odvod odpadních vod. Systémy navrhujeme tak, aby splňovaly
+          všechny hygienické normy a požadavky na ochranu životního prostředí.
+          Naše řešení jsou energeticky úsporná a dlouhodobě spolehlivá.
+        </div>
+      </div>
+    </div>
+    <div class="services--penb">
+      <div class="imgContainer">
+        <img src="./img/penb.jpg" alt="penb" />
+      </div>
+      <div class="services--desc">
+        <div class="services--desc--icon"><svg width="70" height="64" viewBox="0 0 70 64" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1.45508" width="68" height="61.0901" rx="14" stroke="#ECECEC" stroke-width="2" />
+            <g clip-path="url(#clip0_14_689)">
+              <path opacity="0.3"
+                d="M17.5 14.5V49.5H52.5V14.5H17.5ZM40 44.5H22.5V39.5H40V44.5ZM47.5 34.5H22.5V29.5H47.5V34.5ZM47.5 24.5H22.5V19.5H47.5V24.5Z"
+                fill="#323232" />
+              <path
+                d="M22.5 39.5H40V44.5H22.5V39.5ZM22.5 29.5H47.5V34.5H22.5V29.5ZM22.5 19.5H47.5V24.5H22.5V19.5ZM52.5 9.5H42.05C41 6.6 38.25 4.5 35 4.5C31.75 4.5 29 6.6 27.95 9.5H17.5C17.15 9.5 16.825 9.525 16.5 9.6C15.525 9.8 14.65 10.3 13.975 10.975C13.525 11.425 13.15 11.975 12.9 12.575C12.65 13.175 12.5 13.8 12.5 14.5V49.5C12.5 50.175 12.65 50.85 12.9 51.45C13.15 52.05 13.525 52.575 13.975 53.05C14.65 53.725 15.525 54.225 16.5 54.425C16.825 54.475 17.15 54.5 17.5 54.5H52.5C55.25 54.5 57.5 52.25 57.5 49.5V14.5C57.5 11.75 55.25 9.5 52.5 9.5ZM35 8.875C36.025 8.875 36.875 9.725 36.875 10.75C36.875 11.775 36.025 12.625 35 12.625C33.975 12.625 33.125 11.775 33.125 10.75C33.125 9.725 33.975 8.875 35 8.875ZM52.5 49.5H17.5V14.5H52.5V49.5Z"
+                fill="#323232" />
+            </g>
+            <defs>
+              <clipPath id="clip0_14_689">
+                <rect width="60" height="60" fill="white" transform="translate(5 2)" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="services--desc--title">PENB</div>
+        <div class="services--desc--perex">
+          Vytváříme energetické průkazy budov (PENB), které slouží k hodnocení
+          energetické náročnosti a efektivity budov. Naše služby pomáhají
+          zajistit splnění legislativních požadavků a optimalizaci nákladů na
+          energie, což přispívá k udržitelnosti a šetření nákladů na provoz.
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section class="nzu">
+    <h2>DOTACE NOVÁ ZELENÁ ÚSPORÁM</h2>
+    <p>
+      Pomůžeme vám s vyřízením dotace z programu Nová zelená úsporám,
+      připravíme veškerou dokumentaci, zajistíme průkaz PENB a navrhneme
+      komplexní ekologická řešení, jako jsou fotovoltaické systémy, tepelná
+      čerpadla, rekuperace, zateplení budovy, využití dešťové vody a další
+      opatření pro úsporu energie a zlepšení energetické efektivity.
+    </p>
+    <a>Chci vědět víc</a>
+  </section>
+  <section id="contact">
+    <h2>Kontaktujte nás</h2>
+    <form id="contactForm" action="send-mail.php" method="POST" style="max-width: 1000px; margin: 0 auto">
+      <div class="name-email">
+        <input type="text" name="name" placeholder="Vaše jméno" required />
+        <input type="email" name="email" placeholder="Váš e-mail" required />
+      </div>
+
+      <div class="services-selection">
+        <h3>Vyberte služby:</h3>
+        <div class="services-container">
+          <div class="service-box">
+            <input type="checkbox" id="service-1" name="services[]" value="Rekuperace" />
+            <label for="service-1">Rekuperace</label>
+            <select name="scope-1">
+              <option value="zakladni">Základní</option>
+              <option value="stredni">Střední</option>
+              <option value="rozsahly">Rozsáhlý</option>
+            </select>
+          </div>
+          <div class="service-box">
+            <input type="checkbox" id="service-2" name="services[]" value="Vytápění" />
+            <label for="service-2">Vytápění</label>
+            <select name="scope-2">
+              <option value="zakladni">Základní</option>
+              <option value="stredni">Střední</option>
+              <option value="rozsahly">Rozsáhlý</option>
+            </select>
+          </div>
+          <div class="service-box">
+            <input type="checkbox" id="service-3" name="services[]" value="Fotovoltaika" />
+            <label for="service-3">Fotovoltaika</label>
+            <select name="scope-3">
+              <option value="zakladni">Základní</option>
+              <option value="stredni">Střední</option>
+              <option value="rozsahly">Rozsáhlý</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <textarea name="message" placeholder="Vaše zpráva" required rows="8"></textarea>
+      <button type="submit">Odeslat</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>
+      &copy; 2025 TZBsystems | Adresa: Ulice 123, Město | E-mail:
+      <a href="mailto:info@tzbsystems.cz">info@tzbsystems.cz</a>
+    </p>
+    <div id="cookie-consent">
+      <p>
+        Tato stránka používá soubory cookies. Pokračováním v používání
+        souhlasíte s jejich používáním. <a href="#">Více informací</a>
+      </p>
+      <button id="accept-cookies">Souhlasím</button>
+    </div>
+    <div id="privacy-policy">
+      <p>
+        Souhlasím se zpracováním osobních údajů v souladu s
+        <a href="#">Zásadami ochrany osobních údajů</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
