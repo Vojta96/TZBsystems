@@ -47,7 +47,6 @@ body {
   justify-content: flex-end;
   min-height: 100vh;
   background: url(./img/hero-bg.webp);
-  background-color: #5D594A;
   background-size: cover;
   position: relative;
   overflow: hidden;
