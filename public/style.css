@@ -1,6 +1,10 @@
 :root {
-  --content-w: 1800px;
   --section-space: 5rem;
+  --content-w: 100%;
+
+  @media (min-width: 1800px) {
+    --content-w: 1800px;
+  }
 }
 
 body {
@@ -15,13 +19,10 @@ body {
 
 .cHeader {
   position: absolute;
-  top: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  inset: 2rem 0 auto;
   display: flex;
   justify-content: space-between;
   max-width: var(--content-w);
-  width: 100%;
   padding: 0 1rem;
   z-index: 2;
 }
@@ -46,12 +47,30 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   min-height: 100vh;
-  background: url(./img/hero-bg.webp);
-  background-color: #5D594A;
+  padding: 0 1rem;
+  background-color: rgba(13, 13, 13, 0.75);
   background-size: cover;
   position: relative;
   overflow: hidden;
   isolation: isolate;
+
+  video {
+    position: absolute;
+    inset: 0;
+    max-width: 100%;
+    object-fit: cover;
+    margin: auto;
+    z-index: -2;
+    mix-blend-mode: difference;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgb(16, 27, 50, 0.3);
+    z-index: -1;
+  }
 
   h1 {
     font-weight: 300;
@@ -70,6 +89,7 @@ body {
     line-height: 1.5;
     max-width: 440px;
     list-style: none;
+    margin-bottom: 4rem;
 
     li {
       margin-bottom: 1rem;
@@ -95,23 +115,31 @@ body {
   margin-left: calc((100vw - var(--content-w)) / 2);
 }
 
-.row--hero::before {
+.row--hero::before,
+.row--hero ul::before,
+.row--hero h1::before {
   content: "";
   position: absolute;
   inset: 0;
-  transform: translate(-50%, -25%) rotate(-14.4deg);
   width: 1450px;
   height: 2547px;
   border-radius: 50%;
-  opacity: 0.7;
-  backdrop-filter: blur(4px);
   pointer-events: none;
-  background: linear-gradient(0deg,
-      rgba(82, 156, 206, 0.7),
-      rgba(82, 156, 206, 0.7)),
-    linear-gradient(0deg, rgba(24, 37, 55, 0.7), rgba(24, 37, 55, 0.7)), #000000;
-  background-blend-mode: multiply, normal, color;
+  background: #001524;
   z-index: -1;
+  opacity: 0.56;
+}
+
+.row--hero::before {
+  transform: translate(-50%, -25%) rotate(-14.4deg) scale(1.1);
+}
+
+.row--hero h1::before {
+  transform: translate(-50%, -25%) rotate(-14.4deg) scale(1.6);
+}
+
+.row--hero ul::before {
+  transform: translate(-50%, -25%) rotate(-14.4deg) scale(2.2);
 }
 
 .row--fact {
@@ -343,7 +371,7 @@ body {
 }
 
 .nzu::after {
-  background: linear-gradient(0deg, rgba(16, 138, 0, 1), rgba(16, 138, 0, 0.8)),linear-gradient(0deg, rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.9));
+  background: linear-gradient(0deg, rgba(16, 138, 0, 1), rgba(16, 138, 0, 0.8)), linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9));
   z-index: -1;
   mix-blend-mode: multiply;
 }
