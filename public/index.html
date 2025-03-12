@@ -7,10 +7,13 @@
   <meta name="author" content="TZBsystems" />
   <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="TZBsystems - Chytré projekty, úsporná řešení pro moderní technologie" />
-  <meta name="keywords" content="projekce, vytápění, vzduchotechnika, fotovoltaika, dotace NZU, financování" />
-  <title>TZBsystems - Kreslíme projekty, řešíme budoucnost</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>TZBsystems - Kreslíme projekty, řešíme dotace</title>
+  <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
+  <meta name="description" content="TZBsystems - Chytré projekty TZB, úsporná řešení pro moderní technologie" />
+  <meta name="keywords" content="Projektování vzduchotechniky, projektování vytápění, projektování Pardubice, Projekce TZB Pardubice, projektovani tepelnych čerpadel, 
+  dotace NZÚ, dotace NZÚ Pardubice, dotace nová zelená úsporám" />
+  <link rel="stylesheet" href="/public/css/global.css">
+  <link id="page-style" rel="stylesheet" href="">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -22,20 +25,18 @@
   <div class="cHeader">
     <span class="cHeader__logo"><strong>TZB</strong>systems</span>
     <span class="mainNav">
-      <div class="nav">
-        <a>Služby</a>
-        <a>O nás</a>
-      </div>
-      <div><a>Poptávka</a></div>
+      <nav class="nav">
+        <a href="#projektovani">Projekční služby</a>
+        <a href="#dotace" class="dotace">Dotace NZÚ</a>
+        <a href="#aplikace" class="disabled">Webové aplikace</a>
+        <a href="#kariera" class="disabled">Kariéra</a>
+        <a href="#contactForm">Poptávka</a>
+      </nav>
   </div>
   </span>
   <section class="row--hero">
-    <video autoplay loop muted playsinline poster="hero-bg.webp" preload="auto">
-      <source src="./img/hero-video.mp4" type="video/mp4">
-      Váš prohlížeč nepodporuje přehrávání videí.
-    </video>
     <h1>
-      KRESLÍME PROJEKTY,<br />ŘEŠÍME BUDOUCNOST
+      ŘEŠÍME DOTACE,<br /> KRESLÍME PROJEKTY
     </h1>
     <ul>
       <li>
@@ -150,7 +151,7 @@
       </p>
     </div>
   </section>
-  <section class="services">
+  <section id="projektovani" class="services">
     <span class="services__title">
       <h2>Navrhujeme efektivní systémy, které splňují vaše potřeby</h2>
       <p>Prozkoumejte, jak naše projekční služby TZB pomáhají s úsporami a dlouhodobou efektivitou pro všechny typy
@@ -564,7 +565,7 @@
     </div>
     </div>
   </section>
-  <section class="nzu">
+  <section id="dotace" class="nzu">
     <h2>DOTACE NOVÁ ZELENÁ ÚSPORÁM</h2>
     <p>
       Pomůžeme vám s vyřízením dotace z programu Nová zelená úsporám,
@@ -573,79 +574,65 @@
       čerpadla, rekuperace, zateplení budovy, využití dešťové vody a další
       opatření pro úsporu energie a zlepšení energetické efektivity.
     </p>
-    <a href="pages/nzu.html">Chci vědět víc</a>
+    <a href="#contactForm">Chci vědět víc</a>
   </section>
-  <section id="contact">
-    <h2>Kontaktujte nás</h2>
-    <form id="contactForm" action="send-mail.php" method="POST" style="max-width: 1000px; margin: 0 auto">
-      <div class="name-email">
-        <input type="text" name="name" placeholder="Vaše jméno" required />
-        <input type="email" name="email" placeholder="Váš e-mail" required />
-      </div>
-
-      <div class="services-selection">
-        <h3>Vyberte služby:</h3>
-        <div class="services-container">
-          <div class="service-box">
-            <input type="checkbox" id="service-1" name="services[]" value="Rekuperace" />
-            <label for="service-1">Rekuperace</label>
-            <select name="scope-1">
-              <option value="zakladni">Základní</option>
-              <option value="stredni">Střední</option>
-              <option value="rozsahly">Rozsáhlý</option>
-            </select>
-          </div>
-          <div class="service-box">
-            <input type="checkbox" id="service-2" name="services[]" value="Vytápění" />
-            <label for="service-2">Vytápění</label>
-            <select name="scope-2">
-              <option value="zakladni">Základní</option>
-              <option value="stredni">Střední</option>
-              <option value="rozsahly">Rozsáhlý</option>
-            </select>
-          </div>
-          <div class="service-box">
-            <input type="checkbox" id="service-3" name="services[]" value="Fotovoltaika" />
-            <label for="service-3">Fotovoltaika</label>
-            <select name="scope-3">
-              <option value="zakladni">Základní</option>
-              <option value="stredni">Střední</option>
-              <option value="rozsahly">Rozsáhlý</option>
-            </select>
-          </div>
+  <section class="contact">
+    <h2>Poptávková formulář</h2>
+    <form id="contactForm" action="./php/send-mail.php" method="POST" style="max-width: 1000px; margin: 0 auto">
+      <div class="inputs--container">
+        <div class="inputBox">
+          <label for="name">Jméno a příjmení:</label>
+          <input type="text" name="name" placeholder="Zadejte vaše jméno" required />
+        </div>
+        <div class="inputBox">
+          <label for="phone">Telefon:</label>
+          <input type="numeric" name="phone" placeholder="+420 ... ... ..." required />
+        </div>
+        <div class="inputBox">
+          <label for="email">E-mail:</label>
+          <input type="email" name="email" placeholder="Zadejte váš e-mail" required />
+        </div>
+        <div class="inputBox">
+          <label for="message">Text zptávy:</label>
+          <textarea name="message" placeholder="Text vaší zprávy....." required rows="8"></textarea>
         </div>
       </div>
-
-      <textarea name="message" placeholder="Vaše zpráva" required rows="8"></textarea>
-      <button type="submit">Odeslat</button>
+      <div class="form-consent">
+        <input type="checkbox" required />
+        <p>Souhlasíte se <a href="#footer">zpracováním osobních údajů.</a></p>
+      </div>
+      <button type="submit">Odeslat zprávu</button>
     </form>
   </section>
-
-  <footer>
-    <p>
-      &copy; 2025 TZBsystems | Adresa: Ulice 123, Město | E-mail:
-      <a href="mailto:info@tzbsystems.cz">info@tzbsystems.cz</a>
-    </p>
+  <footer id="footer">
+    <span class="cHeader__logo"><strong>TZB</strong>systems</span>
+    <p>Jungmannova 1020, Pardubice 530 02</p>
+    <a href="mailto:info@tzbsystems.cz">info@tzbsystems.cz</a>
+    <a href="tel:+420777960025" class="phone-number">+420 777 960 025</a>
+    <div class="footer-bottom">
+      <div class="footer-menu">
+        <a>nastavení cookies</a>
+        <p>|</p>
+        <a>mapa stránek</a>
+        <p>|</p>
+        <a>TZBsystem</a>
+      </div>
+      <div id="creator">
+        <p>web by Vojtěch Procházka </p>
+        <a href="mailto:prochazka.v96@gmail.com">prochazka.v96@gmail.com</a>
+      </div>
+    </div>
     <div id="cookie-consent">
+      <p class="alert">Web je ještě ve výstavbě, omlouváme se za potíže.</p>
       <p>
         Tato stránka používá soubory cookies. Pokračováním v používání
         souhlasíte s jejich používáním. <a href="#">Více informací</a>
       </p>
       <button id="accept-cookies">Souhlasím</button>
     </div>
-    <div id="privacy-policy">
-      <p>
-        Souhlasím se zpracováním osobních údajů v souladu s
-        <a href="#">Zásadami ochrany osobních údajů</a>.
-      </p>
-    </div>
   </footer>
-
-  <script defer src="script.js"></script>
-  <!-- update the version number as needed -->
-  <script src="/__/firebase/11.3.1/firebase-app-compat.js"></script>
-  <script src="/__/firebase/init.js?useEmulator=true"></script>
-
+  <script defer src="js/main.js"></script>
+  <script defer src="js/routing.js"></script>
 </body>
 
 </html>
