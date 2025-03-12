@@ -1,6 +1,24 @@
 {
   "hosting": {
     "public": "public",
+    "rewrites": [
+      {
+        "source": "/projektovani",
+        "destination": "/projektovani.html"
+      },
+      {
+        "source": "/dotace",
+        "destination": "/dotace.html"
+      },
+      {
+        "source": "/aplikace",
+        "destination": "/aplikace.html"
+      },
+      {
+        "source": "/kariera",
+        "destination": "/kariera.html"
+      }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",
