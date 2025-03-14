@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Nastavení souborů cookies na webu TZBsystems.">
+    <title>Nastavení cookies | TZBsystems</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .cookie-category {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin: 5px 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Nastavení cookies</h1>
+    <p>Tento web používá soubory cookies ke zlepšení uživatelského zážitku. Zde můžete spravovat své preference.</p>
+
+    <h2>Typy cookies</h2>
+
+    <div class="cookie-category">
+        <h3>Nezbytné cookies</h3>
+        <p>Tyto cookies jsou nutné pro správnou funkci webu a nelze je vypnout.</p>
+        <input type="checkbox" checked disabled> Povolit (nelze vypnout)
+    </div>
+
+    <div class="cookie-category">
+        <h3>Analytické cookies</h3>
+        <p>Pomáhají nám pochopit, jak návštěvníci používají web.</p>
+        <label>
+            <input type="checkbox" id="analyticsCookies"> Povolit analytické cookies
+        </label>
+    </div>
+
+    <div class="cookie-category">
+        <h3>Marketingové cookies</h3>
+        <p>Slouží k personalizaci reklam a obsahu.</p>
+        <label>
+            <input type="checkbox" id="marketingCookies"> Povolit marketingové cookies
+        </label>
+    </div>
+
+    <button class="btn" onclick="saveCookieSettings()">Uložit nastavení</button>
+
+    <script>
+        // Načtení uložených preferencí
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("analyticsCookies").checked = localStorage.getItem("analyticsCookies") === "true";
+            document.getElementById("marketingCookies").checked = localStorage.getItem("marketingCookies") === "true";
+        });
+
+        function saveCookieSettings() {
+            localStorage.setItem("analyticsCookies", document.getElementById("analyticsCookies").checked);
+            localStorage.setItem("marketingCookies", document.getElementById("marketingCookies").checked);
+            alert("Vaše nastavení bylo uloženo.");
+        }
+    </script>
+
+</body>
+</html>
