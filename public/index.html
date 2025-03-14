@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 
 <head>
   <meta charset="utf-8" />
@@ -12,22 +12,228 @@
   <meta name="description" content="TZBsystems - Chytré projekty TZB, úsporná řešení pro moderní technologie" />
   <meta name="keywords" content="Projektování vzduchotechniky, projektování vytápění, projektování Pardubice, Projekce TZB Pardubice, projektovani tepelnych čerpadel, 
   dotace NZÚ, dotace NZÚ Pardubice, dotace nová zelená úsporám" />
-  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/global.css" media="print" onload="this.onload=null;this.removeAttribute('media');">
   <link id="page-style" rel="stylesheet" href="">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-      (function() {
-          // https://dashboard.emailjs.com/admin/account
-          emailjs.init({
-            publicKey: "QB-v70d8qxZu4beyy",
-          });
-      })();
+  <script>
+    window.addEventListener("load", function () {
+      let script = document.createElement("script");
+      script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
+      script.async = true;
+      document.body.appendChild(script);
+    });
   </script>
+  <script type="text/javascript">
+    (function () {
+      // https://dashboard.emailjs.com/admin/account
+      emailjs.init({
+        publicKey: "QB-v70d8qxZu4beyy",
+      });
+    })();
+  </script>
+  <style>
+    :root {
+      --section-space: 5rem;
+      --content-w: 100%;
+      scroll-behavior: smooth;
+
+      @media (min-width: 1800px) {
+        --content-w: 1800px;
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .cHeader,
+    .row--hero {
+      color: #fff;
+    }
+
+    .cHeader {
+      position: absolute;
+      inset: 2rem 0 auto;
+      display: flex;
+      justify-content: space-between;
+      z-index: 2;
+      padding-inline: 2rem;
+
+      @media (min-width: var(--content-w)) {
+        padding-inline: calc((100vw - var(--content-w)) / 2);
+      }
+    }
+
+    .cHeader__logo {
+      font-family: 'Istok Web';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 45px;
+      line-height: 65px;
+      text-align: center;
+      color: #EAEAEA;
+    }
+
+    .mainNav {
+      display: none;
+
+      @media (min-width: 1024px) {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+
+        a {
+          font-size: 0.85rem;
+          color: #FFFFFF;
+          text-decoration: none;
+
+          &.dotace {
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            background-color: rgb(16, 138, 0);
+          }
+
+          &.disabled {
+            opacity: .5;
+          }
+
+          &:hover {
+            color: #FFFFFF;
+            text-decoration: underline;
+          }
+
+          &:last-child {
+            display: flex;
+            align-items: center;
+            padding: 1rem 3rem;
+            border-radius: 10px;
+            border: solid 2px #EAEAEA;
+            line-height: 1rem;
+            background-color: rgba(50, 173, 230, .7);
+
+            &:hover {
+              text-decoration: none;
+              background-color: rgba(50, 173, 230, .8);
+            }
+          }
+        }
+      }
+    }
+
+    .row--hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background-image: url('./img/herobg_small.webp');
+      height: 100vh;
+      min-height: 600px;
+      padding: 0 1rem;
+      background-color: rgba(13, 13, 13, 0.75);
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+
+      @media (min-width: 768px) {
+        background-image: url('./img/herobg.avif');
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgb(16, 27, 50, 0.3);
+        z-index: -1;
+      }
+
+      h1 {
+        font-weight: 300;
+        font-size: 50px;
+        line-height: 1.34;
+        letter-spacing: -0.02em;
+
+        strong {
+          font-weight: 800;
+        }
+      }
+
+      ul {
+        font-weight: 400;
+        font-size: 19px;
+        line-height: 1.5;
+        max-width: 440px;
+        list-style: none;
+        margin-bottom: 4rem;
+        display: none;
+
+        @media (min-width: 768px) {
+          display: block;
+        }
+
+
+        li {
+          margin-bottom: 1rem;
+          position: relative;
+        }
+
+        li::before {
+          content: '';
+          width: 13px;
+          height: 13px;
+          border-radius: 50%;
+          display: block;
+          position: absolute;
+          left: -25px;
+          top: 7px;
+          border: 3px solid #8CCFFF;
+          box-sizing: border-box;
+        }
+      }
+    }
+
+    .row--hero>* {
+      margin-left: calc((100vw - var(--content-w)) / 2);
+    }
+
+    .row--hero::before,
+    .row--hero ul::before,
+    .row--hero h1::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 1450px;
+      height: 2547px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: #001524;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 1),
+        0 0 30px rgba(0, 0, 0, 1);
+      z-index: -1;
+      opacity: 0.56;
+    }
+
+    .row--hero::before {
+      transform: translate(-50%, -25%) rotate(-14.4deg) scale(1.1);
+    }
+
+    .row--hero h1::before {
+      transform: translate(-50%, -25%) rotate(-14.4deg) scale(1.6);
+    }
+
+    .row--hero ul::before {
+      transform: translate(-50%, -25%) rotate(-14.4deg) scale(2.2);
+    }
+  </style>
 </head>
 
 <body>
@@ -86,7 +292,7 @@
         </svg>
 
       </div>
-      <h3>Úspora</h3>
+      <h2>Úspora</h2>
       <p class="arguments__item__desc">
         Naše projekty zlepší energetickou účinnost a výrazně sníží náklady na
         provoz vaší budovy, což vám umožní dlouhodobě šetřit a přispět k
@@ -108,7 +314,7 @@
           </defs>
         </svg>
       </div>
-      <h3>Přístup</h3>
+      <h2>Přístup</h2>
       <p class="arguments__item__desc">
         Navrhneme komplexní a efektivní řešení, která zajistí ideální
         propojení všech systémů a jejich optimální spolupráci pro dlouhodobý
@@ -130,7 +336,7 @@
           </defs>
         </svg>
       </div>
-      <h3>Udržitelnost</h3>
+      <h2>Udržitelnost</h2>
       <p class="arguments__item__desc">
         Zohledňujeme ekologická řešení jako obnovitelné zdroje a úsporné
         technologie, které šetří energii, náklady a zároveň přispívají k
@@ -152,7 +358,7 @@
           </defs>
         </svg>
       </div>
-      <h3>Kvalita</h3>
+      <h2>Kvalita</h2>
       <p class="arguments__item__desc">
         Postaráme se o veškerou dokumentaci, vyřízení potřebných povolení a
         soulad s předpisy, což zajistí bezproblémovou realizaci a hladký
@@ -168,7 +374,7 @@
     </span>
     <div class="services--esi">
       <div class="imgContainer">
-        <img src="./img/electric-pole.webp" alt="electric-pole" />
+        <img loading="lazy" src="./img/electric-pole.webp" alt="electric-pole" />
       </div>
       <div class="services--desc">
         <div class="services--desc--icon"><svg width="70" height="64" viewBox="0 0 70 64" fill="none"
@@ -204,7 +410,7 @@
     </div>
     <div class="services--eL">
       <div class="imgContainer">
-        <img src="./img/electric-board.webp" alt="electric-board" />
+        <img loading="lazy" src="./img/electric-board.webp" alt="electric-board" />
       </div>
       <div class="services--desc">
         <div class="services--desc--icon">
@@ -240,7 +446,7 @@
     </div>
     <div class="services--smart">
       <div class="imgContainer">
-        <img src="./img/smartHouse.webp" alt="smartHouse" />
+        <img loading="lazy" src="./img/smartHouse.webp" alt="smartHouse" />
       </div>
       <div class="services--desc">
         <div class="services--desc--icon">
@@ -271,7 +477,7 @@
     </div>
     <div class="services--mar">
       <div class="imgContainer">
-        <img src="./img/circuit-board.webp" alt="circuit-board" />
+        <img loading="lazy" src="./img/circuit-board.webp" alt="circuit-board" />
       </div>
       <div class="services--desc">
         <div class="services--desc--icon">
@@ -303,7 +509,7 @@
     <div class="services--fve">
 
       <div class="imgContainer">
-        <img src="./img/fotovolt.webp" alt="fotovolt" />
+        <img loading="lazy" src="./img/fotovolt.webp" alt="fotovolt" />
       </div>
       <div class="services--desc">
         <div class="services--desc--icon"><svg width="70" height="64" viewBox="0 0 70 64" fill="none"
@@ -335,7 +541,7 @@
     <div class="services--lightning">
 
       <div class="imgContainer">
-        <img src="./img/lightning.webp" alt="lightning" />
+        <img loading="lazy" src="./img/lightning.webp" alt="lightning" />
       </div>
       <div class="services--desc">
         <div class="services--desc--icon"><svg width="70" height="64" viewBox="0 0 70 64" fill="none"
@@ -364,7 +570,7 @@
     </div>
     <div class="services--ventilation">
       <div class="imgContainer">
-        <img src="./img/ventilation.webp" alt="ventilation" />¨
+        <img loading="lazy" src="./img/ventilation.webp" alt="ventilation" />¨
       </div>
       <div class="services--desc">
         <div class="services--desc--icon"><svg width="70" height="64" viewBox="0 0 70 64" fill="none"
@@ -398,7 +604,7 @@
     </div>
     <div class="services--heating">
       <div class="imgContainer">
-        <img src="./img/heating.webp" alt="heating" />
+        <img loading="lazy" src="./img/heating.webp" alt="heating" />
       </div>
       <div class="services--desc">
         <div class="services--desc--icon"><svg width="153" height="64" viewBox="0 0 153 64" fill="none"
@@ -439,7 +645,7 @@
     </div>
     <div class="services--rainWater">
       <div class="imgContainer">
-        <img src="./img/waterDrop.webp" alt="waterDrop" />
+        <img loading="lazy" src="./img/waterDrop.webp" alt="waterDrop" />
       </div>
       <div class="services--desc">
         <div class="services--desc--icon"><svg width="70" height="64" viewBox="0 0 70 64" fill="none"
@@ -475,7 +681,7 @@
     <div class="services--watering">
 
       <div class="imgContainer">
-        <img src="./img/tap.webp" alt="tap" />
+        <img loading="lazy" src="./img/tap.webp" alt="tap" />
       </div>
       <div class="services--desc">
         <div class="services--desc--icon"><svg width="70" height="64" viewBox="0 0 70 64" fill="none"
@@ -508,7 +714,7 @@
     </div>
     <div class="services--sewering">
       <div class="imgContainer">
-        <img src="./img/kg-pipe.webp" alt="kg-pipe" />
+        <img loading="lazy" src="./img/kg-pipe.webp" alt="kg-pipe" />
       </div>
       <div class="services--desc">
         <div class="services--desc--icon"><svg width="70" height="64" viewBox="0 0 70 64" fill="none"
@@ -542,7 +748,7 @@
     </div>
     <div class="services--penb">
       <div class="imgContainer">
-        <img src="./img/penb.webp" alt="penb" />
+        <img loading="lazy" src="./img/penb.webp" alt="penb" />
       </div>
       <div class="services--desc">
         <div class="services--desc--icon"><svg width="70" height="64" viewBox="0 0 70 64" fill="none"
@@ -608,8 +814,8 @@
         </div>
       </div>
       <div class="form-consent">
-        <input type="checkbox" required />
-        <p>Souhlasíte se <a href="#footer">zpracováním osobních údajů.</a></p>
+        <label for="checkboxConsent">Souhlasíte se <a href="#footer">zpracováním osobních údajů.</a></label>
+        <input type="checkbox" id="checkboxConsent" required />
       </div>
       <button type="submit">Odeslat zprávu</button>
     </form>
@@ -641,9 +847,9 @@
       <button id="accept-cookies">Souhlasím</button>
     </div>
   </footer>
+  <script defer src="js/routing.js"></script>
   <script defer src="js/main.js"></script>
   <script defer src="js/sendEmail.js"></script>
-  <script defer src="js/routing.js"></script>
 </body>
 
 </html>

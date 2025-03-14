@@ -8,190 +8,6 @@
   }
 }
 
-body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-}
-
-.cHeader,
-.row--hero {
-  color: #fff;
-}
-
-.cHeader {
-  position: absolute;
-  inset: 2rem 0 auto;
-  display: flex;
-  justify-content: space-between;
-  z-index: 2;
-  padding-inline: 2rem;
-
-  @media (min-width: var(--content-w)) {
-    padding-inline: calc((100vw - var(--content-w)) / 2);
-  }
-}
-
-.cHeader__logo {
-  font-family: 'Istok Web';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 45px;
-  line-height: 65px;
-  text-align: center;
-  color: #EAEAEA;
-}
-
-.mainNav {
-  display: none;
-
-  @media (min-width: 1024px) {
-    display: flex;
-    gap: 2rem;
-  }
-
-  .nav {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-
-    a {
-      font-size: 0.85rem;
-      color: #EAEAEA;
-      text-decoration: none;
-
-      &.dotace {
-        padding: 0.5rem 1rem;
-        border-radius: 10px;
-        background-color: rgb(16, 138, 0);
-      }
-
-      &.disabled {
-        opacity: .5;
-      }
-
-      &:hover {
-        color: #FFFFFF;
-        text-decoration: underline;
-      }
-
-      &:last-child {
-        display: flex;
-        align-items: center;
-        padding: 1rem 3rem;
-        border-radius: 10px;
-        border: solid 2px #EAEAEA;
-        line-height: 1rem;
-        background-color: rgba(50, 173, 230, .7);
-
-        &:hover {
-          text-decoration: none;
-          background-color: rgba(50, 173, 230, .8);
-        }
-      }
-    }
-  }
-}
-
-.row--hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  background-image: url('../img/herobg.webp');
-  height: 100vh;
-  min-height: 600px;
-  padding: 0 1rem;
-  background-color: rgba(13, 13, 13, 0.75);
-  background-size: cover;
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgb(16, 27, 50, 0.3);
-    z-index: -1;
-  }
-
-  h1 {
-    font-weight: 300;
-    font-size: 50px;
-    line-height: 1.34;
-    letter-spacing: -0.02em;
-
-    strong {
-      font-weight: 800;
-    }
-  }
-
-  ul {
-    font-weight: 400;
-    font-size: 19px;
-    line-height: 1.5;
-    max-width: 440px;
-    list-style: none;
-    margin-bottom: 4rem;
-    display: none;
-
-    @media (min-width: 768px) {
-      display: block;
-    }
-
-
-    li {
-      margin-bottom: 1rem;
-      position: relative;
-    }
-
-    li::before {
-      content: '';
-      width: 13px;
-      height: 13px;
-      border-radius: 50%;
-      display: block;
-      position: absolute;
-      left: -25px;
-      top: 7px;
-      border: 3px solid #8CCFFF;
-      box-sizing: border-box;
-    }
-  }
-}
-
-.row--hero>* {
-  margin-left: calc((100vw - var(--content-w)) / 2);
-}
-
-.row--hero::before,
-.row--hero ul::before,
-.row--hero h1::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  width: 1450px;
-  height: 2547px;
-  border-radius: 50%;
-  pointer-events: none;
-  background: #001524;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 1),
-    0 0 30px rgba(0, 0, 0, 1);
-  z-index: -1;
-  opacity: 0.56;
-}
-
-.row--hero::before {
-  transform: translate(-50%, -25%) rotate(-14.4deg) scale(1.1);
-}
-
-.row--hero h1::before {
-  transform: translate(-50%, -25%) rotate(-14.4deg) scale(1.6);
-}
-
-.row--hero ul::before {
-  transform: translate(-50%, -25%) rotate(-14.4deg) scale(2.2);
-}
-
 .row--fact {
   font-style: italic;
   font-weight: 500;
@@ -446,12 +262,16 @@ body {
 }
 
 .nzu::before {
-  background: url("../img/nzu.webp");
+  background: url("../img/nzu.webp_small");
   opacity: 0.25;
   background-color: #000000;
   background-position: 50% 35%;
   z-index: -2;
   background-size: cover;
+
+  @media (min-width: 768px) {
+    background: url("../img/nzu.webp");
+  }
 }
 
 .nzu::after {
@@ -465,8 +285,8 @@ body {
   background-color: #529CCE;
   display: grid;
   justify-items: center;
-  align-content: center;
   background: url('../img/formBg.webp');
+  align-content: center;
   background-size: cover;
 
   @media (min-width: 768px) {
@@ -641,11 +461,11 @@ footer {
 }
 
 .alert {
-  color: red;
+  color: rgb(190, 0, 0);
   border: 1px solid red;
   padding: 1rem;
   border-radius: 10px;
   text-align: center;
   font-weight: 500;
-  background-color: #ffb4b4;
+  background-color: #ffdfdf;
 }
