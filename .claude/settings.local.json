@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:stitch.withgoogle.com)",
+      "Bash(curl -sI \"https://stitch.withgoogle.com/project/11066504724257473591/screen/9d85de58cf0f4b4bacf797688392129c\")"
+    ]
+  }
+}

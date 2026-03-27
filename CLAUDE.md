@@ -33,21 +33,28 @@ Firebase rewrites clean URLs to HTML files (configured in `firebase.json`):
 - `/kariera` → `kariera.html`
 - `/aplikace` → `aplikace.html`
 
-404s fall back to `404.html`.
+404s fall back to `404.html`. Subpages under `profese/` and `reference/` are accessed directly by path (no Firebase rewrites configured for them).
 
 ### CSS Loading
 
-`public/js/routing.js` dynamically injects page-specific stylesheets at runtime based on the current URL path. The shared base styles live in `public/css/global.css`.
+`public/js/routing.js` dynamically sets the `href` of a `<link id="page-style">` element based on `window.location.pathname.split('/').pop()`. This only works for root-level pages — it loads `css/<pagename>.css` (e.g. `css/dotace.css`). Subpages under `profese/` and `reference/` must include their stylesheets directly in their `<head>`.
+
+Primary stylesheet is `public/css/main.css` (Apple-inspired design system with CSS custom properties: `--blue`, `--text`, `--text-2`, `--bg`, etc.). Shared base styles live in `public/css/global.css`. Page-specific overrides live in `public/css/<page>.css`.
+
+### JavaScript Files
+
+- `public/js/main.js` — cookie banner (`localStorage` key `cookiesAccepted`) + fade-in scroll animations for homepage sections
+- `public/js/nav.js` — nav scroll opacity effect, mobile burger menu toggle, fade-in scroll animations for `.profession-card`, `.ref-card`, `.feature-card`, `.step`, `.benefit-card`
+- `public/js/routing.js` — dynamic CSS injection (root pages only)
+- `public/js/sendEmail.js` — EmailJS (v4, CDN) form submission; PHP fallback at `public/php/send-mail.php`
 
 ### Email / Contact Forms
 
 `public/js/sendEmail.js` handles form submissions via **EmailJS** (v4, loaded from CDN). The PHP fallback handler is at `public/php/send-mail.php`.
 
-### Cookie Consent
-
-`public/js/main.js` manages the cookie banner and stores user preferences in `localStorage`.
-
 ## Pages
+
+**Root pages:**
 
 | File | Route | Purpose |
 |------|-------|---------|
@@ -59,6 +66,10 @@ Firebase rewrites clean URLs to HTML files (configured in `firebase.json`):
 | `cookies.html` | `/cookies` | Cookie preferences |
 | `obchodni-podminky.html` | — | Terms & conditions |
 
+**Profession subpages** (`public/profese/`): destova-voda, fotovoltaika, inteligentni, kanalizace, mereni-regulace, ochrana-bleskem, penb, silnoproud, slaboproud, vodovod, vytapeni-chlazeni, vzduchotechnika
+
+**Reference subpages** (`public/reference/`): index (listing), administrativni-budova, bytovy-dum-pardubice, prumyslova-hala, rodinny-dum-chrudim
+
 ## Assets
 
 Images use modern formats (WebP, AVIF) for performance. Cache headers in `firebase.json`:
@@ -66,6 +77,8 @@ Images use modern formats (WebP, AVIF) for performance. Cache headers in `fireba
 - `/css/**`, `/js/**` — 30 days
 
 Reference/portfolio images go in `public/img/references/`.
+
+The `public/gemini/` directory contains AI-generated text drafts (`.txt` files) used as content reference — not served to users.
 
 ## Language
 

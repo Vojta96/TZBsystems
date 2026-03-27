@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html class="light" lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt & O nás | TZBsystems</title>
+  <meta name="description" content="Kontaktujte TZBsystems — projektování TZB v Pardubicích. Nezávazná konzultace zdarma." />
+  <link rel="icon" href="./img/favicon.ico" />
+  <link rel="apple-touch-icon" href="./img/apple-touch-icon.png" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>(function(){ emailjs.init({ publicKey: "QB-v70d8qxZu4beyy" }); })();</script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-highest": "#e1e3e4",
+            "primary": "#096277",
+            "background": "#f8f9fa",
+            "on-background": "#191c1d",
+            "on-primary-container": "#f1fbff",
+            "on-surface-variant": "#3f484e",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#8bd1e8",
+            "inverse-primary": "#8bd1e8",
+            "on-error-container": "#93000a",
+            "surface-container-low": "#f3f4f5",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-container": "#417d6b",
+            "surface-container-high": "#e7e8e9",
+            "on-secondary-fixed-variant": "#004f51",
+            "surface-container": "#edeeef",
+            "inverse-on-surface": "#f0f1f2",
+            "error": "#ba1a1a",
+            "primary-container": "#317b90",
+            "on-tertiary-fixed-variant": "#0b5040",
+            "surface-variant": "#e1e3e4",
+            "tertiary": "#266453",
+            "secondary": "#00696c",
+            "tertiary-fixed-dim": "#95d3be",
+            "surface-bright": "#f8f9fa",
+            "surface-dim": "#d9dadb",
+            "on-secondary-fixed": "#002021",
+            "surface-tint": "#13677b",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#6bd7da",
+            "inverse-surface": "#2e3132",
+            "secondary-fixed": "#89f3f6",
+            "on-tertiary-fixed": "#002018",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#e3fff3",
+            "secondary-container": "#86f0f3",
+            "tertiary-fixed": "#b0efda",
+            "surface": "#f8f9fa",
+            "on-tertiary": "#ffffff",
+            "outline": "#6f787f",
+            "on-primary-fixed-variant": "#004e5f",
+            "on-secondary-container": "#006e70",
+            "primary-fixed": "#b2ebff",
+            "on-primary-fixed": "#001f27",
+            "error-container": "#ffdad6",
+            "outline-variant": "#bfc8cf",
+            "on-surface": "#191c1d"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .blueprint-pattern {
+      background-image: linear-gradient(to right, rgba(191, 200, 207, 0.1) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(191, 200, 207, 0.1) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .fluid-gradient {
+      background: linear-gradient(135deg, #096277 0%, #00696c 100%);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/20">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm">
+  <div class="flex justify-between items-center h-20 px-8 md:px-16 w-full max-w-screen-2xl mx-auto">
+    <a href="/" class="text-xl font-bold tracking-tighter text-cyan-900 font-headline">TZBsystems</a>
+    <div class="hidden md:flex items-center space-x-12">
+      <a class="text-slate-600 hover:text-cyan-600 transition-colors text-sm tracking-tight font-label" href="/">Domů</a>
+      <a class="text-slate-600 hover:text-cyan-600 transition-colors text-sm tracking-tight font-label" href="/sluzby">Profese</a>
+      <a class="text-slate-600 hover:text-cyan-600 transition-colors text-sm tracking-tight font-label" href="/dotace">Dotace NZÚ</a>
+      <a class="text-cyan-700 border-b-2 border-cyan-700 pb-1 text-sm tracking-tight font-label" href="/kontakt">O nás</a>
+    </div>
+    <div class="flex items-center space-x-4">
+      <div class="hidden lg:flex items-center space-x-4 text-cyan-800">
+        <a href="mailto:info@tzbsystems.cz" class="material-symbols-outlined hover:bg-slate-50 p-2 rounded-full transition-all cursor-pointer">mail</a>
+        <a href="tel:+420123456789" class="material-symbols-outlined hover:bg-slate-50 p-2 rounded-full transition-all cursor-pointer">call</a>
+      </div>
+      <button id="burger-btn" class="md:hidden p-2 rounded-full hover:bg-slate-100" aria-label="Otevřít menu" aria-expanded="false">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-outline-variant/20 px-8 py-6 flex flex-col gap-4">
+    <a class="text-sm text-slate-600" href="/">Domů</a>
+    <a class="text-sm text-slate-600" href="/sluzby">Profese</a>
+    <a class="text-sm text-slate-600" href="/dotace">Dotace NZÚ</a>
+    <a class="text-sm font-medium text-cyan-700" href="/kontakt">O nás & Kontakt</a>
+    <a class="text-sm text-slate-600" href="/kariera">Kariéra</a>
+  </div>
+</nav>
+
+<main class="pt-20">
+
+  <!-- Hero / Mission Section -->
+  <section class="relative py-24 md:py-40 overflow-hidden">
+    <div class="absolute inset-0 blueprint-pattern -z-10 opacity-40"></div>
+    <div class="max-w-screen-2xl mx-auto px-8 md:px-16">
+      <div class="flex flex-col md:flex-row gap-16 items-center">
+        <div class="w-full md:w-1/2">
+          <span class="inline-block py-1 px-3 bg-surface-container-high text-on-surface-variant text-xs font-bold tracking-widest uppercase rounded-full mb-6">Pardubice, ČR</span>
+          <h1 class="text-5xl md:text-7xl font-extrabold font-headline text-on-surface leading-tight tracking-tighter mb-8">
+            Inženýrství pro <span class="text-primary italic">lidi.</span>
+          </h1>
+          <p class="text-lg text-on-surface-variant max-w-xl leading-relaxed mb-12">
+            TZBsystems se specializuje na neviditelnou páteř moderní architektury. Navrhujeme systémy, které optimalizují dynamiku proudění, tepelný komfort a energetickou efektivitu — s maximální technickou pečlivostí.
+          </p>
+          <div class="flex gap-8 border-l-2 border-primary/20 pl-8">
+            <div>
+              <div class="text-3xl font-bold font-headline text-primary">150+</div>
+              <div class="text-xs uppercase tracking-widest font-bold text-outline">Dokončených projektů</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold font-headline text-primary">12+</div>
+              <div class="text-xs uppercase tracking-widest font-bold text-outline">Oborů projektování</div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 relative">
+          <div class="aspect-square bg-surface-container rounded-3xl overflow-hidden shadow-2xl">
+            <img src="./img/stitch-about.jpg" alt="Moderní interiér s exponovanými TZB systémy" class="w-full h-full object-cover grayscale opacity-80" />
+          </div>
+          <div class="absolute -bottom-8 -left-8 bg-white p-8 rounded-2xl shadow-xl max-w-xs hidden md:block border border-outline-variant/10">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="p-2 bg-primary/10 rounded-lg">
+                <span class="material-symbols-outlined text-primary">architecture</span>
+              </div>
+              <div class="font-headline font-bold">Filozofie návrhu</div>
+            </div>
+            <p class="text-sm text-on-surface-variant italic">"Nenavrhujeme jen potrubí — orchestrujeme energii ve službách lidského komfortu."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section - Asymmetric Bento Grid -->
+  <section class="py-24 bg-surface-container-low">
+    <div class="max-w-screen-2xl mx-auto px-8 md:px-16">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div class="md:col-span-8 bg-surface-container-lowest p-12 rounded-3xl shadow-sm border border-outline-variant/5">
+          <span class="material-symbols-outlined text-4xl text-primary mb-6 block" style="font-variation-settings: 'FILL' 1;">speed</span>
+          <h3 class="text-3xl font-bold font-headline mb-4">Preciznost</h3>
+          <p class="text-on-surface-variant max-w-2xl leading-relaxed">Naše výpočty nenechávají prostor pro odchylky. Každý výměník, potrubí a energetický uzel je simulován v BIM modelu tak, aby skutečný výkon odpovídal návrhu s maximální přesností.</p>
+        </div>
+        <div class="md:col-span-4 bg-primary text-on-primary p-12 rounded-3xl shadow-lg flex flex-col justify-end">
+          <span class="material-symbols-outlined text-4xl mb-6">waves</span>
+          <h3 class="text-3xl font-bold font-headline mb-4">Průtok</h3>
+          <p class="text-on-primary/80">Harmonizujeme pohyb kapalin a plynů pro minimalizaci odporů a maximalizaci výkonu.</p>
+        </div>
+        <div class="md:col-span-4 bg-surface-container-high p-12 rounded-3xl">
+          <span class="material-symbols-outlined text-4xl text-primary mb-6 block" style="font-variation-settings: 'FILL' 1;">energy_savings_leaf</span>
+          <h3 class="text-xl font-bold font-headline mb-4">Efektivita</h3>
+          <p class="text-sm text-on-surface-variant">Snižujeme provozní náklady pasivní rekuperací a inteligentní automatizací.</p>
+        </div>
+        <div class="md:col-span-8 grid grid-cols-2 gap-8">
+          <div class="bg-surface-container-lowest p-8 rounded-3xl border border-outline-variant/5 flex items-center gap-6">
+            <div class="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center">
+              <span class="material-symbols-outlined text-primary">verified</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm">Autorizovaní inženýři</h4>
+              <p class="text-xs text-outline">ČKAIT</p>
+            </div>
+          </div>
+          <div class="bg-surface-container-lowest p-8 rounded-3xl border border-outline-variant/5 flex items-center gap-6">
+            <div class="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center">
+              <span class="material-symbols-outlined text-primary">gpp_good</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm">Dotace NZÚ</h4>
+              <p class="text-xs text-outline">Poradenství & zpracování</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-32 bg-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent -z-10"></div>
+    <div class="max-w-screen-2xl mx-auto px-8 md:px-16">
+      <div class="flex flex-col lg:flex-row gap-24">
+
+        <!-- Form Column -->
+        <div class="w-full lg:w-3/5">
+          <h2 class="text-4xl font-bold font-headline mb-4">Ozvěte se <span class="text-primary">našim inženýrům.</span></h2>
+          <p class="text-on-surface-variant mb-12">Prodiskutujte váš projekt s vedoucími projektanty. Konzultace je zdarma.</p>
+          <form id="contactForm" class="space-y-8" novalidate>
+            <input type="hidden" id="time" name="time" />
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-widest text-outline mb-2" for="name">Jméno a příjmení</label>
+                <input id="name" name="name" class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-lg focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all p-3" placeholder="Jan Novák" type="text" required autocomplete="name" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-widest text-outline mb-2" for="email">E-mail</label>
+                <input id="email" name="email" class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-lg focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all p-3" placeholder="jan@firma.cz" type="email" required autocomplete="email" />
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-widest text-outline mb-2" for="phone">Telefon</label>
+              <input id="phone" name="phone" class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-lg focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all p-3" placeholder="+420 123 456 789" type="tel" autocomplete="tel" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-widest text-outline mb-2" for="subject">Obor / Téma</label>
+              <select id="subject" name="subject" class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-lg focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all p-3">
+                <option value="">Vyberte obor...</option>
+                <option>Silnoproudá elektroinstalace</option>
+                <option>Slaboproudá elektroinstalace</option>
+                <option>Inteligentní elektroinstalace</option>
+                <option>Měření a regulace</option>
+                <option>Fotovoltaika</option>
+                <option>Ochrana před bleskem</option>
+                <option>Vzduchotechnika</option>
+                <option>Vytápění / Chlazení</option>
+                <option>Vodovod / Kanalizace</option>
+                <option>PENB</option>
+                <option>Dotace NZÚ</option>
+                <option>Jiné</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-widest text-outline mb-2" for="message">Zpráva</label>
+              <textarea id="message" name="message" class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-lg focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all p-3 resize-none" placeholder="Popište technické požadavky vašeho projektu..." rows="4" required></textarea>
+            </div>
+            <div class="flex items-center gap-4">
+              <button type="submit" id="submit-btn" class="inline-flex items-center justify-center gap-3 fluid-gradient text-on-primary px-10 py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-primary/20 active:scale-95">
+                Odeslat poptávku
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
+              <p id="form-status" class="text-sm text-on-surface-variant"></p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Details Column -->
+        <div class="w-full lg:w-2/5 space-y-12">
+          <div class="p-10 bg-surface-container-low rounded-3xl border border-outline-variant/10 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full"></div>
+            <h3 class="text-xl font-bold font-headline mb-8">Kontaktní informace</h3>
+            <div class="space-y-8">
+              <div class="flex gap-6">
+                <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined">location_on</span>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-outline uppercase tracking-widest mb-1">Sídlo</h4>
+                  <p class="text-on-surface">Pardubice, Česká republika</p>
+                </div>
+              </div>
+              <div class="flex gap-6">
+                <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined">alternate_email</span>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-outline uppercase tracking-widest mb-1">E-mail</h4>
+                  <p class="text-on-surface"><a href="mailto:info@tzbsystems.cz" class="hover:text-primary transition-colors">info@tzbsystems.cz</a></p>
+                </div>
+              </div>
+              <div class="flex gap-6">
+                <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined">phone_in_talk</span>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-outline uppercase tracking-widest mb-1">Telefon</h4>
+                  <p class="text-on-surface font-semibold text-lg"><a href="tel:+420123456789" class="hover:text-primary transition-colors">+420 123 456 789</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Map Placeholder -->
+          <div class="rounded-3xl overflow-hidden h-64 shadow-inner relative group">
+            <img src="./img/stitch-map.jpg" alt="Mapa — Pardubice" class="w-full h-full object-cover grayscale brightness-110" />
+            <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-all"></div>
+            <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md p-4 rounded-xl flex items-center justify-between border border-outline-variant/20">
+              <span class="text-xs font-bold">PARDUBICE, ČESKÁ REPUBLIKA</span>
+              <a href="https://maps.google.com/?q=Pardubice" target="_blank" rel="noopener noreferrer">
+                <span class="material-symbols-outlined text-primary text-sm">open_in_new</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Footer Strip -->
+  <section class="py-12 border-t border-outline-variant/10">
+    <div class="max-w-screen-2xl mx-auto px-8 md:px-16">
+      <div class="flex flex-wrap justify-between items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-3xl">energy_program_saving</span>
+          <span class="font-headline font-bold text-sm">Autorizovaní inženýři ČKAIT</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-3xl">architecture</span>
+          <span class="font-headline font-bold text-sm">BIM projektování</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-3xl">ac_unit</span>
+          <span class="font-headline font-bold text-sm">PENB certifikace</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-3xl">eco</span>
+          <span class="font-headline font-bold text-sm">Dotace NZÚ poradci</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-slate-50 w-full border-t border-slate-200/50">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-16 md:px-20 w-full max-w-screen-2xl mx-auto">
+    <div class="col-span-1">
+      <div class="text-lg font-bold text-cyan-900 mb-6 font-headline">TZBsystems</div>
+      <p class="text-sm text-slate-500 leading-relaxed max-w-xs">Precizní projekce TZB. Technická zařízení budov od Pardubic pro celou ČR.</p>
+    </div>
+    <div class="space-y-4">
+      <h4 class="text-sm font-bold text-cyan-800 font-headline uppercase tracking-widest">Profese</h4>
+      <nav class="flex flex-col space-y-3">
+        <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm" href="./profese/vytapeni-chlazeni.html">Vytápění / Chlazení</a>
+        <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm" href="./profese/vzduchotechnika.html">Vzduchotechnika</a>
+        <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm" href="./profese/penb.html">PENB & Energetika</a>
+      </nav>
+    </div>
+    <div class="space-y-4">
+      <h4 class="text-sm font-bold text-cyan-800 font-headline uppercase tracking-widest">Právní info</h4>
+      <nav class="flex flex-col space-y-3">
+        <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm" href="./obchodni-podminky.html">Obchodní podmínky</a>
+        <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm" href="./cookies.html">Cookies</a>
+      </nav>
+    </div>
+    <div class="space-y-6">
+      <h4 class="text-sm font-bold text-cyan-800 font-headline uppercase tracking-widest">Sledujte nás</h4>
+      <div class="flex gap-4">
+        <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all cursor-pointer">
+          <span class="material-symbols-outlined text-sm">public</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-screen-2xl mx-auto px-8 md:px-20 py-8 border-t border-slate-200/30">
+    <p class="text-xs text-slate-400 text-center">© 2025 TZBsystems s.r.o. Všechna práva vyhrazena.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  document.getElementById('burger-btn').addEventListener('click', function () {
+    const menu = document.getElementById('mobile-menu');
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', String(!expanded));
+    menu.classList.toggle('hidden');
+  });
+
+  // Set timestamp
+  window.addEventListener('DOMContentLoaded', function () {
+    const now = new Date();
+    document.getElementById('time').value = now.toDateString() + ' ' + now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  });
+
+  // Contact form submission
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    const status = document.getElementById('form-status');
+    btn.textContent = 'Odesílám...';
+    btn.disabled = true;
+    emailjs.sendForm('service_85vcgzd', 'template_y5hj9l4', this)
+      .then(function () {
+        status.textContent = 'Zpráva odeslána! Ozveme se vám brzy.';
+        status.className = 'text-sm text-secondary';
+        btn.textContent = 'Odesláno ✓';
+      }, function (err) {
+        status.textContent = 'Chyba při odesílání. Zkuste prosím e-mail.';
+        status.className = 'text-sm text-error';
+        btn.textContent = 'Odeslat poptávku';
+        btn.disabled = false;
+        console.error(err);
+      });
+  });
+</script>
+
+</body>
+</html>

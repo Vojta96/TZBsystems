@@ -17,6 +17,14 @@
       {
         "source": "/kariera",
         "destination": "/kariera.html"
+      },
+      {
+        "source": "/sluzby",
+        "destination": "/sluzby.html"
+      },
+      {
+        "source": "/kontakt",
+        "destination": "/kontakt.html"
       }
     ],
     "ignore": [

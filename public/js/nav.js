@@ -1,45 +1,39 @@
-// Navigation scroll effect
+// Navigation scroll state
 const nav = document.querySelector('.nav');
 if (nav) {
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      nav.style.background = 'rgba(255,255,255,.95)';
-    } else {
-      nav.style.background = 'rgba(255,255,255,.85)';
-    }
+    nav.classList.toggle('scrolled', window.scrollY > 10);
   }, { passive: true });
 }
 
-// Mobile menu toggle
+// Mobile burger menu
 const burger = document.querySelector('.nav__burger');
 const mobileMenu = document.querySelector('.nav__mobile');
 if (burger && mobileMenu) {
   burger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('open');
-    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    const open = mobileMenu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
   });
   mobileMenu.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       mobileMenu.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     });
   });
 }
 
-// Fade-in on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.style.opacity = '1';
-      e.target.style.transform = 'translateY(0)';
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.profession-card, .ref-card, .feature-card, .step, .benefit-card').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity .5s ease, transform .5s ease';
-  observer.observe(el);
-});
+// Scroll reveal — observes all [data-reveal] elements
+const revealEls = document.querySelectorAll('[data-reveal]');
+if (revealEls.length) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => observer.observe(el));
+}

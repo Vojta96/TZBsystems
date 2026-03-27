@@ -1,519 +1,379 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html class="light" lang="cs">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TZBsystems — Navrhujeme systémy, na kterých záleží</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TZBsystems — Precizní projekce TZB</title>
   <meta name="description" content="Projektujeme technická zařízení budov — elektroinstalace, vzduchotechnika, vytápění, fotovoltaika a více. Vyřizujeme dotace NZÚ." />
-  <meta name="author" content="TZBsystems" />
   <link rel="icon" href="./img/favicon.ico" />
   <link rel="apple-touch-icon" href="./img/apple-touch-icon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./css/main.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>(function(){ emailjs.init({ publicKey: "QB-v70d8qxZu4beyy" }); })();</script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-highest": "#e1e3e4",
+            "primary": "#096277",
+            "background": "#f8f9fa",
+            "on-background": "#191c1d",
+            "on-primary-container": "#f1fbff",
+            "on-surface-variant": "#3f484e",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#8bd1e8",
+            "inverse-primary": "#8bd1e8",
+            "on-error-container": "#93000a",
+            "surface-container-low": "#f3f4f5",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-container": "#417d6b",
+            "surface-container-high": "#e7e8e9",
+            "on-secondary-fixed-variant": "#004f51",
+            "surface-container": "#edeeef",
+            "inverse-on-surface": "#f0f1f2",
+            "error": "#ba1a1a",
+            "primary-container": "#317b90",
+            "on-tertiary-fixed-variant": "#0b5040",
+            "surface-variant": "#e1e3e4",
+            "tertiary": "#266453",
+            "secondary": "#00696c",
+            "tertiary-fixed-dim": "#95d3be",
+            "surface-bright": "#f8f9fa",
+            "surface-dim": "#d9dadb",
+            "on-secondary-fixed": "#002021",
+            "surface-tint": "#13677b",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#6bd7da",
+            "inverse-surface": "#2e3132",
+            "secondary-fixed": "#89f3f6",
+            "on-tertiary-fixed": "#002018",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#e3fff3",
+            "secondary-container": "#86f0f3",
+            "tertiary-fixed": "#b0efda",
+            "surface": "#f8f9fa",
+            "on-tertiary": "#ffffff",
+            "outline": "#6f787f",
+            "on-primary-fixed-variant": "#004e5f",
+            "on-secondary-container": "#006e70",
+            "primary-fixed": "#b2ebff",
+            "on-primary-fixed": "#001f27",
+            "error-container": "#ffdad6",
+            "outline-variant": "#bfc8cf",
+            "on-surface": "#191c1d"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    .blueprint-pattern {
+      background-image: linear-gradient(to right, rgba(191, 200, 207, 0.1) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(191, 200, 207, 0.1) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .fluid-gradient {
+      background: linear-gradient(135deg, #096277 0%, #00696c 100%);
+    }
+  </style>
 </head>
-<body>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
 
-<!-- ── NAVIGATION ──────────────────────────── -->
-<nav class="nav">
-  <div class="nav__inner">
-    <a class="nav__logo" href="/">TZB<span>systems</span></a>
-    <ul class="nav__links">
-      <li><a href="#profese">Profese</a></li>
-      <li><a href="#reference">Reference</a></li>
-      <li><a href="./kariera.html">Kariéra</a></li>
-      <li><a href="#kontakt" class="nav__cta">Poptávka</a></li>
-    </ul>
-    <button class="nav__burger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-
-<!-- mobile menu -->
-<div class="nav__mobile">
-  <a href="#profese">Profese</a>
-  <a href="#reference">Reference</a>
-  <a href="./kariera.html">Kariéra</a>
-  <a href="#kontakt">Poptávka</a>
-</div>
-
-<!-- ── HERO ───────────────────────────────── -->
-<section class="hero">
-  <div class="hero__bg"></div>
-  <div class="hero__content">
-    <p class="hero__eyebrow">Projektování TZB · Pardubice</p>
-    <h1 class="hero__title">
-      Navrhujeme systémy,<br />
-      na kterých <em>záleží.</em>
-    </h1>
-    <p class="hero__sub">
-      Projektujeme technická zařízení budov pro všechny typy staveb —
-      od rodinných domů po průmyslové objekty. Kombinujeme technickou
-      přesnost s energetickou efektivitou.
-    </p>
-    <div class="hero__actions">
-      <a href="#profese" class="btn btn--primary">Naše profese</a>
-      <a href="#kontakt" class="btn btn--outline-light">Nezávazná poptávka</a>
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm transition-colors duration-300 bg-surface-container-low">
+  <nav class="flex justify-between items-center h-20 px-8 md:px-16 w-full max-w-screen-2xl mx-auto">
+    <a href="/" class="text-xl font-bold tracking-tighter text-cyan-900 font-headline">TZBsystems</a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-sm tracking-tight text-cyan-700 border-b-2 border-cyan-700 pb-1 font-medium" href="/">Domů</a>
+      <a class="text-sm tracking-tight text-slate-600 hover:text-cyan-600 transition-colors" href="/sluzby">Profese</a>
+      <a class="text-sm tracking-tight text-slate-600 hover:text-cyan-600 transition-colors" href="/dotace">Dotace NZÚ</a>
+      <a class="text-sm tracking-tight text-slate-600 hover:text-cyan-600 transition-colors" href="/kontakt">O nás</a>
     </div>
-  </div>
-</section>
-
-<!-- ── STATS ───────────────────────────────── -->
-<section class="section" style="padding-top: 4rem; padding-bottom: 4rem;">
-  <div class="container">
-    <div class="stats">
-      <div>
-        <div class="stat__num">12+</div>
-        <div class="stat__label">Oborů projektování</div>
+    <div class="flex items-center gap-4">
+      <div class="hidden sm:flex gap-2">
+        <a href="mailto:info@tzbsystems.cz" class="p-2 hover:bg-slate-50 transition-all rounded-full text-cyan-800">
+          <span class="material-symbols-outlined">mail</span>
+        </a>
+        <a href="tel:+420123456789" class="p-2 hover:bg-slate-50 transition-all rounded-full text-cyan-800">
+          <span class="material-symbols-outlined">call</span>
+        </a>
       </div>
-      <div>
-        <div class="stat__num">150+</div>
-        <div class="stat__label">Dokončených projektů</div>
-      </div>
-      <div>
-        <div class="stat__num">40%</div>
-        <div class="stat__label">Průměrná úspora energie</div>
-      </div>
-      <div>
-        <div class="stat__num">100%</div>
-        <div class="stat__label">Spokojenost klientů</div>
-      </div>
+      <a href="/kontakt" class="px-6 py-2.5 fluid-gradient text-on-primary text-sm font-medium rounded-md active:scale-95 opacity-90 hover:opacity-100 transition-all duration-200 shadow-md">
+        Poptávka
+      </a>
+      <button id="burger-btn" class="md:hidden p-2 rounded-full hover:bg-slate-100 transition-colors" aria-label="Otevřít menu" aria-expanded="false">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
     </div>
+  </nav>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-outline-variant/20 px-8 py-6 flex flex-col gap-4">
+    <a class="text-sm font-medium text-cyan-700" href="/">Domů</a>
+    <a class="text-sm text-slate-600" href="/sluzby">Profese</a>
+    <a class="text-sm text-slate-600" href="/dotace">Dotace NZÚ</a>
+    <a class="text-sm text-slate-600" href="/kontakt">O nás & Kontakt</a>
+    <a class="text-sm text-slate-600" href="/kariera">Kariéra</a>
+    <a href="/kontakt" class="mt-2 px-6 py-2.5 fluid-gradient text-on-primary text-sm font-medium rounded-md text-center">Poptávka</a>
   </div>
-</section>
+</header>
 
-<!-- ── PROFESSIONS ─────────────────────────── -->
-<section class="section section--alt" id="profese">
-  <div class="container">
-    <p class="section__eyebrow">Co projektujeme</p>
-    <h2 class="section__title">Profese</h2>
-    <p class="section__sub">
-      Komplexní projektová dokumentace napříč všemi obory technických
-      zařízení budov. Každý systém navrhujeme s důrazem na efektivitu
-      a dlouhodobou spolehlivost.
-    </p>
+<main class="pt-20">
 
-    <div class="professions-grid">
-
-      <!-- 1. Silnoproudá elektroinstalace -->
-      <a class="profession-card" href="./profese/silnoproud.html">
-        <div class="profession-card__icon" style="background: rgba(255,87,34,.12);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#FF5722" stroke-width="2" stroke-linejoin="round"/>
-          </svg>
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden bg-surface-container-lowest">
+    <div class="absolute inset-0 blueprint-pattern opacity-40"></div>
+    <div class="absolute -right-20 -top-20 w-[600px] h-[600px] fluid-gradient rounded-full blur-[120px] opacity-10"></div>
+    <div class="absolute -left-20 bottom-0 w-[400px] h-[400px] bg-tertiary rounded-full blur-[100px] opacity-5"></div>
+    <div class="relative z-10 max-w-screen-2xl mx-auto px-8 md:px-16 w-full grid md:grid-cols-2 gap-16 items-center py-20">
+      <div class="space-y-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
+          <span class="w-2 h-2 rounded-full bg-primary"></span>
+          Projektování TZB · Pardubice
         </div>
-        <div class="profession-card__title">Silnoproudá elektroinstalace</div>
-        <div class="profession-card__desc">Navrhujeme bezpečné a efektivní silnoproudé rozvody pro všechny typy budov dle platných norem.</div>
-        <span class="profession-card__link">Zjistit více →</span>
-      </a>
-
-      <!-- 2. Slaboproudá elektroinstalace -->
-      <a class="profession-card" href="./profese/slaboproud.html">
-        <div class="profession-card__icon" style="background: rgba(33,150,243,.12);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="3" y="7" width="18" height="13" rx="2" stroke="#2196F3" stroke-width="2"/>
-            <path d="M8 7V5a4 4 0 018 0v2" stroke="#2196F3" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="12" cy="13" r="2" stroke="#2196F3" stroke-width="2"/>
-          </svg>
-        </div>
-        <div class="profession-card__title">Slaboproudá elektroinstalace</div>
-        <div class="profession-card__desc">Systémy bezpečnosti, datové sítě, komunikace a pokročilé technologie pro moderní budovy.</div>
-        <span class="profession-card__link">Zjistit více →</span>
-      </a>
-
-      <!-- 3. Inteligentní elektroinstalace -->
-      <a class="profession-card" href="./profese/inteligentni.html">
-        <div class="profession-card__icon" style="background: rgba(76,175,80,.12);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="#4CAF50" stroke-width="2" stroke-linejoin="round"/>
-            <polyline points="9 22 9 12 15 12 15 22" stroke="#4CAF50" stroke-width="2" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="profession-card__title">Inteligentní elektroinstalace</div>
-        <div class="profession-card__desc">Chytré systémy řízení osvětlení, vytápění a bezpečnosti pro maximální komfort a úsporu.</div>
-        <span class="profession-card__link">Zjistit více →</span>
-      </a>
-
-      <!-- 4. Měření a regulace -->
-      <a class="profession-card" href="./profese/mereni-regulace.html">
-        <div class="profession-card__icon" style="background: rgba(96,125,139,.12);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="#607D8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="profession-card__title">Měření a regulace</div>
-        <div class="profession-card__desc">Pokročilé systémy automatizované regulace teploty, tlaku a dalších parametrů prostředí.</div>
-        <span class="profession-card__link">Zjistit více →</span>
-      </a>
-
-      <!-- 5. Fotovoltaika -->
-      <a class="profession-card" href="./profese/fotovoltaika.html">
-        <div class="profession-card__icon" style="background: rgba(255,193,7,.15);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="5" stroke="#FFC107" stroke-width="2"/>
-            <line x1="12" y1="1" x2="12" y2="3" stroke="#FFC107" stroke-width="2" stroke-linecap="round"/>
-            <line x1="12" y1="21" x2="12" y2="23" stroke="#FFC107" stroke-width="2" stroke-linecap="round"/>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="#FFC107" stroke-width="2" stroke-linecap="round"/>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="#FFC107" stroke-width="2" stroke-linecap="round"/>
-            <line x1="1" y1="12" x2="3" y2="12" stroke="#FFC107" stroke-width="2" stroke-linecap="round"/>
-            <line x1="21" y1="12" x2="23" y2="12" stroke="#FFC107" stroke-width="2" stroke-linecap="round"/>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="#FFC107" stroke-width="2" stroke-linecap="round"/>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="#FFC107" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="profession-card__title">Fotovoltaika</div>
-        <div class="profession-card__desc">Projekty solárních elektráren od návrhu panelů přes připojení k síti až po monitoring výkonu.</div>
-        <span class="profession-card__link">Zjistit více →</span>
-      </a>
-
-      <!-- 6. Ochrana před bleskem -->
-      <a class="profession-card" href="./profese/ochrana-bleskem.html">
-        <div class="profession-card__icon" style="background: rgba(244,67,54,.12);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 16.9A5 5 0 0018 7h-1.26A8 8 0 104 15.25" stroke="#F44336" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <polyline points="16 16 12 20 8 16" stroke="#F44336" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <line x1="12" y1="12" x2="12" y2="20" stroke="#F44336" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="profession-card__title">Ochrana před bleskem</div>
-        <div class="profession-card__desc">Komplexní systémy hromosvodů a přepěťové ochrany dle ČSN EN 62305 pro každý typ objektu.</div>
-        <span class="profession-card__link">Zjistit více →</span>
-      </a>
-
-      <!-- 7. Vzduchotechnika -->
-      <a class="profession-card" href="./profese/vzduchotechnika.html">
-        <div class="profession-card__icon" style="background: rgba(3,169,244,.12);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2" stroke="#03A9F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="profession-card__title">Vzduchotechnika</div>
-        <div class="profession-card__desc">Systémy větrání, klimatizace a rekuperace tepla pro zdravé vnitřní prostředí a úsporu energie.</div>
-        <span class="profession-card__link">Zjistit více →</span>
-      </a>
-
-      <!-- 8. Vytápění / Chlazení -->
-      <a class="profession-card" href="./profese/vytapeni-chlazeni.html">
-        <div class="profession-card__icon" style="background: rgba(255,87,34,.12);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z" stroke="#FF5722" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="profession-card__title">Vytápění / Chlazení</div>
-        <div class="profession-card__desc">Tepelná čerpadla, podlahové vytápění a chladicí systémy — ekologicky a hospodárně.</div>
-        <span class="profession-card__link">Zjistit více →</span>
-      </a>
-
-      <!-- 9. Dešťová voda -->
-      <a class="profession-card" href="./profese/destova-voda.html">
-        <div class="profession-card__icon" style="background: rgba(0,150,136,.12);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polyline points="16 16 12 12 8 16" stroke="#009688" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <line x1="12" y1="12" x2="12" y2="21" stroke="#009688" stroke-width="2" stroke-linecap="round"/>
-            <path d="M20.39 18.39A5 5 0 0018 9h-1.26A8 8 0 103 16.3" stroke="#009688" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="profession-card__title">Využívání dešťové vody</div>
-        <div class="profession-card__desc">Systémy sběru a recyklace dešťové vody pro zalévání, splachování a technické využití.</div>
-        <span class="profession-card__link">Zjistit více →</span>
-      </a>
-
-      <!-- 10. Vodovod -->
-      <a class="profession-card" href="./profese/vodovod.html">
-        <div class="profession-card__icon" style="background: rgba(0,188,212,.12);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z" stroke="#00BCD4" stroke-width="2" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="profession-card__title">Vodovod</div>
-        <div class="profession-card__desc">Moderní vodovodní rozvody s důrazem na úsporu vody, hygienické standardy a spolehlivost.</div>
-        <span class="profession-card__link">Zjistit více →</span>
-      </a>
-
-      <!-- 11. Kanalizace -->
-      <a class="profession-card" href="./profese/kanalizace.html">
-        <div class="profession-card__icon" style="background: rgba(121,85,72,.12);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#795548" stroke-width="2" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="profession-card__title">Splašková kanalizace</div>
-        <div class="profession-card__desc">Bezpečný odvod odpadních vod splňující veškeré hygienické a ekologické normy.</div>
-        <span class="profession-card__link">Zjistit více →</span>
-      </a>
-
-      <!-- 12. PENB -->
-      <a class="profession-card" href="./profese/penb.html">
-        <div class="profession-card__icon" style="background: rgba(63,81,181,.12);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="#3F51B5" stroke-width="2" stroke-linejoin="round"/>
-            <polyline points="14 2 14 8 20 8" stroke="#3F51B5" stroke-width="2" stroke-linejoin="round"/>
-            <line x1="16" y1="13" x2="8" y2="13" stroke="#3F51B5" stroke-width="2" stroke-linecap="round"/>
-            <line x1="16" y1="17" x2="8" y2="17" stroke="#3F51B5" stroke-width="2" stroke-linecap="round"/>
-            <polyline points="10 9 9 9 8 9" stroke="#3F51B5" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="profession-card__title">PENB</div>
-        <div class="profession-card__desc">Energetický průkaz budovy — hodnocení energetické náročnosti a splnění legislativních požadavků.</div>
-        <span class="profession-card__link">Zjistit více →</span>
-      </a>
-
-    </div><!-- /professions-grid -->
-  </div>
-</section>
-
-<!-- ── REFERENCES ──────────────────────────── -->
-<section class="section" id="reference">
-  <div class="container">
-    <div class="flex-between mb-4">
-      <div>
-        <p class="section__eyebrow">Výsledky naší práce</p>
-        <h2 class="section__title">Reference</h2>
-        <p class="section__sub">Projekty, na které jsme hrdí. Každý z nich reprezentuje naše odhodlání k dokonalosti a technické preciznosti.</p>
-      </div>
-      <a href="./reference/index.html" class="btn btn--outline" style="flex-shrink: 0; align-self: flex-end;">Všechny reference</a>
-    </div>
-
-    <div class="references-grid">
-
-      <a class="ref-card" href="./reference/bytovy-dum-pardubice.html">
-        <img class="ref-card__img" src="./img/herobg_small.webp" alt="Bytový dům Pardubice" loading="lazy" />
-        <div class="ref-card__body">
-          <div class="ref-card__tag">Bytový dům</div>
-          <div class="ref-card__title">Bytový dům Zelená čtvrť</div>
-          <div class="ref-card__meta">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Pardubice · 2024
-          </div>
-        </div>
-      </a>
-
-      <a class="ref-card" href="./reference/rodinny-dum-chrudim.html">
-        <img class="ref-card__img" src="./img/solar.webp" alt="Rodinný dům Chrudim" loading="lazy" />
-        <div class="ref-card__body">
-          <div class="ref-card__tag">Rodinný dům</div>
-          <div class="ref-card__title">Rodinný dům s FVE systémem</div>
-          <div class="ref-card__meta">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Chrudim · 2023
-          </div>
-        </div>
-      </a>
-
-      <a class="ref-card" href="./reference/administrativni-budova.html">
-        <img class="ref-card__img" src="./img/electric-board.webp" alt="Administrativní budova" loading="lazy" />
-        <div class="ref-card__body">
-          <div class="ref-card__tag">Administrativa</div>
-          <div class="ref-card__title">Administrativní centrum TechPark</div>
-          <div class="ref-card__meta">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Hradec Králové · 2023
-          </div>
-        </div>
-      </a>
-
-      <a class="ref-card" href="./reference/prumyslova-hala.html">
-        <img class="ref-card__img" src="./img/ventilation.webp" alt="Průmyslová hala" loading="lazy" />
-        <div class="ref-card__body">
-          <div class="ref-card__tag">Průmysl</div>
-          <div class="ref-card__title">Výrobní hala KOVONA</div>
-          <div class="ref-card__meta">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Přelouč · 2024
-          </div>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── WHY US ───────────────────────────────── -->
-<section class="section section--dark">
-  <div class="container">
-    <p class="section__eyebrow">Proč TZBsystems</p>
-    <h2 class="section__title">Navrhujeme budoucnost.</h2>
-    <p class="section__sub">Naše projekty kombinují technickou dokonalost s udržitelností a dlouhodobou efektivitou.</p>
-
-    <div class="feature-grid mt-6" style="margin-top: 3rem;">
-      <div class="feature-card" style="background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.1); color: inherit;">
-        <div class="feature-card__icon">⚡</div>
-        <div class="feature-card__title" style="color: #fff;">Energetická úspora</div>
-        <div class="feature-card__desc" style="color: rgba(255,255,255,.6);">Průměrná úspora energií 40 % díky správně navrženým TZB systémům.</div>
-      </div>
-      <div class="feature-card" style="background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.1); color: inherit;">
-        <div class="feature-card__icon">📐</div>
-        <div class="feature-card__title" style="color: #fff;">Technická přesnost</div>
-        <div class="feature-card__desc" style="color: rgba(255,255,255,.6);">Každý projekt je navržen s maximální precizností a dle platných norem ČSN.</div>
-      </div>
-      <div class="feature-card" style="background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.1); color: inherit;">
-        <div class="feature-card__icon">🌱</div>
-        <div class="feature-card__title" style="color: #fff;">Ekologický přístup</div>
-        <div class="feature-card__desc" style="color: rgba(255,255,255,.6);">Upřednostňujeme obnovitelné zdroje a technologie šetrné k životnímu prostředí.</div>
-      </div>
-      <div class="feature-card" style="background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.1); color: inherit;">
-        <div class="feature-card__icon">🤝</div>
-        <div class="feature-card__title" style="color: #fff;">Komplexní přístup</div>
-        <div class="feature-card__desc" style="color: rgba(255,255,255,.6);">Jedna firma, všechny obory TZB. Koordinace a optimální propojení všech systémů.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── CAREER TEASER ───────────────────────── -->
-<section class="career-teaser" id="kariera">
-  <div class="career-teaser__content">
-    <p class="section__eyebrow" style="color: #64d2ff;">Kariéra</p>
-    <h2 class="career-teaser__title">
-      Hledáme skvělé lidi.<br />Jste to vy?
-    </h2>
-    <p class="career-teaser__sub">
-      Přidejte se k týmu TZBsystems jako projektant TZB. Nabízíme zajímavou
-      práci, moderní zázemí a skvělé podmínky.
-    </p>
-    <a href="./kariera.html" class="btn btn--primary">Zobrazit pozici</a>
-  </div>
-</section>
-
-<!-- ── CONTACT ─────────────────────────────── -->
-<section class="section" id="kontakt">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <p class="section__eyebrow">Nezávazná poptávka</p>
-        <h2 class="section__title">Pojďme na to<br />společně.</h2>
-        <p class="mt-3">Pošlete nám nezávaznou poptávku a my se vám ozveme do 24 hodin.</p>
-        <p><strong>Email:</strong> info@tzbsystems.cz</p>
-        <p><strong>Tel:</strong> +420 123 456 789</p>
-        <p><strong>Sídlo:</strong> Pardubice, Česká republika</p>
-        <p style="margin-top: 1.5rem; font-size: .875rem; color: var(--text-2);">
-          Průměrná česká domácnost ušetří díky správně navrženým TZB
-          systémům až <strong>16 000 Kč ročně</strong> na nákladech na vytápění a energii.
+        <h1 class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter text-on-surface leading-[0.95]">
+          Precizní projekce <span class="text-primary">TZB</span>
+        </h1>
+        <p class="text-lg md:text-xl text-on-surface-variant max-w-lg leading-relaxed font-light">
+          Navrhujeme systémy, které dýchají. Specializujeme se na technické zařízení budov s důrazem na energetickou efektivitu a uživatelský komfort.
         </p>
+        <div class="flex flex-wrap gap-4 pt-4">
+          <a href="/kontakt" class="px-8 py-4 fluid-gradient text-on-primary font-semibold rounded-md flex items-center gap-2 group">
+            Nezávazná konzultace
+            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </a>
+          <a href="/sluzby" class="px-8 py-4 bg-surface-container-high text-on-surface font-semibold rounded-md hover:bg-surface-container-highest transition-colors">
+            Naše profese
+          </a>
+        </div>
       </div>
-      <form class="contact-form" id="contactForm" onsubmit="sendEmail(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Jméno a příjmení</label>
-            <input type="text" id="name" name="name" placeholder="Jan Novák" required />
+      <div class="relative">
+        <div class="aspect-square relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
+          <img
+            src="./img/stitch-hero.jpg"
+            alt="Technický výkres TZB s detailními anotacemi"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-primary/10"></div>
+        </div>
+        <div class="absolute -bottom-8 -left-8 p-8 bg-surface-container-lowest shadow-xl rounded-xl max-w-xs hidden lg:block">
+          <p class="text-sm font-label text-on-surface-variant mb-2">Certifikovaný energetický audit</p>
+          <div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+            <div class="h-full w-3/4 fluid-gradient"></div>
           </div>
-          <div class="form-group">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="jan@example.cz" required />
-          </div>
+          <p class="mt-4 text-xs text-outline italic">Optimalizace spotřeby budovy až o 40 %</p>
         </div>
-        <div class="form-group">
-          <label for="phone">Telefon</label>
-          <input type="tel" id="phone" name="phone" placeholder="+420 123 456 789" />
-        </div>
-        <div class="form-group">
-          <label for="subject">Obor / Téma</label>
-          <select id="subject" name="subject">
-            <option value="">Vyberte obor...</option>
-            <option>Silnoproudá elektroinstalace</option>
-            <option>Slaboproudá elektroinstalace</option>
-            <option>Inteligentní elektroinstalace</option>
-            <option>Měření a regulace</option>
-            <option>Fotovoltaika</option>
-            <option>Ochrana před bleskem</option>
-            <option>Vzduchotechnika</option>
-            <option>Vytápění / Chlazení</option>
-            <option>Vodovod / Kanalizace</option>
-            <option>PENB</option>
-            <option>Dotace NZÚ</option>
-            <option>Jiné</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Zpráva</label>
-          <textarea id="message" name="message" placeholder="Popište váš projekt nebo poptávku..." required></textarea>
-        </div>
-        <button type="submit" class="btn btn--primary" style="width: fit-content;">Odeslat poptávku →</button>
-        <p id="form-status" style="font-size: .875rem; color: var(--text-2); display:none;"></p>
-      </form>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── FOOTER ──────────────────────────────── -->
-<footer class="footer">
-  <div class="footer__top">
-    <div>
-      <a class="footer__logo" href="/">TZB<span>systems</span></a>
-      <p class="footer__desc">Projektujeme technická zařízení budov s důrazem na efektivitu, udržitelnost a technickou dokonalost.</p>
+  <!-- Services Section -->
+  <section class="py-24 md:py-32 bg-surface-container-low">
+    <div class="max-w-screen-2xl mx-auto px-8 md:px-16">
+      <div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
+        <div class="max-w-2xl">
+          <h2 class="text-4xl md:text-5xl font-headline font-bold text-on-surface mb-6">Komplexní inženýrské služby</h2>
+          <p class="text-on-surface-variant text-lg leading-relaxed">Od prvotního konceptu až po realizační dokumentaci. Naše řešení jsou navržena pro maximální životnost a minimální provozní náklady.</p>
+        </div>
+        <a href="/sluzby" class="text-primary font-medium flex items-center gap-2 cursor-pointer hover:gap-4 transition-all pb-2 border-b border-primary/20 whitespace-nowrap">
+          Zobrazit všechny profese
+          <span class="material-symbols-outlined">east</span>
+        </a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- HVAC Card -->
+        <div class="group p-10 bg-surface-container-lowest rounded-xl hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+          <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+            <span class="material-symbols-outlined text-9xl">mode_fan</span>
+          </div>
+          <div class="w-14 h-14 rounded-lg bg-primary/5 flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-3xl">ac_unit</span>
+          </div>
+          <h3 class="text-2xl font-headline font-bold mb-4">HVAC & Vytápění</h3>
+          <p class="text-on-surface-variant leading-relaxed mb-8">Vzduchotechnika, vytápění a chlazení navržené pro zdravé vnitřní klima a efektivní distribuci energie.</p>
+          <ul class="space-y-3 text-sm text-outline">
+            <li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Tepelná čerpadla</li>
+            <li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Rekuperace vzduchu</li>
+            <li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Průmyslové chlazení</li>
+          </ul>
+        </div>
+        <!-- Plumbing Card -->
+        <div class="group p-10 bg-surface-container-lowest rounded-xl hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+          <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+            <span class="material-symbols-outlined text-9xl">water_drop</span>
+          </div>
+          <div class="w-14 h-14 rounded-lg bg-primary/5 flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-3xl">plumbing</span>
+          </div>
+          <h3 class="text-2xl font-headline font-bold mb-4">Vodovod & Kanalizace</h3>
+          <p class="text-on-surface-variant leading-relaxed mb-8">Kompletní projekce vodovodu a kanalizace. Od rodinných domů po rozsáhlé průmyslové areály.</p>
+          <ul class="space-y-3 text-sm text-outline">
+            <li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Dešťová voda</li>
+            <li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Požární voda</li>
+            <li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> ČOV a septiky</li>
+          </ul>
+        </div>
+        <!-- Energy Audits Card -->
+        <div class="group p-10 bg-surface-container-lowest rounded-xl hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+          <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+            <span class="material-symbols-outlined text-9xl">bolt</span>
+          </div>
+          <div class="w-14 h-14 rounded-lg bg-primary/5 flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-3xl">energy_savings_leaf</span>
+          </div>
+          <h3 class="text-2xl font-headline font-bold mb-4">Energetické audity</h3>
+          <p class="text-on-surface-variant leading-relaxed mb-8">Analýza a optimalizace energetické náročnosti. PENB štítky a dotační poradenství NZÚ.</p>
+          <ul class="space-y-3 text-sm text-outline">
+            <li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> PENB certifikace</li>
+            <li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Modelování spotřeby</li>
+            <li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Dotační management</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div>
-      <p class="footer__col-title">Profese</p>
-      <ul class="footer__links">
-        <li><a href="./profese/silnoproud.html">Silnoproudá elektroinstalace</a></li>
-        <li><a href="./profese/slaboproud.html">Slaboproudá elektroinstalace</a></li>
-        <li><a href="./profese/fotovoltaika.html">Fotovoltaika</a></li>
-        <li><a href="./profese/vzduchotechnika.html">Vzduchotechnika</a></li>
-        <li><a href="./profese/vytapeni-chlazeni.html">Vytápění / Chlazení</a></li>
-        <li><a href="./profese/penb.html">PENB</a></li>
+  </section>
+
+  <!-- Blueprint / Philosophy Section -->
+  <section class="relative py-24 md:py-32 overflow-hidden bg-surface-container-lowest">
+    <div class="max-w-screen-2xl mx-auto px-8 md:px-16 grid lg:grid-cols-2 gap-20 items-center">
+      <div class="order-2 lg:order-1 relative">
+        <div class="relative z-10 p-4 bg-white shadow-2xl rounded-lg">
+          <img
+            src="./img/stitch-hvac-drawing.jpg"
+            alt="Detailní technický výkres HVAC potrubního systému"
+            class="w-full rounded"
+          />
+          <div class="absolute -top-4 -right-4 w-32 h-32 fluid-gradient opacity-20 rounded-full blur-2xl"></div>
+        </div>
+        <div class="absolute inset-0 blueprint-pattern -m-10 opacity-30 pointer-events-none"></div>
+      </div>
+      <div class="order-1 lg:order-2 space-y-8">
+        <h2 class="text-4xl md:text-5xl font-headline font-bold text-on-surface leading-tight">Preciznost & průtok:<br /><span class="text-primary">Filozofie návrhu</span></h2>
+        <p class="text-on-surface-variant text-lg leading-relaxed font-light">
+          Věříme, že technické zařízení budovy by mělo být jako oběhová soustava – efektivní, tiché a spolehlivé. Naše výkresy nejsou jen čáry na papíře, jsou to pečlivě simulované systémy, které minimalizují ztráty a maximalizují životnost vaší investice.
+        </p>
+        <div class="grid grid-cols-2 gap-8 py-6 border-y border-outline-variant/30">
+          <div>
+            <div class="text-3xl font-headline font-bold text-primary mb-1">12+</div>
+            <div class="text-sm text-outline uppercase tracking-widest font-semibold">Oborů projektování</div>
+          </div>
+          <div>
+            <div class="text-3xl font-headline font-bold text-primary mb-1">150+</div>
+            <div class="text-sm text-outline uppercase tracking-widest font-semibold">Dokončených projektů</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 text-secondary font-medium">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified</span>
+          Autorizovaní inženýři ČKAIT
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-surface-container-high relative overflow-hidden">
+    <div class="absolute inset-0 fluid-gradient opacity-5"></div>
+    <div class="max-w-4xl mx-auto text-center px-8 relative z-10">
+      <h2 class="text-4xl md:text-5xl font-headline font-bold text-on-surface mb-6">Máte projekt, který potřebuje technické srdce?</h2>
+      <p class="text-xl text-on-surface-variant mb-10 leading-relaxed">
+        Pomůžeme vám s projektem od rodinného domu až po průmyslové objekty. Naše první konzultace je vždy zdarma.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt" class="px-10 py-5 fluid-gradient text-on-primary font-bold rounded-md shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined">event_available</span>
+          Rezervovat konzultaci
+        </a>
+        <a href="mailto:info@tzbsystems.cz" class="px-10 py-5 bg-surface-container-lowest text-on-surface font-bold rounded-md border border-outline-variant/30 hover:bg-white transition-colors flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined">mail</span>
+          Napište nám e-mail
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200/50 bg-surface-container-low">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-16 md:px-20 w-full max-w-screen-2xl mx-auto">
+    <div class="space-y-6">
+      <div class="text-lg font-bold text-cyan-900 font-headline">TZBsystems</div>
+      <p class="text-sm text-slate-500 leading-relaxed font-body">Specializujeme se na precizní návrhy technických systémů budov s důrazem na udržitelnost a inovace.</p>
+    </div>
+    <div class="space-y-6">
+      <h4 class="text-sm font-bold uppercase tracking-wider text-cyan-800">Profese</h4>
+      <ul class="space-y-4">
+        <li><a class="text-sm text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all duration-200 block" href="./profese/vytapeni-chlazeni.html">Vytápění / Chlazení</a></li>
+        <li><a class="text-sm text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all duration-200 block" href="./profese/vzduchotechnika.html">Vzduchotechnika</a></li>
+        <li><a class="text-sm text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all duration-200 block" href="./profese/fotovoltaika.html">Fotovoltaika</a></li>
+        <li><a class="text-sm text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all duration-200 block" href="./profese/penb.html">PENB</a></li>
       </ul>
     </div>
-    <div>
-      <p class="footer__col-title">Společnost</p>
-      <ul class="footer__links">
-        <li><a href="./reference/index.html">Reference</a></li>
-        <li><a href="./kariera.html">Kariéra</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-        <li><a href="./dotace.html">Dotace NZÚ</a></li>
-        <li><a href="./aplikace.html">Webové aplikace</a></li>
+    <div class="space-y-6">
+      <h4 class="text-sm font-bold uppercase tracking-wider text-cyan-800">Společnost</h4>
+      <ul class="space-y-4">
+        <li><a class="text-sm text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all duration-200 block" href="./reference/index.html">Reference</a></li>
+        <li><a class="text-sm text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all duration-200 block" href="/kariera">Kariéra</a></li>
+        <li><a class="text-sm text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all duration-200 block" href="/dotace">Dotace NZÚ</a></li>
+        <li><a class="text-sm text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all duration-200 block" href="/kontakt">Kontakt</a></li>
       </ul>
     </div>
-    <div>
-      <p class="footer__col-title">Kontakt</p>
-      <ul class="footer__links">
-        <li><a href="mailto:info@tzbsystems.cz">info@tzbsystems.cz</a></li>
-        <li><a href="tel:+420123456789">+420 123 456 789</a></li>
+    <div class="space-y-6">
+      <h4 class="text-sm font-bold uppercase tracking-wider text-cyan-800">Kontakt</h4>
+      <ul class="space-y-4 text-sm text-slate-500">
+        <li><a href="mailto:info@tzbsystems.cz" class="hover:text-cyan-600 transition-colors">info@tzbsystems.cz</a></li>
+        <li><a href="tel:+420123456789" class="hover:text-cyan-600 transition-colors">+420 123 456 789</a></li>
         <li>Pardubice, ČR</li>
       </ul>
     </div>
   </div>
-  <div class="footer__bottom">
-    <span>© 2025 TZBsystems s.r.o. Všechna práva vyhrazena.</span>
-    <span>
-      <a href="./obchodni-podminky.html">Obchodní podmínky</a> ·
-      <a href="./cookies.html">Cookies</a>
-    </span>
+  <div class="max-w-screen-2xl mx-auto px-8 py-8 border-t border-slate-200/50 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p class="text-xs text-slate-400 font-body">© 2025 TZBsystems s.r.o. Všechna práva vyhrazena.</p>
+    <div class="flex gap-6 text-xs text-slate-400">
+      <a href="./obchodni-podminky.html" class="hover:text-primary transition-colors">Obchodní podmínky</a>
+      <a href="./cookies.html" class="hover:text-primary transition-colors">Cookies</a>
+    </div>
   </div>
 </footer>
 
-<script src="./js/nav.js"></script>
+<!-- Cookie Banner -->
+<div id="cookie-consent" style="display:none" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-3rem)] max-w-xl bg-white rounded-xl shadow-2xl border border-outline-variant/20 p-6 flex flex-col sm:flex-row items-center gap-4">
+  <p class="text-sm text-on-surface-variant flex-1">Používáme cookies pro zlepšení vašeho zážitku. <a href="./cookies.html" class="text-primary underline">Zjistit více</a></p>
+  <button id="accept-cookies" class="px-5 py-2 fluid-gradient text-on-primary text-sm font-semibold rounded-md whitespace-nowrap">Souhlasím</button>
+</div>
+
 <script>
-function sendEmail(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('button[type=submit]');
-  const status = document.getElementById('form-status');
-  btn.textContent = 'Odesílám...';
-  btn.disabled = true;
-  emailjs.send('service_tzbsystems', 'template_contact', {
-    name: document.getElementById('name').value,
-    email: document.getElementById('email').value,
-    phone: document.getElementById('phone').value,
-    subject: document.getElementById('subject').value,
-    message: document.getElementById('message').value,
-  }).then(() => {
-    status.textContent = '✓ Zpráva odeslána! Ozveme se vám do 24 hodin.';
-    status.style.display = 'block';
-    status.style.color = '#00a850';
-    e.target.reset();
-    btn.textContent = 'Odeslat poptávku →';
-    btn.disabled = false;
-  }).catch(() => {
-    status.textContent = 'Chyba při odesílání. Napište nám prosím na info@tzbsystems.cz';
-    status.style.display = 'block';
-    status.style.color = '#F44336';
-    btn.textContent = 'Odeslat poptávku →';
-    btn.disabled = false;
+  // Mobile menu toggle
+  document.getElementById('burger-btn').addEventListener('click', function () {
+    const menu = document.getElementById('mobile-menu');
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', String(!expanded));
+    menu.classList.toggle('hidden');
   });
-}
+
+  // Cookie banner
+  if (!localStorage.getItem('cookiesAccepted')) {
+    document.getElementById('cookie-consent').style.display = 'flex';
+  }
+  document.getElementById('accept-cookies').addEventListener('click', function () {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookie-consent').style.display = 'none';
+  });
 </script>
+
 </body>
 </html>
