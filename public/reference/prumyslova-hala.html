@@ -1,77 +1,312 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html class="light" lang="cs">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Výrobní hala KOVONA, Přelouč — TZBsystems</title>
   <meta name="description" content="Projektování TZB pro výrobní halu KOVONA v Přelouči — průmyslová elektroinstalace, vzduchotechnika, odsávání, vodovod a kanalizace." />
   <link rel="icon" href="../img/favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-highest": "#e1e3e4",
+            "primary": "#096277",
+            "background": "#f8f9fa",
+            "on-background": "#191c1d",
+            "on-primary-container": "#f1fbff",
+            "on-surface-variant": "#3f484e",
+            "on-primary": "#ffffff",
+            "surface-container-low": "#f3f4f5",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#e7e8e9",
+            "surface-container": "#edeeef",
+            "secondary": "#00696c",
+            "on-secondary": "#ffffff",
+            "tertiary": "#266453",
+            "on-tertiary": "#ffffff",
+            "surface": "#f8f9fa",
+            "outline": "#6f787f",
+            "outline-variant": "#bfc8cf",
+            "on-surface": "#191c1d",
+            "on-surface-variant": "#3f484e",
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+          },
+          borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+    }
+    .fluid-gradient { background: linear-gradient(135deg, #096277 0%, #00696c 100%); }
+  </style>
 </head>
-<body>
-<nav class="nav"><div class="nav__inner"><a class="nav__logo" href="/">TZB<span>systems</span></a><ul class="nav__links"><li><a href="/#profese">Profese</a></li><li><a href="/reference/index.html">Reference</a></li><li><a href="/kariera.html">Kariéra</a></li><li><a href="/#kontakt" class="nav__cta">Poptávka</a></li></ul><button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
-<div class="nav__mobile"><a href="/#profese">Profese</a><a href="/reference/index.html">Reference</a><a href="/kariera.html">Kariéra</a><a href="/#kontakt">Poptávka</a></div>
-<div class="breadcrumb-bar"><nav class="breadcrumb"><a href="/">Domů</a><span class="breadcrumb__sep">›</span><a href="/reference/index.html">Reference</a><span class="breadcrumb__sep">›</span><span>Výrobní hala KOVONA</span></nav></div>
+<body class="bg-background text-on-surface font-body">
 
-<section style="padding: calc(52px + 4rem) 1.5rem 0; background: #000; color: #fff; overflow: hidden; position: relative;">
-  <div style="position: absolute; inset: 0; background-image: url('../img/ventilation.webp'); background-size: cover; background-position: center; opacity: .3;"></div>
-  <div class="container" style="position: relative; max-width: 1200px; padding-bottom: 4rem;">
-    <p style="font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #64d2ff; margin-bottom: .75rem;">Průmyslový objekt · 2024 · Přelouč</p>
-    <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; line-height: 1.1; letter-spacing: -.03em; max-width: 700px;">Výrobní hala KOVONA</h1>
-    <p style="font-size: 1.0625rem; color: rgba(255,255,255,.65); line-height: 1.7; max-width: 600px; margin-top: 1rem;">Rozsáhlá výrobní hala pro kovoobrábění s halou 5 000 m², administrativní přístavbou a externím skladem. Kompletní TZB projekt pro průmyslový provoz.</p>
-    <div class="chips" style="margin-top: 2rem;">
-      <span class="chip" style="background: rgba(255,255,255,.1); color: rgba(255,255,255,.85);">Průmyslová elektroinstalace</span>
-      <span class="chip" style="background: rgba(255,255,255,.1); color: rgba(255,255,255,.85);">Vzduchotechnika</span>
-      <span class="chip" style="background: rgba(255,255,255,.1); color: rgba(255,255,255,.85);">Odsávání</span>
-      <span class="chip" style="background: rgba(255,255,255,.1); color: rgba(255,255,255,.85);">Kanalizace</span>
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm border-b border-outline-variant/10">
+  <div class="flex justify-between items-center h-20 px-8 md:px-16 w-full max-w-screen-2xl mx-auto">
+    <a href="/" class="text-xl font-bold tracking-tighter text-cyan-900 font-headline">TZBsystems</a>
+    <div class="hidden md:flex items-center space-x-8">
+      <a class="text-slate-600 hover:text-cyan-600 transition-colors text-sm tracking-tight" href="/">Domů</a>
+      <a class="text-slate-600 hover:text-cyan-600 transition-colors text-sm tracking-tight" href="/sluzby">Profese</a>
+      <a class="text-cyan-700 border-b-2 border-cyan-700 pb-1 text-sm tracking-tight font-semibold" href="/reference/">Reference</a>
+      <a class="text-slate-600 hover:text-cyan-600 transition-colors text-sm tracking-tight" href="/kontakt">O nás</a>
     </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="project-info-grid">
-      <div class="project-info-item"><div class="project-info-item__label">Typ objektu</div><div class="project-info-item__value">Výrobní hala</div></div>
-      <div class="project-info-item"><div class="project-info-item__label">Lokalita</div><div class="project-info-item__value">Přelouč</div></div>
-      <div class="project-info-item"><div class="project-info-item__label">Rok dokončení</div><div class="project-info-item__value">2024</div></div>
-      <div class="project-info-item"><div class="project-info-item__label">Plocha haly</div><div class="project-info-item__value">5 000 m²</div></div>
-      <div class="project-info-item"><div class="project-info-item__label">Výkon napájení</div><div class="project-info-item__value">630 kVA</div></div>
-      <div class="project-info-item"><div class="project-info-item__label">Odvod vzduchu</div><div class="project-info-item__value">85 000 m³/h</div></div>
-    </div>
-
-    <div style="margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
-      <div>
-        <h2 style="font-size: 1.4rem; font-weight: 700; letter-spacing: -.02em; margin-bottom: 1rem;">O projektu</h2>
-        <p style="color: var(--text-2); line-height: 1.7; margin-bottom: 1rem;">Firma KOVONA patří mezi přední výrobce kovového nábytku a regálových systémů v ČR. Nová výrobní hala v průmyslové zóně Přelouč nahradila zastaralé prostory a přinesla výrazné zvýšení výrobní kapacity.</p>
-        <p style="color: var(--text-2); line-height: 1.7; margin-bottom: 1rem;">Projekt zahrnoval silnoproudé napájení výrobních strojů, průmyslové osvětlení, komplexní odsávání kovových třísek a výparů, vzduchotechniku pro administrativu a kompletní zdravotechniku.</p>
-        <p style="color: var(--text-2); line-height: 1.7;">Kritickým požadavkem bylo zajistit spolehlivé napájení CNC strojů bez výpadků a efektivní odsávání pro hygienicky přijatelné pracovní podmínky.</p>
+    <div class="flex items-center space-x-4">
+      <div class="hidden sm:flex space-x-3 text-cyan-800">
+        <a href="mailto:info@tzbsystems.cz" class="material-symbols-outlined cursor-pointer hover:bg-slate-50 p-2 rounded-full transition-all">mail</a>
+        <a href="tel:+420123456789" class="material-symbols-outlined cursor-pointer hover:bg-slate-50 p-2 rounded-full transition-all">call</a>
       </div>
-      <div>
-        <img src="../img/ventilation.webp" style="width: 100%; border-radius: 18px; aspect-ratio: 4/3; object-fit: cover;" alt="Vzduchotechnika výrobní haly" />
+      <a href="/kontakt" class="hidden lg:block fluid-gradient text-on-primary px-6 py-2.5 rounded-md font-medium text-sm transition-all active:scale-95 opacity-90 hover:opacity-100 shadow-md">Poptávka</a>
+      <button id="burger-btn" class="md:hidden p-2 rounded-full hover:bg-slate-100" aria-label="Otevřít menu" aria-expanded="false">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-outline-variant/20 px-8 py-6 flex flex-col gap-4">
+    <a class="text-sm text-slate-600" href="/">Domů</a>
+    <a class="text-sm text-slate-600" href="/sluzby">Profese</a>
+    <a class="text-sm font-medium text-cyan-700" href="/reference/">Reference</a>
+    <a class="text-sm text-slate-600" href="/kontakt">O nás & Kontakt</a>
+    <a href="/kontakt" class="mt-2 px-6 py-2.5 fluid-gradient text-on-primary text-sm font-medium rounded-md text-center">Poptávka</a>
+  </div>
+</nav>
+
+<main class="pt-20">
+
+  <!-- Breadcrumb -->
+  <div class="bg-surface-container-low border-b border-outline-variant/20">
+    <div class="max-w-screen-2xl mx-auto px-8 md:px-16 py-3 flex items-center gap-2 text-xs text-outline">
+      <a href="/" class="hover:text-primary transition-colors">Domů</a>
+      <span class="material-symbols-outlined text-sm">chevron_right</span>
+      <a href="/reference/" class="hover:text-primary transition-colors">Reference</a>
+      <span class="material-symbols-outlined text-sm">chevron_right</span>
+      <span class="text-on-surface font-medium">Výrobní hala KOVONA</span>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative min-h-[60vh] flex items-end overflow-hidden bg-black">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('../img/heating.webp'); opacity: 0.30;"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+    <div class="relative z-10 max-w-screen-2xl mx-auto px-8 md:px-16 pb-16 pt-32 w-full">
+      <p class="text-xs font-bold tracking-widest uppercase text-cyan-400 mb-3">Průmyslový objekt · 2024 · Přelouč</p>
+      <h1 class="font-headline text-4xl md:text-6xl font-extrabold text-white tracking-tight max-w-3xl mb-4">Výrobní hala KOVONA</h1>
+      <p class="text-white/65 text-lg max-w-2xl leading-relaxed mb-8">Rozsáhlá výrobní hala pro kovoobrábění s halou 5 000 m², administrativní přístavbou a externím skladem. Kompletní TZB projekt pro průmyslový provoz.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1.5 bg-white/10 text-white/85 text-xs font-semibold rounded-full backdrop-blur-sm">Průmyslová elektroinstalace</span>
+        <span class="px-3 py-1.5 bg-white/10 text-white/85 text-xs font-semibold rounded-full backdrop-blur-sm">Vzduchotechnika</span>
+        <span class="px-3 py-1.5 bg-white/10 text-white/85 text-xs font-semibold rounded-full backdrop-blur-sm">Odsávání</span>
+        <span class="px-3 py-1.5 bg-white/10 text-white/85 text-xs font-semibold rounded-full backdrop-blur-sm">Kanalizace</span>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section section--alt">
-  <div class="container">
-    <p class="section__eyebrow">Technické řešení</p>
-    <h2 class="section__title">Klíčové systémy</h2>
-    <div class="feature-grid">
-      <div class="feature-card"><div class="feature-card__icon">⚡</div><div class="feature-card__title">Trafostanice 630 kVA</div><div class="feature-card__desc">Vlastní trafostanice VN/NN pro napájení výrobní technologie, zdvihacích zařízení a kompenzace jalového výkonu.</div></div>
-      <div class="feature-card"><div class="feature-card__icon">🌬️</div><div class="feature-card__title">Průmyslové odsávání</div><div class="feature-card__desc">Centrální systém odsávání kovových třísek a olejové mlhy s filtrací a recirkulací upraveného vzduchu.</div></div>
-      <div class="feature-card"><div class="feature-card__icon">💧</div><div class="feature-card__title">Průmyslová kanalizace</div><div class="feature-card__desc">Odlučovač ropných látek a tukový lapač před napojením na veřejnou kanalizaci.</div></div>
-      <div class="feature-card"><div class="feature-card__icon">💡</div><div class="feature-card__title">LED osvětlení haly</div><div class="feature-card__desc">Průmyslové LED svítidla s 80 000 lm/svítidlo a automatickým stmíváním dle denního světla — úspora 60 %.</div></div>
+  <!-- Project stats -->
+  <section class="bg-surface-container-lowest border-b border-outline-variant/20">
+    <div class="max-w-screen-2xl mx-auto px-8 md:px-16 py-10">
+      <div class="grid grid-cols-2 md:grid-cols-6 gap-6">
+        <div class="flex flex-col gap-1">
+          <span class="text-xs uppercase tracking-widest font-bold text-outline">Typ objektu</span>
+          <span class="font-headline font-bold text-on-surface">Výrobní hala</span>
+        </div>
+        <div class="flex flex-col gap-1">
+          <span class="text-xs uppercase tracking-widest font-bold text-outline">Lokalita</span>
+          <span class="font-headline font-bold text-on-surface">Přelouč</span>
+        </div>
+        <div class="flex flex-col gap-1">
+          <span class="text-xs uppercase tracking-widest font-bold text-outline">Rok dokončení</span>
+          <span class="font-headline font-bold text-on-surface">2024</span>
+        </div>
+        <div class="flex flex-col gap-1">
+          <span class="text-xs uppercase tracking-widest font-bold text-outline">Plocha haly</span>
+          <span class="font-headline font-bold text-primary text-xl">5 000 m²</span>
+        </div>
+        <div class="flex flex-col gap-1">
+          <span class="text-xs uppercase tracking-widest font-bold text-outline">Výkon napájení</span>
+          <span class="font-headline font-bold text-primary text-xl">630 kVA</span>
+        </div>
+        <div class="flex flex-col gap-1">
+          <span class="text-xs uppercase tracking-widest font-bold text-outline">Odvod vzduchu</span>
+          <span class="font-headline font-bold text-on-surface">85 000 m³/h</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About the project -->
+  <section class="py-20 md:py-28 bg-surface-container-low">
+    <div class="max-w-screen-2xl mx-auto px-8 md:px-16 grid md:grid-cols-2 gap-16 items-start">
+      <div>
+        <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-primary mb-6">
+          <span class="w-6 h-px bg-primary"></span>
+          O projektu
+        </div>
+        <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-8 leading-tight">Průmyslová hala s vlastní trafostanicí a odsáváním</h2>
+        <div class="space-y-4 text-on-surface-variant leading-relaxed">
+          <p>Firma KOVONA patří mezi přední výrobce kovového nábytku a regálových systémů v ČR. Nová výrobní hala v průmyslové zóně Přelouč nahradila zastaralé prostory a přinesla výrazné zvýšení výrobní kapacity.</p>
+          <p>Projekt zahrnoval silnoproudé napájení výrobních strojů, průmyslové osvětlení, komplexní odsávání kovových třísek a výparů, vzduchotechniku pro administrativu a kompletní zdravotechniku.</p>
+          <p>Kritickým požadavkem bylo zajistit spolehlivé napájení CNC strojů bez výpadků a efektivní odsávání pro hygienicky přijatelné pracovní podmínky.</p>
+        </div>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-xl aspect-[4/3]">
+        <img src="../img/heating.webp" alt="Vzduchotechnika výrobní haly" class="w-full h-full object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical highlights -->
+  <section class="py-20 bg-surface-container-lowest">
+    <div class="max-w-screen-2xl mx-auto px-8 md:px-16">
+      <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-primary mb-4">
+        <span class="w-6 h-px bg-primary"></span>
+        Technické řešení
+      </div>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-12">Klíčové systémy</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-8 bg-surface-container-low rounded-xl hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 rounded-lg fluid-gradient flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-white">bolt</span>
+          </div>
+          <h3 class="font-headline font-bold text-on-surface mb-3">Trafostanice 630 kVA</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Vlastní trafostanice VN/NN pro napájení výrobní technologie, zdvihacích zařízení a kompenzace jalového výkonu.</p>
+        </div>
+        <div class="p-8 bg-surface-container-low rounded-xl hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 rounded-lg fluid-gradient flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-white">air</span>
+          </div>
+          <h3 class="font-headline font-bold text-on-surface mb-3">Průmyslové odsávání</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Centrální systém odsávání kovových třísek a olejové mlhy s filtrací a recirkulací upraveného vzduchu.</p>
+        </div>
+        <div class="p-8 bg-surface-container-low rounded-xl hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 rounded-lg fluid-gradient flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-white">water_drop</span>
+          </div>
+          <h3 class="font-headline font-bold text-on-surface mb-3">Průmyslová kanalizace</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Odlučovač ropných látek a tukový lapač před napojením na veřejnou kanalizaci.</p>
+        </div>
+        <div class="p-8 bg-surface-container-low rounded-xl hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 rounded-lg fluid-gradient flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-white">light_mode</span>
+          </div>
+          <h3 class="font-headline font-bold text-on-surface mb-3">LED osvětlení haly</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Průmyslové LED svítidla s 80 000 lm/svítidlo a automatickým stmíváním dle denního světla — úspora 60 %.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other references -->
+  <section class="py-16 bg-surface-container-low border-t border-outline-variant/20">
+    <div class="max-w-screen-2xl mx-auto px-8 md:px-16">
+      <div class="flex items-center justify-between mb-8">
+        <h3 class="font-headline font-bold text-on-surface text-xl">Další reference</h3>
+        <a href="/reference/" class="text-primary text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+          Všechny projekty <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="./bytovy-dum-pardubice.html" class="group flex items-center gap-4 p-4 bg-surface-container-lowest rounded-xl hover:shadow-md transition-all">
+          <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+            <img src="../img/herobg_small.webp" alt="Bytový dům Pardubice" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+          </div>
+          <div>
+            <div class="text-xs text-outline mb-1">Bytový dům · 2024</div>
+            <div class="font-semibold text-on-surface text-sm group-hover:text-primary transition-colors">Bytový dům Zelená čtvrť</div>
+          </div>
+        </a>
+        <a href="./rodinny-dum-chrudim.html" class="group flex items-center gap-4 p-4 bg-surface-container-lowest rounded-xl hover:shadow-md transition-all">
+          <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+            <img src="../img/solar.webp" alt="Rodinný dům Chrudim" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+          </div>
+          <div>
+            <div class="text-xs text-outline mb-1">Rodinný dům · 2023</div>
+            <div class="font-semibold text-on-surface text-sm group-hover:text-primary transition-colors">Rodinný dům s FVE, Chrudim</div>
+          </div>
+        </a>
+        <a href="./administrativni-budova.html" class="group flex items-center gap-4 p-4 bg-surface-container-lowest rounded-xl hover:shadow-md transition-all">
+          <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+            <img src="../img/electric-board.webp" alt="TechPark HK" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+          </div>
+          <div>
+            <div class="text-xs text-outline mb-1">Administrativa · 2023</div>
+            <div class="font-semibold text-on-surface text-sm group-hover:text-primary transition-colors">Administrativní centrum TechPark</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-surface-container-high relative overflow-hidden">
+    <div class="absolute inset-0 fluid-gradient opacity-5"></div>
+    <div class="max-w-3xl mx-auto text-center px-8 relative z-10">
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-4">Projektujeme průmyslové objekty</h2>
+      <p class="text-on-surface-variant text-lg mb-8">Kontaktujte nás pro projektování vaší výrobní haly nebo průmyslového areálu.</p>
+      <a href="/kontakt" class="inline-flex items-center gap-2 px-10 py-4 fluid-gradient text-on-primary font-bold rounded-md shadow-lg hover:scale-[1.02] transition-transform">
+        <span class="material-symbols-outlined">event_available</span>
+        Kontaktovat nás
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200/50 bg-surface-container-low">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-16 md:px-20 w-full max-w-screen-2xl mx-auto">
+    <div class="space-y-6">
+      <div class="text-lg font-bold text-cyan-900 font-headline">TZBsystems</div>
+      <p class="text-sm text-slate-500 leading-relaxed">Projektujeme technická zařízení budov s důrazem na efektivitu a udržitelnost.</p>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="text-sm font-bold text-cyan-800 uppercase tracking-widest">TZB profese</span>
+      <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm font-medium" href="../profese/silnoproud.html">Silnoproudá elektroinstalace</a>
+      <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm font-medium" href="../profese/vzduchotechnika.html">Vzduchotechnika</a>
+      <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm font-medium" href="../profese/kanalizace.html">Kanalizace</a>
+      <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm font-medium" href="../profese/penb.html">PENB & Energetika</a>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="text-sm font-bold text-cyan-800 uppercase tracking-widest">Reference</span>
+      <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm font-medium" href="./bytovy-dum-pardubice.html">Bytový dům, Pardubice</a>
+      <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm font-medium" href="./rodinny-dum-chrudim.html">Rodinný dům, Chrudim</a>
+      <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm font-medium" href="./administrativni-budova.html">TechPark, Hradec Králové</a>
+      <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm font-medium" href="./prumyslova-hala.html">Hala KOVONA, Přelouč</a>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="text-sm font-bold text-cyan-800 uppercase tracking-widest">Kontakt</span>
+      <a class="text-slate-500 hover:text-cyan-600 transition-colors text-sm" href="mailto:info@tzbsystems.cz">info@tzbsystems.cz</a>
+      <a class="text-slate-500 hover:text-cyan-600 transition-colors text-sm" href="tel:+420123456789">+420 123 456 789</a>
+      <p class="text-slate-500 text-sm">Pardubice, ČR</p>
     </div>
   </div>
-</section>
+  <div class="border-t border-slate-200/30 px-8 py-8 text-center text-[10px] text-slate-400 uppercase tracking-widest">
+    © 2025 TZBsystems s.r.o. Všechna práva vyhrazena.
+  </div>
+</footer>
 
-<section class="section" style="text-align: center;"><div class="container" style="max-width: 600px;"><h2 class="section__title">Projektujeme průmyslové objekty</h2><p class="section__sub" style="margin: 1rem auto;">Kontaktujte nás pro projektování vaší výrobní haly nebo průmyslového areálu.</p><a href="/#kontakt" class="btn btn--primary">Kontaktovat nás</a></div></section>
-
-<footer class="footer"><div class="footer__top"><div><a class="footer__logo" href="/">TZB<span>systems</span></a><p class="footer__desc">Projektujeme technická zařízení budov s důrazem na efektivitu a udržitelnost.</p></div><div><p class="footer__col-title">Profese</p><ul class="footer__links"><li><a href="../profese/silnoproud.html">Silnoproudá elektroinstalace</a></li><li><a href="../profese/vzduchotechnika.html">Vzduchotechnika</a></li><li><a href="../profese/kanalizace.html">Kanalizace</a></li></ul></div><div><p class="footer__col-title">Další reference</p><ul class="footer__links"><li><a href="./bytovy-dum-pardubice.html">Bytový dům, Pardubice</a></li><li><a href="./rodinny-dum-chrudim.html">Rodinný dům, Chrudim</a></li><li><a href="./administrativni-budova.html">TechPark, HK</a></li></ul></div><div><p class="footer__col-title">Kontakt</p><ul class="footer__links"><li><a href="mailto:info@tzbsystems.cz">info@tzbsystems.cz</a></li><li>Pardubice, ČR</li></ul></div></div><div class="footer__bottom"><span>© 2025 TZBsystems s.r.o.</span><a href="/reference/index.html">← Zpět na reference</a></div></footer>
-<script src="../js/nav.js"></script>
+<script>
+  document.getElementById('burger-btn').addEventListener('click', function () {
+    const menu = document.getElementById('mobile-menu');
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', String(!expanded));
+    menu.classList.toggle('hidden');
+  });
+</script>
 </body>
 </html>

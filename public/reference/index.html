@@ -1,159 +1,403 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html class="light" lang="cs">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reference — TZBsystems</title>
   <meta name="description" content="Prohlédněte si dokončené projekty TZBsystems — bytové domy, rodinné domy, administrativní budovy a průmyslové haly." />
   <link rel="icon" href="../img/favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-highest": "#e1e3e4",
+            "primary": "#096277",
+            "background": "#f8f9fa",
+            "on-background": "#191c1d",
+            "on-primary-container": "#f1fbff",
+            "on-surface-variant": "#3f484e",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#8bd1e8",
+            "inverse-primary": "#8bd1e8",
+            "on-error-container": "#93000a",
+            "surface-container-low": "#f3f4f5",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-container": "#417d6b",
+            "surface-container-high": "#e7e8e9",
+            "on-secondary-fixed-variant": "#004f51",
+            "surface-container": "#edeeef",
+            "inverse-on-surface": "#f0f1f2",
+            "error": "#ba1a1a",
+            "primary-container": "#317b90",
+            "on-tertiary-fixed-variant": "#0b5040",
+            "surface-variant": "#e1e3e4",
+            "tertiary": "#266453",
+            "secondary": "#00696c",
+            "tertiary-fixed-dim": "#95d3be",
+            "surface-bright": "#f8f9fa",
+            "surface-dim": "#d9dadb",
+            "on-secondary-fixed": "#002021",
+            "surface-tint": "#13677b",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#6bd7da",
+            "inverse-surface": "#2e3132",
+            "secondary-fixed": "#89f3f6",
+            "on-tertiary-fixed": "#002018",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#e3fff3",
+            "secondary-container": "#86f0f3",
+            "tertiary-fixed": "#b0efda",
+            "surface": "#f8f9fa",
+            "on-tertiary": "#ffffff",
+            "outline": "#6f787f",
+            "on-primary-fixed-variant": "#004e5f",
+            "on-secondary-container": "#006e70",
+            "primary-fixed": "#b2ebff",
+            "on-primary-fixed": "#001f27",
+            "error-container": "#ffdad6",
+            "outline-variant": "#bfc8cf",
+            "on-surface": "#191c1d"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+    }
+    .blueprint-grid {
+      background-image: linear-gradient(to right, #bfc8cf 1px, transparent 1px),
+                        linear-gradient(to bottom, #bfc8cf 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.05;
+    }
+    .fluid-gradient {
+      background: linear-gradient(135deg, #096277 0%, #00696c 100%);
+    }
+  </style>
 </head>
-<body>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
 
-<nav class="nav">
-  <div class="nav__inner">
-    <a class="nav__logo" href="/">TZB<span>systems</span></a>
-    <ul class="nav__links">
-      <li><a href="/#profese">Profese</a></li>
-      <li><a href="/reference/index.html">Reference</a></li>
-      <li><a href="/kariera.html">Kariéra</a></li>
-      <li><a href="/#kontakt" class="nav__cta">Poptávka</a></li>
-    </ul>
-    <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-<div class="nav__mobile">
-  <a href="/#profese">Profese</a>
-  <a href="/reference/index.html">Reference</a>
-  <a href="/kariera.html">Kariéra</a>
-  <a href="/#kontakt">Poptávka</a>
-</div>
-
-<div class="breadcrumb-bar">
-  <nav class="breadcrumb">
-    <a href="/">Domů</a><span class="breadcrumb__sep">›</span>
-    <span>Reference</span>
-  </nav>
-</div>
-
-<!-- HERO -->
-<section style="padding: calc(52px + 4rem) 1.5rem 4rem; background: var(--bg-alt);">
-  <div class="container" style="max-width: 1200px;">
-    <p class="section__eyebrow">Naše projekty</p>
-    <h1 class="section__title" style="font-size: clamp(2rem, 5vw, 3.5rem);">Reference</h1>
-    <p class="section__sub">Výběr dokončených projektů, na které jsme hrdí. Každá reference dokládá naši technickou odbornost a přístup ke kvalitě.</p>
-  </div>
-</section>
-
-<!-- FILTER CHIPS (visual only) -->
-<section style="padding: 1.5rem; border-bottom: 1px solid var(--border); background: #fff;">
-  <div class="container chips" style="max-width: 1200px;">
-    <span class="chip" style="background: var(--blue); color: #fff;">Vše</span>
-    <span class="chip">Bytové domy</span>
-    <span class="chip">Rodinné domy</span>
-    <span class="chip">Administrativa</span>
-    <span class="chip">Průmysl</span>
-  </div>
-</section>
-
-<!-- REFERENCES GRID -->
-<section class="section">
-  <div class="container">
-    <div class="references-grid">
-
-      <a class="ref-card" href="./bytovy-dum-pardubice.html">
-        <img class="ref-card__img" src="../img/herobg_small.webp" alt="Bytový dům Zelená čtvrť Pardubice" loading="lazy" />
-        <div class="ref-card__body">
-          <div class="ref-card__tag">Bytový dům · 2024</div>
-          <div class="ref-card__title">Bytový dům Zelená čtvrť</div>
-          <div class="ref-card__meta">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Pardubice
-          </div>
-          <div class="chips mt-2" style="margin-top: .75rem;">
-            <span class="chip">Silnoproud</span>
-            <span class="chip">Vzduchotechnika</span>
-            <span class="chip">Vytápění</span>
-          </div>
-        </div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm transition-colors duration-300 bg-surface-container-low">
+  <div class="flex justify-between items-center h-20 px-8 md:px-16 w-full max-w-screen-2xl mx-auto">
+    <a href="/" class="text-xl font-bold tracking-tighter text-cyan-900 font-headline">TZBsystems</a>
+    <div class="hidden md:flex items-center space-x-8">
+      <a class="text-slate-600 hover:text-cyan-600 transition-colors text-sm tracking-tight" href="/">Domů</a>
+      <a class="text-slate-600 hover:text-cyan-600 transition-colors text-sm tracking-tight" href="/sluzby">Profese</a>
+      <a class="text-cyan-700 border-b-2 border-cyan-700 pb-1 text-sm tracking-tight font-semibold" href="/reference/">Reference</a>
+      <a class="text-slate-600 hover:text-cyan-600 transition-colors text-sm tracking-tight" href="/kontakt">O nás</a>
+    </div>
+    <div class="flex items-center space-x-4">
+      <div class="hidden sm:flex space-x-3 text-cyan-800">
+        <a href="mailto:info@tzbsystems.cz" class="material-symbols-outlined cursor-pointer hover:bg-slate-50 p-2 rounded-full transition-all">mail</a>
+        <a href="tel:+420123456789" class="material-symbols-outlined cursor-pointer hover:bg-slate-50 p-2 rounded-full transition-all">call</a>
+      </div>
+      <a href="/kontakt" class="hidden lg:block fluid-gradient text-on-primary px-6 py-2.5 rounded-md font-medium text-sm transition-all active:scale-95 opacity-90 hover:opacity-100 shadow-md">
+        Poptávka
       </a>
-
-      <a class="ref-card" href="./rodinny-dum-chrudim.html">
-        <img class="ref-card__img" src="../img/solar.webp" alt="Rodinný dům Chrudim" loading="lazy" />
-        <div class="ref-card__body">
-          <div class="ref-card__tag">Rodinný dům · 2023</div>
-          <div class="ref-card__title">Rodinný dům s FVE systémem</div>
-          <div class="ref-card__meta">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Chrudim
-          </div>
-          <div class="chips mt-2" style="margin-top: .75rem;">
-            <span class="chip">Fotovoltaika</span>
-            <span class="chip">Tepelné čerpadlo</span>
-            <span class="chip">PENB</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="ref-card" href="./administrativni-budova.html">
-        <img class="ref-card__img" src="../img/electric-board.webp" alt="Administrativní centrum TechPark" loading="lazy" />
-        <div class="ref-card__body">
-          <div class="ref-card__tag">Administrativa · 2023</div>
-          <div class="ref-card__title">Administrativní centrum TechPark</div>
-          <div class="ref-card__meta">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Hradec Králové
-          </div>
-          <div class="chips mt-2" style="margin-top: .75rem;">
-            <span class="chip">Silnoproud</span>
-            <span class="chip">Slaboproud</span>
-            <span class="chip">M&R</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="ref-card" href="./prumyslova-hala.html">
-        <img class="ref-card__img" src="../img/ventilation.webp" alt="Výrobní hala KOVONA" loading="lazy" />
-        <div class="ref-card__body">
-          <div class="ref-card__tag">Průmysl · 2024</div>
-          <div class="ref-card__title">Výrobní hala KOVONA</div>
-          <div class="ref-card__meta">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Přelouč
-          </div>
-          <div class="chips mt-2" style="margin-top: .75rem;">
-            <span class="chip">Vzduchotechnika</span>
-            <span class="chip">Silnoproud</span>
-            <span class="chip">Kanalizace</span>
-          </div>
-        </div>
-      </a>
-
+      <button id="burger-btn" class="md:hidden p-2 rounded-full hover:bg-slate-100" aria-label="Otevřít menu" aria-expanded="false">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
     </div>
   </div>
-</section>
-
-<!-- CTA -->
-<section class="section section--alt" style="text-align: center;">
-  <div class="container" style="max-width: 600px;">
-    <h2 class="section__title">Realizujeme váš projekt</h2>
-    <p class="section__sub" style="margin: 1rem auto;">Kontaktujte nás a zjistěte, jak vám můžeme pomoci s vaším projektem.</p>
-    <a href="/#kontakt" class="btn btn--primary">Nezávazná poptávka</a>
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-outline-variant/20 px-8 py-6 flex flex-col gap-4">
+    <a class="text-sm text-slate-600" href="/">Domů</a>
+    <a class="text-sm text-slate-600" href="/sluzby">Profese</a>
+    <a class="text-sm font-medium text-cyan-700" href="/reference/">Reference</a>
+    <a class="text-sm text-slate-600" href="/kontakt">O nás & Kontakt</a>
+    <a class="text-sm text-slate-600" href="/kariera">Kariéra</a>
+    <a href="/kontakt" class="mt-2 px-6 py-2.5 fluid-gradient text-on-primary text-sm font-medium rounded-md text-center">Poptávka</a>
   </div>
-</section>
+</nav>
 
-<footer class="footer">
-  <div class="footer__top">
-    <div><a class="footer__logo" href="/">TZB<span>systems</span></a><p class="footer__desc">Projektujeme technická zařízení budov s důrazem na efektivitu a udržitelnost.</p></div>
-    <div><p class="footer__col-title">Profese</p><ul class="footer__links"><li><a href="/../profese/silnoproud.html">Silnoproudá elektroinstalace</a></li><li><a href="/../profese/fotovoltaika.html">Fotovoltaika</a></li><li><a href="/../profese/vzduchotechnika.html">Vzduchotechnika</a></li><li><a href="/../profese/penb.html">PENB</a></li></ul></div>
-    <div><p class="footer__col-title">Společnost</p><ul class="footer__links"><li><a href="/reference/index.html">Reference</a></li><li><a href="/kariera.html">Kariéra</a></li><li><a href="/#kontakt">Kontakt</a></li></ul></div>
-    <div><p class="footer__col-title">Kontakt</p><ul class="footer__links"><li><a href="mailto:info@tzbsystems.cz">info@tzbsystems.cz</a></li><li>Pardubice, ČR</li></ul></div>
+<main class="pt-20">
+
+  <!-- Hero Section -->
+  <header class="relative overflow-hidden py-24 md:py-32 bg-surface">
+    <div class="blueprint-grid absolute inset-0 pointer-events-none"></div>
+    <div class="relative max-w-screen-2xl mx-auto px-8 md:px-16 grid md:grid-cols-2 gap-16 items-center">
+      <div class="flex flex-col items-start">
+        <div class="inline-flex items-center px-3 py-1 bg-surface-container-high rounded-full mb-6">
+          <span class="text-[10px] uppercase tracking-widest font-bold text-primary mr-2">Naše projekty</span>
+          <div class="h-px w-8 bg-outline-variant opacity-30"></div>
+        </div>
+        <h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight text-on-surface mb-8">
+          Projekty, na které <span class="text-primary italic">jsme hrdí.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed mb-12">
+          Výběr dokončených zakázek dokládající naši technickou odbornost. Od rodinných domů po průmyslové haly — každý projekt s precizní dokumentací a důrazem na kvalitu.
+        </p>
+        <div class="flex items-center gap-8 pt-4 border-t border-outline-variant/20 w-full">
+          <div>
+            <div class="text-3xl font-headline font-bold text-primary">150+</div>
+            <div class="text-xs text-outline uppercase tracking-widest font-semibold mt-1">Dokončených projektů</div>
+          </div>
+          <div class="w-px h-10 bg-outline-variant/30"></div>
+          <div>
+            <div class="text-3xl font-headline font-bold text-primary">12+</div>
+            <div class="text-xs text-outline uppercase tracking-widest font-semibold mt-1">Oborů projektování</div>
+          </div>
+          <div class="w-px h-10 bg-outline-variant/30"></div>
+          <div>
+            <div class="text-3xl font-headline font-bold text-primary">10+</div>
+            <div class="text-xs text-outline uppercase tracking-widest font-semibold mt-1">Let zkušeností</div>
+          </div>
+        </div>
+      </div>
+      <div class="relative hidden md:block">
+        <div class="aspect-square rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
+          <img src="../img/stitch-hero.jpg" alt="Technický výkres TZB" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-primary/10"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Filter chips -->
+  <div class="sticky top-20 z-30 bg-surface-container-lowest border-b border-outline-variant/20 shadow-sm">
+    <div class="max-w-screen-2xl mx-auto px-8 md:px-16 py-4 flex items-center gap-3 overflow-x-auto">
+      <button data-filter="vse" class="filter-chip flex-shrink-0 px-4 py-1.5 fluid-gradient text-on-primary text-xs font-semibold rounded-full transition-all">Vše</button>
+      <button data-filter="bytove-domy" class="filter-chip flex-shrink-0 px-4 py-1.5 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full cursor-pointer hover:bg-surface-container-highest transition-all">Bytové domy</button>
+      <button data-filter="rodinne-domy" class="filter-chip flex-shrink-0 px-4 py-1.5 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full cursor-pointer hover:bg-surface-container-highest transition-all">Rodinné domy</button>
+      <button data-filter="administrativa" class="filter-chip flex-shrink-0 px-4 py-1.5 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full cursor-pointer hover:bg-surface-container-highest transition-all">Administrativa</button>
+      <button data-filter="prumysl" class="filter-chip flex-shrink-0 px-4 py-1.5 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full cursor-pointer hover:bg-surface-container-highest transition-all">Průmysl</button>
+    </div>
   </div>
-  <div class="footer__bottom"><span>© 2025 TZBsystems s.r.o.</span><a href="/">← Zpět na hlavní stránku</a></div>
+
+  <!-- Reference Grid -->
+  <section class="py-16 md:py-24 bg-surface-container-low">
+    <div class="max-w-screen-2xl mx-auto px-8 md:px-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8">
+
+        <!-- Card 1: Bytový dům -->
+        <a href="./bytovy-dum-pardubice.html" data-category="bytove-domy" class="ref-card group block bg-surface-container-lowest rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-1">
+          <div class="relative overflow-hidden aspect-[16/9]">
+            <img src="../img/herobg_small.webp" alt="Bytový dům Zelená čtvrť Pardubice" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 bg-primary text-on-primary text-xs font-semibold rounded-full">Bytový dům</span>
+            </div>
+            <div class="absolute bottom-4 right-4 text-white/60 text-xs font-semibold tracking-wider uppercase">2024</div>
+          </div>
+          <div class="p-8">
+            <h2 class="font-headline text-xl font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">Bytový dům Zelená čtvrť</h2>
+            <div class="flex items-center gap-1 text-outline text-sm mb-4">
+              <span class="material-symbols-outlined text-base">location_on</span>
+              Pardubice
+            </div>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+              Kompletní projektování TZB systémů pro rezidenční komplex 48 bytových jednotek — silnoproud, vzduchotechnika, vytápění, vodovod a kanalizace.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full">Silnoproud</span>
+              <span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full">Vzduchotechnika</span>
+              <span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full">Vytápění</span>
+            </div>
+            <div class="mt-6 flex items-center gap-2 text-primary text-sm font-semibold">
+              Zobrazit detail
+              <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 2: Rodinný dům -->
+        <a href="./rodinny-dum-chrudim.html" data-category="rodinne-domy" class="ref-card group block bg-surface-container-lowest rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-1">
+          <div class="relative overflow-hidden aspect-[16/9]">
+            <img src="../img/solar.webp" alt="Rodinný dům s FVE systémem, Chrudim" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 bg-secondary text-on-secondary text-xs font-semibold rounded-full">Rodinný dům</span>
+            </div>
+            <div class="absolute bottom-4 right-4 text-white/60 text-xs font-semibold tracking-wider uppercase">2023</div>
+          </div>
+          <div class="p-8">
+            <h2 class="font-headline text-xl font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">Rodinný dům s FVE systémem</h2>
+            <div class="flex items-center gap-1 text-outline text-sm mb-4">
+              <span class="material-symbols-outlined text-base">location_on</span>
+              Chrudim
+            </div>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+              Kompletní energetická koncepce rodinného domu s fotovoltaickým systémem, tepelným čerpadlem a energetickým průkazem budovy.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full">Fotovoltaika</span>
+              <span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full">Tepelné čerpadlo</span>
+              <span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full">PENB</span>
+            </div>
+            <div class="mt-6 flex items-center gap-2 text-primary text-sm font-semibold">
+              Zobrazit detail
+              <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 3: Administrativní budova -->
+        <a href="./administrativni-budova.html" data-category="administrativa" class="ref-card group block bg-surface-container-lowest rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-1">
+          <div class="relative overflow-hidden aspect-[16/9]">
+            <img src="../img/electric-board.webp" alt="Administrativní centrum TechPark, Hradec Králové" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 bg-tertiary text-on-tertiary text-xs font-semibold rounded-full">Administrativa</span>
+            </div>
+            <div class="absolute bottom-4 right-4 text-white/60 text-xs font-semibold tracking-wider uppercase">2023</div>
+          </div>
+          <div class="p-8">
+            <h2 class="font-headline text-xl font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">Administrativní centrum TechPark</h2>
+            <div class="flex items-center gap-1 text-outline text-sm mb-4">
+              <span class="material-symbols-outlined text-base">location_on</span>
+              Hradec Králové
+            </div>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+              Elektroprojekce a řídicí systémy pro moderní administrativní centrum — silnoproud, slaboproud, měření a regulace.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full">Silnoproud</span>
+              <span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full">Slaboproud</span>
+              <span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full">M&R</span>
+            </div>
+            <div class="mt-6 flex items-center gap-2 text-primary text-sm font-semibold">
+              Zobrazit detail
+              <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 4: Průmyslová hala -->
+        <a href="./prumyslova-hala.html" data-category="prumysl" class="ref-card group block bg-surface-container-lowest rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-1">
+          <div class="relative overflow-hidden aspect-[16/9]">
+            <img src="../img/heating.webp" alt="Výrobní hala KOVONA, Přelouč" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 bg-on-surface text-surface text-xs font-semibold rounded-full">Průmysl</span>
+            </div>
+            <div class="absolute bottom-4 right-4 text-white/60 text-xs font-semibold tracking-wider uppercase">2024</div>
+          </div>
+          <div class="p-8">
+            <h2 class="font-headline text-xl font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">Výrobní hala KOVONA</h2>
+            <div class="flex items-center gap-1 text-outline text-sm mb-4">
+              <span class="material-symbols-outlined text-base">location_on</span>
+              Přelouč
+            </div>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+              Průmyslová vzduchotechnika, silnoproudá elektroinstalace a kanalizace pro výrobní provoz s přísnými hygienickými požadavky.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full">Vzduchotechnika</span>
+              <span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full">Silnoproud</span>
+              <span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full">Kanalizace</span>
+            </div>
+            <div class="mt-6 flex items-center gap-2 text-primary text-sm font-semibold">
+              Zobrazit detail
+              <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-surface-container-high relative overflow-hidden">
+    <div class="absolute inset-0 fluid-gradient opacity-5"></div>
+    <div class="max-w-4xl mx-auto text-center px-8 relative z-10">
+      <h2 class="text-4xl md:text-5xl font-headline font-bold text-on-surface mb-6">Realizujeme váš projekt</h2>
+      <p class="text-xl text-on-surface-variant mb-10 leading-relaxed">
+        Kontaktujte nás a zjistěte, jak vám můžeme pomoci s vaším projektem. První konzultace je vždy zdarma.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt" class="px-10 py-5 fluid-gradient text-on-primary font-bold rounded-md shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined">event_available</span>
+          Nezávazná poptávka
+        </a>
+        <a href="mailto:info@tzbsystems.cz" class="px-10 py-5 bg-surface-container-lowest text-on-surface font-bold rounded-md border border-outline-variant/30 hover:bg-white transition-colors flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined">mail</span>
+          Napište nám e-mail
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200/50 bg-surface-container-low">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-16 md:px-20 w-full max-w-screen-2xl mx-auto">
+    <div class="space-y-6">
+      <div class="text-lg font-bold text-cyan-900 font-headline">TZBsystems</div>
+      <p class="text-sm text-slate-500 leading-relaxed">Projektujeme technická zařízení budov s důrazem na efektivitu a udržitelnost.</p>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="text-sm font-bold text-cyan-800 uppercase tracking-widest">TZB profese</span>
+      <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm font-medium" href="../profese/vytapeni-chlazeni.html">Vytápění / Chlazení</a>
+      <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm font-medium" href="../profese/vzduchotechnika.html">Vzduchotechnika</a>
+      <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm font-medium" href="../profese/vodovod.html">Vodovod</a>
+      <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm font-medium" href="../profese/kanalizace.html">Kanalizace</a>
+      <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm font-medium" href="../profese/penb.html">PENB & Energetika</a>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="text-sm font-bold text-cyan-800 uppercase tracking-widest">Reference</span>
+      <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm font-medium" href="./bytovy-dum-pardubice.html">Bytový dům, Pardubice</a>
+      <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm font-medium" href="./rodinny-dum-chrudim.html">Rodinný dům, Chrudim</a>
+      <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm font-medium" href="./administrativni-budova.html">TechPark, Hradec Králové</a>
+      <a class="text-slate-500 hover:text-cyan-600 hover:translate-x-1 transition-all text-sm font-medium" href="./prumyslova-hala.html">Hala KOVONA, Přelouč</a>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="text-sm font-bold text-cyan-800 uppercase tracking-widest">Kontakt</span>
+      <a class="text-slate-500 hover:text-cyan-600 transition-colors text-sm" href="mailto:info@tzbsystems.cz">info@tzbsystems.cz</a>
+      <a class="text-slate-500 hover:text-cyan-600 transition-colors text-sm" href="tel:+420123456789">+420 123 456 789</a>
+      <p class="text-slate-500 text-sm">Pardubice, ČR</p>
+    </div>
+  </div>
+  <div class="border-t border-slate-200/30 px-8 py-8 text-center text-[10px] text-slate-400 uppercase tracking-widest">
+    © 2025 TZBsystems s.r.o. Všechna práva vyhrazena.
+  </div>
 </footer>
-<script src="../js/nav.js"></script>
+
+<script>
+  // Mobile menu
+  document.getElementById('burger-btn').addEventListener('click', function () {
+    const menu = document.getElementById('mobile-menu');
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', String(!expanded));
+    menu.classList.toggle('hidden');
+  });
+
+  // Filter
+  document.querySelectorAll('.filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const filter = chip.dataset.filter;
+
+      document.querySelectorAll('.filter-chip').forEach(c => {
+        const active = c === chip;
+        c.classList.toggle('fluid-gradient', active);
+        c.classList.toggle('text-on-primary', active);
+        c.classList.toggle('bg-surface-container-high', !active);
+        c.classList.toggle('text-on-surface-variant', !active);
+      });
+
+      document.querySelectorAll('.ref-card').forEach(card => {
+        card.style.display = (filter === 'vse' || card.dataset.category === filter) ? '' : 'none';
+      });
+    });
+  });
+</script>
+
 </body>
 </html>

@@ -101,7 +101,7 @@
     <div class="hidden md:flex items-center gap-8">
       <a class="text-sm tracking-tight text-cyan-700 border-b-2 border-cyan-700 pb-1 font-medium" href="/">Domů</a>
       <a class="text-sm tracking-tight text-slate-600 hover:text-cyan-600 transition-colors" href="/sluzby">Profese</a>
-      <a class="text-sm tracking-tight text-slate-600 hover:text-cyan-600 transition-colors" href="/dotace">Dotace NZÚ</a>
+      <a class="text-sm tracking-tight text-slate-600 hover:text-cyan-600 transition-colors" href="/reference/">Reference</a>
       <a class="text-sm tracking-tight text-slate-600 hover:text-cyan-600 transition-colors" href="/kontakt">O nás</a>
     </div>
     <div class="flex items-center gap-4">
@@ -125,7 +125,7 @@
   <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-outline-variant/20 px-8 py-6 flex flex-col gap-4">
     <a class="text-sm font-medium text-cyan-700" href="/">Domů</a>
     <a class="text-sm text-slate-600" href="/sluzby">Profese</a>
-    <a class="text-sm text-slate-600" href="/dotace">Dotace NZÚ</a>
+    <a class="text-sm text-slate-600" href="/reference/">Reference</a>
     <a class="text-sm text-slate-600" href="/kontakt">O nás & Kontakt</a>
     <a class="text-sm text-slate-600" href="/kariera">Kariéra</a>
     <a href="/kontakt" class="mt-2 px-6 py-2.5 fluid-gradient text-on-primary text-sm font-medium rounded-md text-center">Poptávka</a>
@@ -196,7 +196,7 @@
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- HVAC Card -->
-        <div class="group p-10 bg-surface-container-lowest rounded-xl hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+        <div class="group p-10 bg-surface-container-lowest rounded-xl hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col">
           <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
             <span class="material-symbols-outlined text-9xl">mode_fan</span>
           </div>
@@ -205,14 +205,18 @@
           </div>
           <h3 class="text-2xl font-headline font-bold mb-4">HVAC & Vytápění</h3>
           <p class="text-on-surface-variant leading-relaxed mb-8">Vzduchotechnika, vytápění a chlazení navržené pro zdravé vnitřní klima a efektivní distribuci energie.</p>
-          <ul class="space-y-3 text-sm text-outline">
+          <ul class="space-y-3 text-sm text-outline mb-8">
             <li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Tepelná čerpadla</li>
             <li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Rekuperace vzduchu</li>
             <li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Průmyslové chlazení</li>
           </ul>
+          <div class="mt-auto flex flex-wrap gap-3 text-xs">
+            <a href="./profese/vytapeni-chlazeni.html" class="flex items-center gap-1 text-primary font-semibold hover:underline">Vytápění / Chlazení <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+            <a href="./profese/vzduchotechnika.html" class="flex items-center gap-1 text-primary font-semibold hover:underline">Vzduchotechnika <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          </div>
         </div>
         <!-- Plumbing Card -->
-        <div class="group p-10 bg-surface-container-lowest rounded-xl hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+        <div class="group p-10 bg-surface-container-lowest rounded-xl hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col">
           <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
             <span class="material-symbols-outlined text-9xl">water_drop</span>
           </div>
@@ -221,14 +225,18 @@
           </div>
           <h3 class="text-2xl font-headline font-bold mb-4">Vodovod & Kanalizace</h3>
           <p class="text-on-surface-variant leading-relaxed mb-8">Kompletní projekce vodovodu a kanalizace. Od rodinných domů po rozsáhlé průmyslové areály.</p>
-          <ul class="space-y-3 text-sm text-outline">
+          <ul class="space-y-3 text-sm text-outline mb-8">
             <li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Dešťová voda</li>
             <li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Požární voda</li>
             <li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> ČOV a septiky</li>
           </ul>
+          <div class="mt-auto flex flex-wrap gap-3 text-xs">
+            <a href="./profese/vodovod.html" class="flex items-center gap-1 text-primary font-semibold hover:underline">Vodovod <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+            <a href="./profese/kanalizace.html" class="flex items-center gap-1 text-primary font-semibold hover:underline">Kanalizace <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          </div>
         </div>
         <!-- Energy Audits Card -->
-        <div class="group p-10 bg-surface-container-lowest rounded-xl hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+        <div class="group p-10 bg-surface-container-lowest rounded-xl hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col">
           <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
             <span class="material-symbols-outlined text-9xl">bolt</span>
           </div>
@@ -237,11 +245,15 @@
           </div>
           <h3 class="text-2xl font-headline font-bold mb-4">Energetické audity</h3>
           <p class="text-on-surface-variant leading-relaxed mb-8">Analýza a optimalizace energetické náročnosti. PENB štítky a dotační poradenství NZÚ.</p>
-          <ul class="space-y-3 text-sm text-outline">
+          <ul class="space-y-3 text-sm text-outline mb-8">
             <li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> PENB certifikace</li>
             <li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Modelování spotřeby</li>
             <li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Dotační management</li>
           </ul>
+          <div class="mt-auto flex flex-wrap gap-3 text-xs">
+            <a href="./profese/penb.html" class="flex items-center gap-1 text-primary font-semibold hover:underline">PENB <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+            <a href="/dotace" class="flex items-center gap-1 text-primary font-semibold hover:underline">Dotace NZÚ <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          </div>
         </div>
       </div>
     </div>
