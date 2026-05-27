@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naše profese – TZBsystem</title>
+<meta name="description" content="Kompletní TZB projekce pod jednou střechou – vytápění, vzduchotechnika, zdravotní technika, elektro a MaR. Vše výhradně v BIM prostředí Autodesk Revit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ─── MOBILE NAV ─── -->
+<nav class="mob-nav" id="mob">
+  <button class="mob-close" id="mob-close" aria-label="Zavřít"><i class="fa-solid fa-xmark"></i></button>
+  <a href="/"          onclick="closeMob()">Domů</a>
+  <a href="/profese"   onclick="closeMob()">Profese</a>
+  <a href="/reference" onclick="closeMob()">Reference</a>
+  <a href="/kariera"   onclick="closeMob()">Kariéra</a>
+  <a href="/#kontakt"  onclick="closeMob()">Kontakt</a>
+</nav>
+
+<!-- ─── HEADER ─── -->
+<header class="hdr s" id="hdr">
+  <a href="/" class="brand" aria-label="TZBsystems – domů"><strong>TZB</strong>systems</a>
+  <nav class="hdr-nav">
+    <a href="/profese" style="color:var(--sky)">Profese</a>
+    <a href="/reference">Reference</a>
+    <a href="/kariera">Kariéra</a>
+    <a href="/#kontakt">Kontakt</a>
+    <a href="/#kontakt" class="cta">Kontaktujte nás</a>
+  </nav>
+  <button class="hdr-burger" id="burger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+</header>
+
+<!-- ─── DARK HERO ─── -->
+<div class="dph">
+  <div class="wrap">
+    <div class="dph-inner">
+      <div class="dph-text">
+        <div class="brd">
+          <a href="/">TZBsystem</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Profese</span>
+        </div>
+        <span class="lbl">Naše odbornosti</span>
+        <h1>Pět profesí.<br><em>Jeden tým.</em></h1>
+        <p class="sub">Pokrýváme kompletní rozsah technického zařízení budov — od návrhu topení přes vzduchotechniku až po elektro a MaR. Každá profese projektována čistě v BIM.</p>
+      </div>
+      <div class="dph-photo">
+        <img src="img/circuit-board.webp" alt="Technické zařízení budov" loading="eager">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── STAT STRIP ─── -->
+<div class="stat-strip">
+  <div class="stat">
+    <strong>5</strong>
+    <span>TZB profesí</span>
+  </div>
+  <div class="stat">
+    <strong>50<em>+</em></strong>
+    <span>realizovaných projektů</span>
+  </div>
+  <div class="stat">
+    <strong>100<em>%</em></strong>
+    <span>BIM workflow (Revit)</span>
+  </div>
+  <div class="stat">
+    <strong>1</strong>
+    <span>tým, kompletní TZB</span>
+  </div>
+</div>
+
+<!-- ─── PROFESE EXPLORER ─── -->
+<section class="pe-sec">
+  <div class="wrap">
+
+    <div class="pe-intro" data-r>
+      <span class="lbl">Co projektujeme</span>
+      <h2 class="sec-h">Každá profese.<br>Na profesionální úrovni.</h2>
+      <p class="sec-p">Nespecializujeme se na jednu disciplínu — zvládáme celou stavbu. Lepší koordinace, méně chyb, jeden kontakt pro investora.</p>
+    </div>
+
+    <div class="pe-nav" role="tablist" aria-label="Naše profese">
+      <button class="pe-btn active" data-idx="0" role="tab" aria-selected="true" aria-controls="pe-0">
+        <div class="pe-btn-ico"><i class="fa-solid fa-fire-flame-curved"></i></div>
+        <div class="pe-btn-txt"><strong>Vytápění</strong><em>Teplo &amp; TČ</em></div>
+      </button>
+      <button class="pe-btn" data-idx="1" role="tab" aria-selected="false" aria-controls="pe-1">
+        <div class="pe-btn-ico"><i class="fa-solid fa-fan"></i></div>
+        <div class="pe-btn-txt"><strong>Vzduchotechnika</strong><em>VZT, VRF</em></div>
+      </button>
+      <button class="pe-btn" data-idx="2" role="tab" aria-selected="false" aria-controls="pe-2">
+        <div class="pe-btn-ico"><i class="fa-solid fa-droplet"></i></div>
+        <div class="pe-btn-txt"><strong>Zdravotní technika</strong><em>Vodovod, kanalizace</em></div>
+      </button>
+      <button class="pe-btn" data-idx="3" role="tab" aria-selected="false" aria-controls="pe-3">
+        <div class="pe-btn-ico"><i class="fa-solid fa-bolt"></i></div>
+        <div class="pe-btn-txt"><strong>Elektrotechnika</strong><em>Silno- &amp; slaboproud</em></div>
+      </button>
+      <button class="pe-btn" data-idx="4" role="tab" aria-selected="false" aria-controls="pe-4">
+        <div class="pe-btn-ico"><i class="fa-solid fa-gauge-high"></i></div>
+        <div class="pe-btn-txt"><strong>MaR</strong><em>BMS, SCADA, KNX</em></div>
+      </button>
+    </div>
+
+    <div class="pe-panels">
+
+      <div class="pe-panel active" id="pe-0" role="tabpanel">
+        <div class="pe-panel-img"><img src="img/heating.webp" alt="Projektování vytápění" loading="lazy"></div>
+        <div class="pe-panel-body">
+          <div class="pe-panel-ico"><i class="fa-solid fa-fire-flame-curved"></i></div>
+          <h3>Vytápění</h3>
+          <p>Nízkoteplotní otopné soustavy, tepelná čerpadla a podlahové vytápění pro maximální komfort a energetickou úspornost.</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i>Tepelná čerpadla vzduch–voda, země–voda</li>
+            <li><i class="fa-solid fa-check"></i>Podlahové a stěnové vytápění</li>
+            <li><i class="fa-solid fa-check"></i>Energetické výpočty a bilance</li>
+            <li><i class="fa-solid fa-check"></i>Solární termické soustavy</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pe-panel" id="pe-1" role="tabpanel">
+        <div class="pe-panel-img"><img src="img/ventilation.webp" alt="Projektování vzduchotechniky" loading="lazy"></div>
+        <div class="pe-panel-body">
+          <div class="pe-panel-ico"><i class="fa-solid fa-fan"></i></div>
+          <h3>Vzduchotechnika</h3>
+          <p>Klimatizační a vzduchotechnické systémy pro obytné, komerční i průmyslové stavby. Rekuperace, čistá prostředí, VRF.</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i>VZT jednotky a distribuce vzduchu</li>
+            <li><i class="fa-solid fa-check"></i>Klimatizace — split, VRF, chillery</li>
+            <li><i class="fa-solid fa-check"></i>Rekuperace a zpětné získávání tepla</li>
+            <li><i class="fa-solid fa-check"></i>Čistá prostředí a přetlakování</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pe-panel" id="pe-2" role="tabpanel">
+        <div class="pe-panel-img"><img src="img/tap.webp" alt="Zdravotní technika" loading="lazy"></div>
+        <div class="pe-panel-body">
+          <div class="pe-panel-ico"><i class="fa-solid fa-droplet"></i></div>
+          <h3>Zdravotní technika</h3>
+          <p>Kompletní projekce vnitřního vodovodu, kanalizace a sprinklerových systémů pro bytové, občanské i průmyslové stavby.</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i>Vodovod — studená, teplá voda, cirkulace</li>
+            <li><i class="fa-solid fa-check"></i>Vnitřní a venkovní kanalizace</li>
+            <li><i class="fa-solid fa-check"></i>Sprinklery a hasicí systémy</li>
+            <li><i class="fa-solid fa-check"></i>Plynovodní přípojky a rozvody</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pe-panel" id="pe-3" role="tabpanel">
+        <div class="pe-panel-img"><img src="img/electric-board.webp" alt="Projektování elektroinstalace" loading="lazy"></div>
+        <div class="pe-panel-body">
+          <div class="pe-panel-ico"><i class="fa-solid fa-bolt"></i></div>
+          <h3>Elektrotechnika</h3>
+          <p>Silnoproud, slaboproud, osvětlení i záložní zdroje — bezpečná a energeticky efektivní elektroinstalace pro každou stavbu.</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i>Silnoproudé rozvody a rozvaděče</li>
+            <li><i class="fa-solid fa-check"></i>Osvětlení vnitřní, venkovní, nouzové</li>
+            <li><i class="fa-solid fa-check"></i>Slaboproud — EZS, EPS, CCTV, datové sítě</li>
+            <li><i class="fa-solid fa-check"></i>Bleskosvody a záložní zdroje</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pe-panel" id="pe-4" role="tabpanel">
+        <div class="pe-panel-img"><img src="img/smartHouse.webp" alt="Měření a regulace budov" loading="lazy"></div>
+        <div class="pe-panel-body">
+          <div class="pe-panel-ico"><i class="fa-solid fa-gauge-high"></i></div>
+          <h3>MaR &amp; Automatizace budov</h3>
+          <p>Systémy měření a regulace propojují všechny TZB profese do inteligentního celku. Úspora energie, vzdálený monitoring a komfortní obsluha jako standard každého moderního projektu.</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i>Regulační schémata a funkční popisy</li>
+            <li><i class="fa-solid fa-check"></i>BMS / BAS — automatizace budov</li>
+            <li><i class="fa-solid fa-check"></i>SCADA a vizualizace technologií</li>
+            <li><i class="fa-solid fa-check"></i>Integrace Modbus, BACnet, KNX</li>
+            <li><i class="fa-solid fa-check"></i>Energetický management a měření spotřeby</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="cta-sec">
+  <div class="wrap">
+    <div class="glass cta-box" data-r>
+      <span class="lbl">Začněme spolupracovat</span>
+      <h2>Máte projekt na stole?</h2>
+      <p>Rádi probereme váš záměr a připravíme nabídku. Odpovídáme do 24 hodin.</p>
+      <div class="cta-btns">
+        <a href="/#kontakt" class="cta-btn-p"><i class="fa-solid fa-envelope"></i> Napsat nám</a>
+        <a href="/reference" class="cta-btn-s"><i class="fa-solid fa-images"></i> Naše reference</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="wrap">
+    <div class="foot-main">
+      <div class="foot-brand">
+        <a href="/" class="brand"><strong>TZB</strong>systems</a>
+        <p>Projektová kancelář systémů TZB. Moderní přístup, BIM technologie, spolehlivá projekce.</p>
+        <div class="foot-soc">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Stránky</h4>
+        <a href="/profese">Profese</a>
+        <a href="/reference">Reference</a>
+        <a href="/kariera">Kariéra</a>
+        <a href="/#kontakt">Kontakt</a>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <a href="mailto:info@tzbsystems.cz">info@tzbsystems.cz</a>
+        <a href="tel:+420000000000">+420 XXX XXX XXX</a>
+        <a href="#">Praha, Česká republika</a>
+      </div>
+    </div>
+    <div class="foot-bt">
+      <p>© 2025 TZBsystem s.r.o. Všechna práva vyhrazena.</p>
+      <div class="foot-lg">
+        <a href="#">Ochrana osobních údajů</a>
+        <a href="#">Podmínky použití</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="alert"></div>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="js/app.js"></script>
+<script>
+(function(){
+  const btns = document.querySelectorAll('.pe-btn');
+  const panels = document.querySelectorAll('.pe-panel');
+  btns.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      panels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected','true');
+      panels[i].classList.add('active');
+    });
+  });
+})();
+</script>
+</body>
+</html>

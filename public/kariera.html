@@ -1,13 +1,283 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/public/css/global.css">
-    <link id="page-style" rel="stylesheet" href="">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kariéra – TZBsystem</title>
+<meta name="description" content="Přidejte se k mladé projektové kanceláři TZBsystem. Hledáme projektanty TZB a BIM specialisty. Moderní BIM prostředí, flexibilní práce, zajímavé projekty.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+
+<!-- ─── MOBILE NAV ─── -->
+<nav class="mob-nav" id="mob">
+  <button class="mob-close" id="mob-close" aria-label="Zavřít"><i class="fa-solid fa-xmark"></i></button>
+  <a href="/"          onclick="closeMob()">Domů</a>
+  <a href="/profese"   onclick="closeMob()">Profese</a>
+  <a href="/reference" onclick="closeMob()">Reference</a>
+  <a href="/kariera"   onclick="closeMob()">Kariéra</a>
+  <a href="/#kontakt"  onclick="closeMob()">Kontakt</a>
+</nav>
+
+<!-- ─── HEADER ─── -->
+<header class="hdr s" id="hdr">
+  <a href="/" class="brand" aria-label="TZBsystems – domů"><strong>TZB</strong>systems</a>
+  <nav class="hdr-nav">
+    <a href="/profese">Profese</a>
+    <a href="/reference">Reference</a>
+    <a href="/kariera" style="color:var(--sky)">Kariéra</a>
+    <a href="/#kontakt">Kontakt</a>
+    <a href="/#kontakt" class="cta">Kontaktujte nás</a>
+  </nav>
+  <button class="hdr-burger" id="burger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+</header>
+
+<!-- ─── DARK HERO ─── -->
+<div class="dph">
+  <div class="wrap">
+    <div class="dph-inner">
+      <div class="dph-text">
+        <div class="brd">
+          <a href="/">TZBsystem</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Kariéra</span>
+        </div>
+        <span class="lbl">Přidejte se k nám</span>
+        <h1>Stavme<br><em>budoucnost TZB</em><br>spolu.</h1>
+        <p class="sub">Jsme malý, ale šikovný tým. Děláme věci jinak — BIM od prvního dne, žádné překreslování, přímá komunikace. Hledáme lidi, kteří to berou stejně vážně jako my.</p>
+      </div>
+      <div class="dph-photo">
+        <img src="img/electric-pole.webp" alt="Kariéra v TZBsystem" loading="eager">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── STAT STRIP ─── -->
+<div class="stat-strip">
+  <div class="stat">
+    <strong>100<em>%</em></strong>
+    <span>projektů v Autodesk Revit</span>
+  </div>
+  <div class="stat">
+    <strong>5</strong>
+    <span>profesí pod jednou střechou</span>
+  </div>
+  <div class="stat">
+    <strong>50<em>+</em></strong>
+    <span>projektů v portfoliu</span>
+  </div>
+  <div class="stat">
+    <strong>0</strong>
+    <span>korporátní byrokracie</span>
+  </div>
+</div>
+
+<!-- ─── PERKY / BENEFITS ─── -->
+<section class="page-sec">
+  <div class="wrap">
+    <div data-r>
+      <span class="lbl">Proč TZBsystem</span>
+      <h2 class="sec-h">Co vás u nás čeká</h2>
+      <p class="sec-p">Věříme, že dobré výsledky přichází od lidí, kteří mají podmínky pro dobrou práci.</p>
+    </div>
+    <div class="perk-grid" data-s>
+
+      <div class="perk">
+        <div class="perk-ico"><i class="fa-solid fa-cubes"></i></div>
+        <h3>Čistý BIM od začátku</h3>
+        <p>Pracujeme výhradně v Autodesk Revit. Žádné CAD výkresy, žádné ruční překreslování. Moderní BIM workflow od prvního dne projektu.</p>
+      </div>
+
+      <div class="perk">
+        <div class="perk-ico"><i class="fa-solid fa-clock"></i></div>
+        <h3>Flexibilní práce</h3>
+        <p>Záleží nám na výsledku, ne na hodinách odpracovaných u monitoru. Pracujte, kdy a jak vám to vyhovuje.</p>
+      </div>
+
+      <div class="perk">
+        <div class="perk-ico"><i class="fa-solid fa-globe"></i></div>
+        <h3>Zajímavé projekty</h3>
+        <p>Bytové komplexy, administrativní budovy, průmyslové haly — projekty různého rozsahu, na které budete skutečně hrdí.</p>
+      </div>
+
+      <div class="perk">
+        <div class="perk-ico"><i class="fa-solid fa-graduation-cap"></i></div>
+        <h3>Vzdělávání &amp; růst</h3>
+        <p>Podporujeme profesní rozvoj — kurzy, Autodesk certifikace, odborné konference. Vy rostete, roste i firma.</p>
+      </div>
+
+      <div class="perk">
+        <div class="perk-ico"><i class="fa-solid fa-comments"></i></div>
+        <h3>Přímá komunikace</h3>
+        <p>Žádná korporátní hierarchie. Přímý kontakt s vedením, rychlá rozhodnutí, otevřená zpětná vazba.</p>
+      </div>
+
+      <div class="perk">
+        <div class="perk-ico"><i class="fa-solid fa-laptop-code"></i></div>
+        <h3>Moderní vybavení</h3>
+        <p>Výkonné pracovní stanice, aktuální licence softwaru a zázemí pro home office. Vše, co potřebujete.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── VOLNÉ POZICE ─── -->
+<section class="sec-dark" id="pozice">
+  <div class="wrap">
+    <div data-r style="margin-bottom:44px">
+      <span class="lbl">Aktuálně hledáme</span>
+      <h2 class="sec-h">Volné pozice</h2>
+      <p class="sec-p">Nenašli jste svou pozici? Pošlete nám CV i tak — vhodným kandidátům se vždy ozveme.</p>
+    </div>
+
+    <div class="job-list" style="display:flex;flex-direction:column;gap:14px" data-s>
+
+      <div class="job-dark">
+        <div class="job-info">
+          <h3>Projektant TZB – Senior</h3>
+          <p>Vedení projektů od konceptu po realizační dokumentaci. Zodpovědnost za TZB část, komunikace s investory a koordinátory stavby.</p>
+          <div class="job-tags">
+            <span class="job-tag">Revit / BIM</span>
+            <span class="job-tag">Praha</span>
+            <span class="job-tag">Full-time</span>
+            <span class="job-tag">Hybrid</span>
+          </div>
+        </div>
+        <a href="#prihlasit" class="job-btn">Přihlásit se <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="job-dark">
+        <div class="job-info">
+          <h3>BIM Modeler / Revit Specialista</h3>
+          <p>Tvorba a správa BIM modelů v Autodesk Revit. Koordinace s ostatními profesemi, IFC export, clash detection, BIM management.</p>
+          <div class="job-tags">
+            <span class="job-tag">Revit</span>
+            <span class="job-tag">IFC / BIM</span>
+            <span class="job-tag">Praha</span>
+            <span class="job-tag">Full-time</span>
+          </div>
+        </div>
+        <a href="#prihlasit" class="job-btn">Přihlásit se <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="job-dark">
+        <div class="job-info">
+          <h3>Junior projektant TZB</h3>
+          <p>Vhodné i pro absolventy ČVUT / VUT. Zaučíme vás do BIM workflow, budete pracovat na skutečných projektech od prvního dne.</p>
+          <div class="job-tags">
+            <span class="job-tag">Absolvent OK</span>
+            <span class="job-tag">Praha</span>
+            <span class="job-tag">Full-time</span>
+            <span class="job-tag">Mentoring</span>
+          </div>
+        </div>
+        <a href="#prihlasit" class="job-btn">Přihlásit se <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── PŘIHLÁŠKA ─── -->
+<section class="page-sec" id="prihlasit">
+  <div class="wrap">
+    <div class="glass nabor-in" data-r>
+      <div class="nabor-txt">
+        <span class="lbl">Přihláška</span>
+        <h2 class="sec-h">Ozvěte se nám</h2>
+        <p>Vyplňte formulář nebo napište přímo na <a href="mailto:info@tzbsystems.cz" style="color:var(--sky-l)">info@tzbsystems.cz</a>. Odpovídáme do 3 pracovních dnů.</p>
+        <div class="nabor-perks" style="margin-top:8px">
+          <div class="np"><i class="fa-solid fa-check"></i> Žádná složitá HR procedura</div>
+          <div class="np"><i class="fa-solid fa-check"></i> Reagujeme na každou přihlášku</div>
+          <div class="np"><i class="fa-solid fa-check"></i> Pohovor online nebo osobně v Praze</div>
+          <div class="np"><i class="fa-solid fa-check"></i> Nástup dle dohody</div>
+        </div>
+      </div>
+      <div class="nabor-form">
+        <form onsubmit="doForm(event,'Přihláška odeslána — brzy se ozveme!')">
+          <input type="hidden" name="time">
+          <input type="hidden" name="form_type" value="kariera">
+          <div class="fg">
+            <label>Jméno a příjmení *</label>
+            <input type="text" name="user_name" class="fc" placeholder="Ing. Jan Novák" required>
+          </div>
+          <div class="fg">
+            <label>E-mail *</label>
+            <input type="email" name="user_email" class="fc" placeholder="jan@firma.cz" required>
+          </div>
+          <div class="fg">
+            <label>Telefon</label>
+            <input type="tel" name="phone" class="fc" placeholder="+420 123 456 789">
+          </div>
+          <div class="fg">
+            <label>Pozice *</label>
+            <select name="position" class="fc" required>
+              <option value="">Vyberte pozici…</option>
+              <option>Projektant TZB (Senior)</option>
+              <option>BIM Modeler / Revit Specialista</option>
+              <option>Junior projektant TZB</option>
+              <option>Jiná pozice</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>LinkedIn / Portfolio</label>
+            <input type="url" name="portfolio" class="fc" placeholder="https://linkedin.com/in/…">
+          </div>
+          <div class="fg">
+            <label>Zpráva</label>
+            <textarea name="message" class="fc" placeholder="Pár slov o sobě nebo proč vás TZB baví…"></textarea>
+          </div>
+          <button type="submit" class="btn-s">Odeslat přihlášku <i class="fa-solid fa-paper-plane" style="margin-left:6px"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="wrap">
+    <div class="foot-main">
+      <div class="foot-brand">
+        <a href="/" class="brand"><strong>TZB</strong>systems</a>
+        <p>Projektová kancelář systémů TZB. Moderní přístup, BIM technologie, spolehlivá projekce.</p>
+        <div class="foot-soc">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Stránky</h4>
+        <a href="/profese">Profese</a>
+        <a href="/reference">Reference</a>
+        <a href="/kariera">Kariéra</a>
+        <a href="/#kontakt">Kontakt</a>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <a href="mailto:info@tzbsystems.cz">info@tzbsystems.cz</a>
+        <a href="tel:+420000000000">+420 XXX XXX XXX</a>
+        <a href="#">Praha, Česká republika</a>
+      </div>
+    </div>
+    <div class="foot-bt">
+      <p>© 2025 TZBsystem s.r.o. Všechna práva vyhrazena.</p>
+      <div class="foot-lg">
+        <a href="#">Ochrana osobních údajů</a>
+        <a href="#">Podmínky použití</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="alert"></div>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

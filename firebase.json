@@ -2,22 +2,9 @@
   "hosting": {
     "public": "public",
     "rewrites": [
-      {
-        "source": "/projektovani",
-        "destination": "/projektovani.html"
-      },
-      {
-        "source": "/dotace",
-        "destination": "/dotace.html"
-      },
-      {
-        "source": "/aplikace",
-        "destination": "/aplikace.html"
-      },
-      {
-        "source": "/kariera",
-        "destination": "/kariera.html"
-      }
+      { "source": "/profese",   "destination": "/profese.html" },
+      { "source": "/reference", "destination": "/reference.html" },
+      { "source": "/kariera",   "destination": "/kariera.html" }
     ],
     "ignore": [
       "firebase.json",
@@ -28,28 +15,19 @@
       {
         "source": "/img/**",
         "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=31536000, immutable"
-          }
+          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
         ]
       },
       {
         "source": "/css/**",
         "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=2592000"
-          }
+          { "key": "Cache-Control", "value": "public, max-age=2592000" }
         ]
       },
       {
         "source": "/js/**",
         "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=2592000"
-          }
+          { "key": "Cache-Control", "value": "public, max-age=2592000" }
         ]
       }
     ]

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reference – TZBsystem</title>
+<meta name="description" content="Realizované projekty TZBsystem – bytové komplexy, administrativní budovy, průmyslové objekty. BIM projekce vytápění, vzduchotechniky, sanity, elektra a MaR.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ─── MOBILE NAV ─── -->
+<nav class="mob-nav" id="mob">
+  <button class="mob-close" id="mob-close" aria-label="Zavřít"><i class="fa-solid fa-xmark"></i></button>
+  <a href="/"          onclick="closeMob()">Domů</a>
+  <a href="/profese"   onclick="closeMob()">Profese</a>
+  <a href="/reference" onclick="closeMob()">Reference</a>
+  <a href="/kariera"   onclick="closeMob()">Kariéra</a>
+  <a href="/#kontakt"  onclick="closeMob()">Kontakt</a>
+</nav>
+
+<!-- ─── HEADER ─── -->
+<header class="hdr s" id="hdr">
+  <a href="/" class="brand" aria-label="TZBsystems – domů"><strong>TZB</strong>systems</a>
+  <nav class="hdr-nav">
+    <a href="/profese">Profese</a>
+    <a href="/reference" style="color:var(--sky)">Reference</a>
+    <a href="/kariera">Kariéra</a>
+    <a href="/#kontakt">Kontakt</a>
+    <a href="/#kontakt" class="cta">Kontaktujte nás</a>
+  </nav>
+  <button class="hdr-burger" id="burger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+</header>
+
+<!-- ─── DARK HERO ─── -->
+<div class="dph">
+  <div class="wrap">
+    <div class="dph-inner">
+      <div class="dph-text">
+        <div class="brd">
+          <a href="/">TZBsystem</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Reference</span>
+        </div>
+        <span class="lbl">Naše práce</span>
+        <h1>Projekty, na<br><em>které jsme hrdí.</em></h1>
+        <p class="sub">Bytové komplexy, administrativní budovy, průmyslové haly i rodinné domy. Každý projekt navržen v BIM prostředí s precizností a důrazem na detail.</p>
+      </div>
+      <div class="dph-photo">
+        <img src="img/kg-pipe.webp" alt="TZB projekty a realizace" loading="eager">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── STAT STRIP ─── -->
+<div class="stat-strip">
+  <div class="stat">
+    <strong>50<em>+</em></strong>
+    <span>dokončených projektů</span>
+  </div>
+  <div class="stat">
+    <strong>5</strong>
+    <span>profesí na každé stavbě</span>
+  </div>
+  <div class="stat">
+    <strong>10<em>+</em></strong>
+    <span>měst v České republice</span>
+  </div>
+  <div class="stat">
+    <strong>100<em>%</em></strong>
+    <span>projektů v BIM (Revit)</span>
+  </div>
+</div>
+
+<!-- ─── REFERENCE GRID ─── -->
+<section class="page-sec">
+  <div class="wrap">
+    <div class="rfg" data-s>
+
+      <div class="rfg-item">
+        <div class="ri-skel" aria-hidden="true"></div>
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
+             alt="Kancelářský komplex" loading="lazy" onload="this.previousElementSibling.remove()">
+        <div class="rfg-ov">
+          <h3>Kancelářský komplex</h3>
+          <span>Vytápění · VZT · Elektro · MaR</span>
+        </div>
+      </div>
+
+      <div class="rfg-item tall">
+        <div class="ri-skel" aria-hidden="true"></div>
+        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80"
+             alt="Residenční komplex" loading="lazy" onload="this.previousElementSibling.remove()">
+        <div class="rfg-ov">
+          <h3>Residenční komplex</h3>
+          <span>Vytápění · Sanita · Elektro</span>
+        </div>
+      </div>
+
+      <div class="rfg-item">
+        <div class="ri-skel" aria-hidden="true"></div>
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
+             alt="Luxusní vila" loading="lazy" onload="this.previousElementSibling.remove()">
+        <div class="rfg-ov">
+          <h3>Luxusní vila</h3>
+          <span>Vytápění · VZT · Sanita · MaR</span>
+        </div>
+      </div>
+
+      <div class="rfg-item">
+        <div class="ri-skel" aria-hidden="true"></div>
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
+             alt="Moderní kancelář" loading="lazy" onload="this.previousElementSibling.remove()">
+        <div class="rfg-ov">
+          <h3>Moderní kancelář</h3>
+          <span>Klimatizace · VRF · MaR</span>
+        </div>
+      </div>
+
+      <div class="rfg-item">
+        <div class="ri-skel" aria-hidden="true"></div>
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
+             alt="Rodinný dům" loading="lazy" onload="this.previousElementSibling.remove()">
+        <div class="rfg-ov">
+          <h3>Rodinný dům</h3>
+          <span>TČ · Podlahové vytápění · FVE</span>
+        </div>
+      </div>
+
+      <div class="rfg-item tall">
+        <div class="ri-skel" aria-hidden="true"></div>
+        <img src="https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=600&q=80"
+             alt="Administrativní budova" loading="lazy" onload="this.previousElementSibling.remove()">
+        <div class="rfg-ov">
+          <h3>Administrativní budova</h3>
+          <span>Celý TZB rozsah · BIM koordinace</span>
+        </div>
+      </div>
+
+      <div class="rfg-item">
+        <div class="ri-skel" aria-hidden="true"></div>
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
+             alt="Bytový komplex" loading="lazy" onload="this.previousElementSibling.remove()">
+        <div class="rfg-ov">
+          <h3>Bytový komplex</h3>
+          <span>Vytápění · Sanita · Elektro</span>
+        </div>
+      </div>
+
+      <div class="rfg-item">
+        <div class="ri-skel" aria-hidden="true"></div>
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
+             alt="Průmyslový objekt" loading="lazy" onload="this.previousElementSibling.remove()">
+        <div class="rfg-ov">
+          <h3>Průmyslový objekt</h3>
+          <span>VZT · Elektro · MaR · Sprinklery</span>
+        </div>
+      </div>
+
+      <div class="rfg-item">
+        <div class="ri-skel" aria-hidden="true"></div>
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80"
+             alt="Hotel &amp; wellness" loading="lazy" onload="this.previousElementSibling.remove()">
+        <div class="rfg-ov">
+          <h3>Hotel &amp; wellness</h3>
+          <span>Celý TZB rozsah · BIM</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="cta-sec">
+  <div class="wrap">
+    <div class="glass cta-box" data-r>
+      <span class="lbl">Váš projekt</span>
+      <h2>Přidáme váš projekt do portfolia.</h2>
+      <p>Ozvěte se nám — rádi se podíváme na váš záměr a navrhneme optimální řešení.</p>
+      <div class="cta-btns">
+        <a href="/#kontakt" class="cta-btn-p"><i class="fa-solid fa-envelope"></i> Napsat nám</a>
+        <a href="/profese" class="cta-btn-s"><i class="fa-solid fa-drafting-compass"></i> Naše profese</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="wrap">
+    <div class="foot-main">
+      <div class="foot-brand">
+        <a href="/" class="brand"><strong>TZB</strong>systems</a>
+        <p>Projektová kancelář systémů TZB. Moderní přístup, BIM technologie, spolehlivá projekce.</p>
+        <div class="foot-soc">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Stránky</h4>
+        <a href="/profese">Profese</a>
+        <a href="/reference">Reference</a>
+        <a href="/kariera">Kariéra</a>
+        <a href="/#kontakt">Kontakt</a>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <a href="mailto:info@tzbsystems.cz">info@tzbsystems.cz</a>
+        <a href="tel:+420000000000">+420 XXX XXX XXX</a>
+        <a href="#">Praha, Česká republika</a>
+      </div>
+    </div>
+    <div class="foot-bt">
+      <p>© 2025 TZBsystem s.r.o. Všechna práva vyhrazena.</p>
+      <div class="foot-lg">
+        <a href="#">Ochrana osobních údajů</a>
+        <a href="#">Podmínky použití</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="alert"></div>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
