@@ -4,7 +4,9 @@
     "rewrites": [
       { "source": "/profese",   "destination": "/profese.html" },
       { "source": "/reference", "destination": "/reference.html" },
-      { "source": "/kariera",   "destination": "/kariera.html" }
+      { "source": "/kariera",   "destination": "/kariera.html" },
+      { "source": "/ochrana-osobnich-udaju", "destination": "/ochrana-osobnich-udaju.html" },
+      { "source": "/podminky-pouziti",       "destination": "/podminky-pouziti.html" }
     ],
     "ignore": [
       "firebase.json",

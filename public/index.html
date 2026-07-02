@@ -3,8 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TZBsystem – Projektujeme budoucnost TZB</title>
-<meta name="description" content="Projektová kancelář systémů TZB. Vytápění, vzduchotechnika, sanita, elektro, MaR. Projektujeme v BIM prostředí Autodesk Revit.">
+<title>TZBsystem – Projektujeme budoucnost TZB | Projekce TZB &amp; BIM</title>
+<meta name="description" content="Projektová kancelář systémů TZB. Vytápění, vzduchotechnika, sanita, elektro, MaR a PENB. Projektujeme v BIM prostředí Autodesk Revit. Praha, Česká republika.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0D3B66">
+<link rel="canonical" href="https://tzbsystems.cz/">
+
+<!-- Ikony &amp; manifest -->
+<link rel="icon" href="/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- Open Graph / sociální sítě -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="TZBsystem s.r.o.">
+<meta property="og:title" content="TZBsystem – Projektujeme budoucnost TZB">
+<meta property="og:description" content="Projektová kancelář systémů TZB ve 100% BIM (Autodesk Revit). Vytápění, vzduchotechnika, sanita, elektro, MaR a PENB.">
+<meta property="og:url" content="https://tzbsystems.cz/">
+<meta property="og:image" content="https://tzbsystems.cz/web-app-manifest-512x512.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TZBsystem – Projektujeme budoucnost TZB">
+<meta name="twitter:description" content="Projektová kancelář systémů TZB ve 100% BIM (Autodesk Revit).">
+<meta name="twitter:image" content="https://tzbsystems.cz/web-app-manifest-512x512.png">
+
+<!-- Strukturovaná data (Schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "TZBsystem s.r.o.",
+  "url": "https://tzbsystems.cz/",
+  "image": "https://tzbsystems.cz/web-app-manifest-512x512.png",
+  "description": "Projektová kancelář systémů technického zařízení budov (TZB) – vytápění, vzduchotechnika, sanita, elektro, MaR a PENB. Projektování ve 100% BIM (Autodesk Revit).",
+  "email": "info@tzbsystems.cz",
+  "areaServed": "CZ",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Praha",
+    "addressCountry": "CZ"
+  },
+  "knowsAbout": ["TZB", "BIM", "Autodesk Revit", "Vytápění", "Vzduchotechnika", "Zdravotní technika", "Elektroinstalace", "MaR", "PENB"]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -13,13 +56,31 @@
 </head>
 <body>
 
+<a href="#main" class="skip-link">Přeskočit na obsah</a>
+
 <!-- ─── MOBILE NAV ─── -->
 <nav class="mob-nav" id="mob">
-  <button class="mob-close" id="mob-close" aria-label="Zavřít"><i class="fa-solid fa-xmark"></i></button>
-  <a href="/profese"   onclick="closeMob()">Profese</a>
-  <a href="/reference" onclick="closeMob()">Reference</a>
-  <a href="/kariera"   onclick="closeMob()">Kariéra</a>
-  <a href="#kontakt"   onclick="closeMob()">Kontakt</a>
+  <div class="mob-top">
+    <a href="/" class="brand" onclick="closeMob()" aria-label="TZBsystems – domů"><strong>TZB</strong>systems</a>
+    <button class="mob-close" id="mob-close" aria-label="Zavřít menu"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="mob-links">
+    <a href="/profese"   onclick="closeMob()"><span>Profese</span><i class="fa-solid fa-arrow-right"></i></a>
+    <a href="/reference" onclick="closeMob()"><span>Reference</span><i class="fa-solid fa-arrow-right"></i></a>
+    <a href="/kariera"   onclick="closeMob()"><span>Kariéra</span><i class="fa-solid fa-arrow-right"></i></a>
+    <a href="#kontakt"   onclick="closeMob()"><span>Kontakt</span><i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+  <div class="mob-foot">
+    <a href="#kontakt" class="mob-cta" onclick="closeMob()">Kontaktujte nás <i class="fa-solid fa-paper-plane"></i></a>
+    <div class="mob-contact">
+      <a href="mailto:info@tzbsystems.cz"><i class="fa-solid fa-envelope"></i> info@tzbsystems.cz</a>
+      <a href="tel:+420000000000"><i class="fa-solid fa-phone"></i> +420 XXX XXX XXX</a>
+    </div>
+    <div class="mob-soc">
+      <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+  </div>
 </nav>
 
 <!-- ─── HEADER ─── -->
@@ -38,6 +99,8 @@
     <i class="fa-solid fa-bars"></i>
   </button>
 </header>
+
+<main id="main">
 
 <!-- ─── HERO ─── -->
 <section class="hero">
@@ -79,104 +142,49 @@
     <a href="#profese" class="hero-btn">Zjistit více <i class="fa-solid fa-arrow-down"></i></a>
   </div>
 
-  <!-- ─── Arc profesí – 5 CSS 3D budov ─── -->
+  <a href="#revit" class="hero-scroll" aria-label="Posunout na obsah">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </a>
+
+  <!-- ─── Arc profesí – 5 skleněných ikon v karuselu ─── -->
   <div class="hero-arc" aria-hidden="true">
 
     <div class="arc-slot arc-slot--0">
       <div class="bld-wrap">
-        <div class="bld-scene">
-          <div class="bld">
-            <div class="bf b-fr"></div><div class="bf b-bk"></div>
-            <div class="bf b-lt"></div><div class="bf b-rt"></div>
-            <div class="bf b-tp"></div><div class="bf b-bt"></div>
-          </div>
-          <div class="bld-roof">
-            <div class="bf r-fr"></div><div class="bf r-bk"></div>
-            <div class="bf r-lt"></div><div class="bf r-rt"></div>
-            <div class="bf r-tp"></div>
-          </div>
-        </div>
-        <div class="arc-label"><i class="fa-solid fa-fire-flame-curved"></i><span>Vytápění</span></div>
+        <div class="arc-ico glass"><i class="fa-solid fa-fire-flame-curved"></i></div>
+        <div class="arc-label"><span>Vytápění</span></div>
       </div>
     </div>
 
     <div class="arc-slot arc-slot--1">
       <div class="bld-wrap">
-        <div class="bld-scene">
-          <div class="bld">
-            <div class="bf b-fr"></div><div class="bf b-bk"></div>
-            <div class="bf b-lt"></div><div class="bf b-rt"></div>
-            <div class="bf b-tp"></div><div class="bf b-bt"></div>
-          </div>
-          <div class="bld-roof">
-            <div class="bf r-fr"></div><div class="bf r-bk"></div>
-            <div class="bf r-lt"></div><div class="bf r-rt"></div>
-            <div class="bf r-tp"></div>
-          </div>
-        </div>
-        <div class="arc-label"><i class="fa-solid fa-fan"></i><span>Vzduchotechnika</span></div>
+        <div class="arc-ico glass"><i class="fa-solid fa-fan"></i></div>
+        <div class="arc-label"><span>Vzduchotechnika</span></div>
       </div>
     </div>
 
     <div class="arc-slot arc-slot--2">
       <div class="bld-wrap">
-        <div class="bld-scene">
-          <div class="bld">
-            <div class="bf b-fr"></div><div class="bf b-bk"></div>
-            <div class="bf b-lt"></div><div class="bf b-rt"></div>
-            <div class="bf b-tp"></div><div class="bf b-bt"></div>
-          </div>
-          <div class="bld-roof">
-            <div class="bf r-fr"></div><div class="bf r-bk"></div>
-            <div class="bf r-lt"></div><div class="bf r-rt"></div>
-            <div class="bf r-tp"></div>
-          </div>
-        </div>
-        <div class="arc-label"><i class="fa-solid fa-droplet"></i><span>Sanita</span></div>
+        <div class="arc-ico glass"><i class="fa-solid fa-droplet"></i></div>
+        <div class="arc-label"><span>Sanita</span></div>
       </div>
     </div>
 
     <div class="arc-slot arc-slot--3">
       <div class="bld-wrap">
-        <div class="bld-scene">
-          <div class="bld">
-            <div class="bf b-fr"></div><div class="bf b-bk"></div>
-            <div class="bf b-lt"></div><div class="bf b-rt"></div>
-            <div class="bf b-tp"></div><div class="bf b-bt"></div>
-          </div>
-          <div class="bld-roof">
-            <div class="bf r-fr"></div><div class="bf r-bk"></div>
-            <div class="bf r-lt"></div><div class="bf r-rt"></div>
-            <div class="bf r-tp"></div>
-          </div>
-        </div>
-        <div class="arc-label"><i class="fa-solid fa-bolt"></i><span>Elektro</span></div>
+        <div class="arc-ico glass"><i class="fa-solid fa-bolt"></i></div>
+        <div class="arc-label"><span>Elektro</span></div>
       </div>
     </div>
 
     <div class="arc-slot arc-slot--4">
       <div class="bld-wrap">
-        <div class="bld-scene">
-          <div class="bld">
-            <div class="bf b-fr"></div><div class="bf b-bk"></div>
-            <div class="bf b-lt"></div><div class="bf b-rt"></div>
-            <div class="bf b-tp"></div><div class="bf b-bt"></div>
-          </div>
-          <div class="bld-roof">
-            <div class="bf r-fr"></div><div class="bf r-bk"></div>
-            <div class="bf r-lt"></div><div class="bf r-rt"></div>
-            <div class="bf r-tp"></div>
-          </div>
-        </div>
-        <div class="arc-label"><i class="fa-solid fa-gauge-high"></i><span>MaR</span></div>
+        <div class="arc-ico glass"><i class="fa-solid fa-gauge-high"></i></div>
+        <div class="arc-label"><span>PENB</span></div>
       </div>
     </div>
 
-  </div>
-
-  <div class="hero-scroll">
-    <span>Scroll</span>
-    <div class="hero-scroll-line"></div>
   </div>
 </section>
 
@@ -224,7 +232,13 @@
   </div>
 </section>
 
-<div class="divider"></div>
+<!-- ─── ČÍSLA / SOCIAL PROOF ─── (TODO: doplnit reálné hodnoty) -->
+<section class="stat-strip" aria-label="TZBsystem v číslech">
+  <div class="stat"><strong>120<em>+</em></strong><span>Dokončených projektů</span></div>
+  <div class="stat"><strong>5</strong><span>Profesí pod jednou střechou</span></div>
+  <div class="stat"><strong>100<em>%</em></strong><span>Projektů v BIM</span></div>
+  <div class="stat"><strong>24<em>h</em></strong><span>Reakce na poptávku</span></div>
+</section>
 
 <!-- ─── PROFESE ─── -->
 <section class="profese" id="profese">
@@ -261,11 +275,14 @@
       </div>
 
       <div class="pc">
-        <div class="pc-ico"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i></div>
-        <h3>MaR</h3>
-        <p>Měření a regulace, automatizace budov, SCADA</p>
+        <div class="pc-ico"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div>
+        <h3>PENB</h3>
+        <p>Průkaz energetické náročnosti budov, energetické audity</p>
       </div>
 
+    </div>
+    <div class="profese-more" data-r>
+      <a href="/profese" class="profese-more-btn">Prozkoumat všechny profese <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
     </div>
   </div>
 </section>
@@ -285,32 +302,32 @@
     <div class="ref-grid" data-s>
       <div class="ri">
         <div class="ri-skel" aria-hidden="true"></div>
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Kancelářský komplex" loading="lazy" onload="this.previousElementSibling.remove()">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&h=420&q=80" width="600" height="420" alt="Kancelářský komplex" loading="lazy" onload="this.previousElementSibling.remove()">
         <div class="ri-ov"><span>Kancelářský komplex</span></div>
       </div>
       <div class="ri">
         <div class="ri-skel" aria-hidden="true"></div>
-        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80" alt="Residenční projekt" loading="lazy" onload="this.previousElementSibling.remove()">
+        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&h=680&q=80" width="600" height="680" alt="Residenční projekt" loading="lazy" onload="this.previousElementSibling.remove()">
         <div class="ri-ov"><span>Residenční projekt</span></div>
       </div>
       <div class="ri">
         <div class="ri-skel" aria-hidden="true"></div>
-        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Luxusní vila" loading="lazy" onload="this.previousElementSibling.remove()">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&h=340&q=80" width="600" height="340" alt="Luxusní vila" loading="lazy" onload="this.previousElementSibling.remove()">
         <div class="ri-ov"><span>Luxusní vila</span></div>
       </div>
       <div class="ri">
         <div class="ri-skel" aria-hidden="true"></div>
-        <img src="https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=600&q=80" alt="Administrativní budova" loading="lazy" onload="this.previousElementSibling.remove()">
+        <img src="https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=600&h=580&q=80" width="600" height="580" alt="Administrativní budova" loading="lazy" onload="this.previousElementSibling.remove()">
         <div class="ri-ov"><span>Administrativní budova</span></div>
       </div>
       <div class="ri">
         <div class="ri-skel" aria-hidden="true"></div>
-        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80" alt="Moderní dům" loading="lazy" onload="this.previousElementSibling.remove()">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&h=360&q=80" width="600" height="360" alt="Moderní dům" loading="lazy" onload="this.previousElementSibling.remove()">
         <div class="ri-ov"><span>Moderní dům</span></div>
       </div>
       <div class="ri">
         <div class="ri-skel" aria-hidden="true"></div>
-        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80" alt="Bytový komplex" loading="lazy" onload="this.previousElementSibling.remove()">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&h=620&q=80" width="600" height="620" alt="Bytový komplex" loading="lazy" onload="this.previousElementSibling.remove()">
         <div class="ri-ov"><span>Bytový komplex</span></div>
       </div>
     </div>
@@ -342,16 +359,16 @@
           <input type="hidden" name="time">
           <input type="hidden" name="form_type" value="kariera">
           <div class="fg">
-            <label>Jméno a příjmení</label>
-            <input type="text" name="user_name" class="fc" placeholder="Ing. Jan Novák" required>
+            <label for="nb-name">Jméno a příjmení</label>
+            <input type="text" id="nb-name" name="user_name" class="fc" placeholder="Ing. Jan Novák" required>
           </div>
           <div class="fg">
-            <label>E-mail</label>
-            <input type="email" name="user_email" class="fc" placeholder="jan@firma.cz" required>
+            <label for="nb-email">E-mail</label>
+            <input type="email" id="nb-email" name="user_email" class="fc" placeholder="jan@firma.cz" required>
           </div>
           <div class="fg">
-            <label>Hledaná pozice</label>
-            <select name="position" class="fc" required>
+            <label for="nb-position">Hledaná pozice</label>
+            <select id="nb-position" name="position" class="fc" required>
               <option value="">Vyberte pozici…</option>
               <option>Projektant TZB (Senior)</option>
               <option>BIM Modeler / Revit Specialista</option>
@@ -360,9 +377,10 @@
             </select>
           </div>
           <div class="fg">
-            <label>LinkedIn / Portfolio</label>
-            <input type="text" name="portfolio" class="fc" placeholder="https://linkedin.com/in/…">
+            <label for="nb-portfolio">LinkedIn / Portfolio</label>
+            <input type="url" id="nb-portfolio" name="portfolio" class="fc" placeholder="https://linkedin.com/in/…">
           </div>
+          <p class="form-consent">Odesláním formuláře souhlasíte se <a href="/ochrana-osobnich-udaju">zpracováním osobních údajů</a>.</p>
           <button type="submit" class="btn-s">Odeslat přihlášku <i class="fa-solid fa-paper-plane" style="margin-left:6px"></i></button>
         </form>
       </div>
@@ -387,17 +405,18 @@
             <input type="hidden" name="time">
             <input type="hidden" name="form_type" value="kontakt">
             <div class="fg">
-              <label>Jméno a příjmení</label>
-              <input type="text" name="user_name" class="fc" placeholder="Vaše jméno" required>
+              <label for="kt-name">Jméno a příjmení</label>
+              <input type="text" id="kt-name" name="user_name" class="fc" placeholder="Vaše jméno" required>
             </div>
             <div class="fg">
-              <label>E-mail</label>
-              <input type="email" name="user_email" class="fc" placeholder="vas@email.cz" required>
+              <label for="kt-email">E-mail</label>
+              <input type="email" id="kt-email" name="user_email" class="fc" placeholder="vas@email.cz" required>
             </div>
             <div class="fg">
-              <label>Zpráva</label>
-              <textarea name="message" class="fc" placeholder="Popište váš projekt nebo dotaz…" required></textarea>
+              <label for="kt-message">Zpráva</label>
+              <textarea id="kt-message" name="message" class="fc" placeholder="Popište váš projekt nebo dotaz…" required></textarea>
             </div>
+            <p class="form-consent">Odesláním formuláře souhlasíte se <a href="/ochrana-osobnich-udaju">zpracováním osobních údajů</a>.</p>
             <button type="submit" class="btn-s">Odeslat zprávu <i class="fa-solid fa-paper-plane" style="margin-left:6px"></i></button>
           </form>
         </div>
@@ -442,6 +461,8 @@
   </div>
 </section>
 
+</main>
+
 <!-- ─── FOOTER ─── -->
 <footer>
   <div class="wrap">
@@ -449,6 +470,7 @@
       <div class="foot-brand">
         <a href="/" class="brand" aria-label="TZBsystems – domů"><strong>TZB</strong>systems</a>
         <p>Projektová kancelář systémů TZB. Moderní přístup, BIM technologie, spolehlivá projekce.</p>
+        <p class="foot-id">TZBsystem s.r.o. · IČO: <span style="opacity:.7">[doplňte]</span> · Sídlo: <span style="opacity:.7">[doplňte]</span></p>
         <div class="foot-soc">
           <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -469,10 +491,10 @@
       </div>
     </div>
     <div class="foot-bt">
-      <p>© 2025 TZBsystem s.r.o. Všechna práva vyhrazena.</p>
+      <p>© 2026 TZBsystem s.r.o. Všechna práva vyhrazena.</p>
       <div class="foot-lg">
-        <a href="#">Ochrana osobních údajů</a>
-        <a href="#">Podmínky použití</a>
+        <a href="/ochrana-osobnich-udaju">Ochrana osobních údajů</a>
+        <a href="/podminky-pouziti">Podmínky použití</a>
       </div>
     </div>
   </div>

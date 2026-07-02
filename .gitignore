@@ -67,3 +67,6 @@ node_modules/
 
 # dataconnect generated files
 .dataconnect
+
+# Uncompressed source 3D assets (not deployed)
+assets-src/

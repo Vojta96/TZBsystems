@@ -42,6 +42,49 @@ function toast(msg, type='ok'){
   setTimeout(() => el.classList.remove('show'), 4500);
 }
 
+/* ── Arc karusel ── */
+(function(){
+  const slots = [...document.querySelectorAll('.arc-slot')];
+  if(!slots.length) return;
+  const POS = [
+    {left:'calc(50% - 262px)', bottom:'12px', z:1,  sw:.64,  so:.52},
+    {left:'calc(50% - 130px)', bottom:'58px', z:3,  sw:.81,  so:.74},
+    {left:'50%',               bottom:'2px',  z:5,  sw:1.06, so:1  },
+    {left:'calc(50% + 130px)', bottom:'58px', z:3,  sw:.81,  so:.74},
+    {left:'calc(50% + 262px)', bottom:'12px', z:1,  sw:.64,  so:.52},
+  ];
+  let order = [0,1,2,3,4]; // order[posIdx] = slotIdx
+
+  function apply(animate){
+    if(animate){
+      slots.forEach(s => { s.style.transition = 'left .5s cubic-bezier(.22,1,.36,1), bottom .5s cubic-bezier(.22,1,.36,1)'; });
+      void slots[0].offsetHeight; // force reflow – zaručí spuštění přechodu
+    }
+    slots.forEach((slot, si) => {
+      const pi = order.indexOf(si), p = POS[pi];
+      if(!animate) slot.style.transition = 'none';
+      slot.style.left   = p.left;
+      slot.style.bottom = p.bottom;
+      slot.style.zIndex = p.z;
+      slot.style.setProperty('--sw', p.sw);
+      slot.style.setProperty('--so', p.so);
+      slot.classList.toggle('arc-active', pi === 2);
+    });
+  }
+
+  apply(false);
+
+  slots.forEach((slot, si) => {
+    slot.addEventListener('click', () => {
+      const pi = order.indexOf(si);
+      if(pi === 2) return;
+      const n = ((pi - 2) % 5 + 5) % 5;
+      order = [...order.slice(n), ...order.slice(0, n)];
+      apply(true);
+    });
+  });
+})();
+
 /* ── Form s EmailJS ── */
 function doForm(e, msg){
   e.preventDefault();
