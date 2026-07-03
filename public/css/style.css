@@ -241,7 +241,8 @@ body::before {
 [data-r] {
   opacity: 0;
   transform: translateY(44px);
-  transition: opacity .85s cubic-bezier(.22, 1, .36, 1), transform .85s cubic-bezier(.22, 1, .36, 1)
+  transition: opacity .85s cubic-bezier(.22, 1, .36, 1), transform .85s cubic-bezier(.22, 1, .36, 1);
+  will-change: opacity, transform
 }
 
 @media(min-width:769px) {
@@ -262,7 +263,8 @@ body::before {
 [data-s]>* {
   opacity: 0;
   transform: translateY(32px);
-  transition: opacity .7s cubic-bezier(.22, 1, .36, 1), transform .7s cubic-bezier(.22, 1, .36, 1)
+  transition: opacity .7s cubic-bezier(.22, 1, .36, 1), transform .7s cubic-bezier(.22, 1, .36, 1);
+  will-change: opacity, transform
 }
 
 [data-s].on>*:nth-child(1) {
