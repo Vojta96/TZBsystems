@@ -1,12 +1,15 @@
 {
   "hosting": {
     "public": "public",
-    "rewrites": [
-      { "source": "/profese",   "destination": "/profese.html" },
-      { "source": "/reference", "destination": "/reference.html" },
-      { "source": "/kariera",   "destination": "/kariera.html" },
-      { "source": "/ochrana-osobnich-udaju", "destination": "/ochrana-osobnich-udaju.html" },
-      { "source": "/podminky-pouziti",       "destination": "/podminky-pouziti.html" }
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "redirects": [
+      { "regex": "/projektovani(\\.html)?",      "destination": "/profese",                "type": 301 },
+      { "regex": "/aplikace(\\.html)?",          "destination": "/",                       "type": 301 },
+      { "regex": "/dotace(\\.html)?",            "destination": "/",                       "type": 301 },
+      { "regex": "/cookies(\\.html)?",           "destination": "/ochrana-osobnich-udaju", "type": 301 },
+      { "regex": "/obchodni-podminky(\\.html)?", "destination": "/podminky-pouziti",       "type": 301 },
+      { "regex": "/sitemap\\.html",              "destination": "/",                       "type": 301 }
     ],
     "ignore": [
       "firebase.json",
@@ -17,19 +20,64 @@
       {
         "source": "/img/**",
         "headers": [
-          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
         ]
       },
       {
         "source": "/css/**",
         "headers": [
-          { "key": "Cache-Control", "value": "public, max-age=2592000" }
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=2592000"
+          }
+        ]
+      },
+      {
+        "source": "/fonts/*.woff2",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "/fonts/*.css",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=2592000"
+          }
+        ]
+      },
+      {
+        "source": "/fa/webfonts/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "/fa/css/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=2592000"
+          }
         ]
       },
       {
         "source": "/js/**",
         "headers": [
-          { "key": "Cache-Control", "value": "public, max-age=2592000" }
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=2592000"
+          }
         ]
       }
     ]

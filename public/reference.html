@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reference – realizované TZB projekty | TZBsystem</title>
-<meta name="description" content="Realizované projekty TZBsystem – bytové komplexy, administrativní budovy, průmyslové objekty. BIM projekce vytápění, vzduchotechniky, sanity, elektra a MaR.">
+<title>Reference – realizované TZB projekty | TZBsystems</title>
+<meta name="description" content="Realizované projekty TZBsystems – rezidenční, komerční i občanské stavby. BIM projekce vytápění, vzduchotechniky, zdravotně-technických instalací, elektra a PENB.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0D3B66">
 <link rel="canonical" href="https://tzbsystems.cz/reference">
@@ -13,16 +13,20 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="cs_CZ">
-<meta property="og:site_name" content="TZBsystem s.r.o.">
-<meta property="og:title" content="Reference – TZBsystem">
+<meta property="og:site_name" content="TZBsystems">
+<meta property="og:title" content="Reference – TZBsystems">
 <meta property="og:description" content="Realizované TZB projekty – bytové komplexy, administrativní a průmyslové stavby v BIM (Autodesk Revit).">
 <meta property="og:url" content="https://tzbsystems.cz/reference">
-<meta property="og:image" content="https://tzbsystems.cz/web-app-manifest-512x512.png">
+<meta property="og:image" content="https://tzbsystems.cz/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preload" href="/fonts/inter-400-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-800-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/inter.css">
+<link rel="preload" href="/fa/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fa/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -31,12 +35,23 @@
 
 <!-- ─── MOBILE NAV ─── -->
 <nav class="mob-nav" id="mob">
-  <button class="mob-close" id="mob-close" aria-label="Zavřít"><i class="fa-solid fa-xmark"></i></button>
-  <a href="/"          onclick="closeMob()">Domů</a>
-  <a href="/profese"   onclick="closeMob()">Profese</a>
-  <a href="/reference" onclick="closeMob()">Reference</a>
-  <a href="/kariera"   onclick="closeMob()">Kariéra</a>
-  <a href="/#kontakt"  onclick="closeMob()">Kontakt</a>
+  <div class="mob-top">
+    <a href="/" class="brand" onclick="closeMob()" aria-label="TZBsystems – domů"><strong>TZB</strong>systems</a>
+    <button class="mob-close" id="mob-close" aria-label="Zavřít menu"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="mob-links">
+    <a href="/profese"   onclick="closeMob()"><span>Profese</span><i class="fa-solid fa-arrow-right"></i></a>
+    <a href="/reference" onclick="closeMob()"><span>Reference</span><i class="fa-solid fa-arrow-right"></i></a>
+    <a href="/kariera"   onclick="closeMob()"><span>Kariéra</span><i class="fa-solid fa-arrow-right"></i></a>
+    <a href="/#kontakt"  onclick="closeMob()"><span>Kontakt</span><i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+  <div class="mob-foot">
+    <a href="/#kontakt" class="mob-cta" onclick="closeMob()">Kontaktujte nás <i class="fa-solid fa-paper-plane"></i></a>
+    <div class="mob-contact">
+      <a href="mailto:info@tzbsystems.cz"><i class="fa-solid fa-envelope"></i> info@tzbsystems.cz</a>
+      <a href="tel:+420777960025"><i class="fa-solid fa-phone"></i> +420 777 960 025</a>
+    </div>
+  </div>
 </nav>
 
 <!-- ─── HEADER ─── -->
@@ -66,99 +81,88 @@
       <button class="rf-chip active" data-prof="all">Vše</button>
       <button class="rf-chip" data-prof="vytapeni">Vytápění</button>
       <button class="rf-chip" data-prof="vzt">Vzduchotechnika</button>
-      <button class="rf-chip" data-prof="zt">Zdravotní technika</button>
+      <button class="rf-chip" data-prof="zt">ZTI</button>
       <button class="rf-chip" data-prof="elektro">Elektro</button>
-      <button class="rf-chip" data-prof="mar">MaR</button>
     </div>
     <div class="rfg" data-s>
 
-      <div class="rfg-item" data-prof="vytapeni vzt elektro mar">
+      <div class="rfg-item" data-prof="vzt">
         <div class="ri-skel" aria-hidden="true"></div>
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&h=600&q=80"
-             alt="Kancelářský komplex" loading="lazy" onload="this.previousElementSibling.remove()">
+        <img src="img/ref/cermat.webp" width="1360" height="1020"
+             alt="Administrativní budova CZVV (CERMAT) v Praze" loading="lazy" onload="this.previousElementSibling.remove()">
         <div class="rfg-ov">
-          <h3>Kancelářský komplex</h3>
-          <span>Vytápění · VZT · Elektro · MaR</span>
+          <h3>Klimatizace CERMAT · Praha</h3>
+          <span>Vzduchotechnika · Chlazení VRF</span>
         </div>
       </div>
 
-      <div class="rfg-item" data-prof="vytapeni zt elektro">
+      <div class="rfg-item" data-prof="vytapeni">
         <div class="ri-skel" aria-hidden="true"></div>
-        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&h=1000&q=80"
-             alt="Residenční komplex" loading="lazy" onload="this.previousElementSibling.remove()">
+        <img src="img/ref/kostelicek.jpg" width="800" height="1067"
+             alt="Vizualizace bytového domu Rezidence U Kostelíčka v Pardubicích" loading="lazy" onload="this.previousElementSibling.remove()">
         <div class="rfg-ov">
-          <h3>Residenční komplex</h3>
-          <span>Vytápění · Sanita · Elektro</span>
+          <h3>Rezidence U Kostelíčka · Pardubice</h3>
+          <span>Bytový dům · Vytápění</span>
         </div>
       </div>
 
-      <div class="rfg-item" data-prof="vytapeni vzt zt mar">
+      <div class="rfg-item" data-prof="vytapeni vzt zt elektro">
         <div class="ri-skel" aria-hidden="true"></div>
-        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&h=520&q=80"
-             alt="Luxusní vila" loading="lazy" onload="this.previousElementSibling.remove()">
+        <img src="img/ref/skicentrum.jpg" width="696" height="464"
+             alt="Dolní stanice lanovky Skicentra Deštné v Orlických horách" loading="lazy" onload="this.previousElementSibling.remove()">
         <div class="rfg-ov">
-          <h3>Luxusní vila</h3>
-          <span>Vytápění · VZT · Sanita · MaR</span>
+          <h3>Skicentrum Deštné v Orlických horách</h3>
+          <span>Vytápění · VZT · ZTI · Elektro</span>
         </div>
       </div>
 
-      <div class="rfg-item" data-prof="vzt mar">
+      <div class="rfg-item" data-prof="vytapeni vzt zt">
         <div class="ri-skel" aria-hidden="true"></div>
-        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&h=860&q=80"
-             alt="Moderní kancelář" loading="lazy" onload="this.previousElementSibling.remove()">
+        <img src="img/ref/element-gym.webp" width="1200" height="1200"
+             alt="Interiér fitness centra Element Gym" loading="lazy" onload="this.previousElementSibling.remove()">
         <div class="rfg-ov">
-          <h3>Moderní kancelář</h3>
-          <span>Klimatizace · VRF · MaR</span>
+          <h3>Element Gym · Ústí n. L. &amp; České Budějovice</h3>
+          <span>Vytápění · Klimatizace · ZTI</span>
         </div>
       </div>
 
-      <div class="rfg-item" data-prof="vytapeni elektro">
+      <div class="rfg-item" data-prof="vytapeni vzt zt">
         <div class="ri-skel" aria-hidden="true"></div>
-        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&h=560&q=80"
-             alt="Rodinný dům" loading="lazy" onload="this.previousElementSibling.remove()">
+        <img src="img/ref/prepychy.jpg" width="1336" height="767"
+             alt="Vizualizace domova seniorů Přepychy" loading="lazy" onload="this.previousElementSibling.remove()">
         <div class="rfg-ov">
-          <h3>Rodinný dům</h3>
-          <span>TČ · Podlahové vytápění · FVE</span>
+          <h3>Domov seniorů Přepychy</h3>
+          <span>Vytápění · VZT · ZTI</span>
         </div>
       </div>
 
-      <div class="rfg-item" data-prof="vytapeni vzt zt elektro mar">
+      <div class="rfg-item" data-prof="vytapeni zt">
         <div class="ri-skel" aria-hidden="true"></div>
-        <img src="https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=800&h=960&q=80"
-             alt="Administrativní budova" loading="lazy" onload="this.previousElementSibling.remove()">
+        <img src="img/ref/bazen.jpg" width="900" height="555"
+             alt="Vizualizace interiéru lázeňského bazénu" loading="lazy" onload="this.previousElementSibling.remove()">
         <div class="rfg-ov">
-          <h3>Administrativní budova</h3>
-          <span>Celý TZB rozsah · BIM koordinace</span>
+          <h3>Lázeňský bazén · studie</h3>
+          <span>Vytápění · ZTI</span>
         </div>
       </div>
 
-      <div class="rfg-item" data-prof="vytapeni zt elektro">
+      <div class="rfg-item" data-prof="vzt">
         <div class="ri-skel" aria-hidden="true"></div>
-        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&h=640&q=80"
-             alt="Bytový komplex" loading="lazy" onload="this.previousElementSibling.remove()">
+        <img src="img/ref/raajska.jpg" width="900" height="637"
+             alt="Vizualizace baru Raajská sauna &amp; wellness v Praze" loading="lazy" onload="this.previousElementSibling.remove()">
         <div class="rfg-ov">
-          <h3>Bytový komplex</h3>
-          <span>Vytápění · Sanita · Elektro</span>
+          <h3>Raajská sauna &amp; wellness · Praha</h3>
+          <span>Vzduchotechnika</span>
         </div>
       </div>
 
-      <div class="rfg-item" data-prof="vzt zt elektro mar">
+      <div class="rfg-item" data-prof="vzt zt">
         <div class="ri-skel" aria-hidden="true"></div>
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&h=500&q=80"
-             alt="Průmyslový objekt" loading="lazy" onload="this.previousElementSibling.remove()">
+        <img src="img/ref/zs-svitkov.jpg" width="900" height="569"
+             alt="Vizualizace tělocvičny ZŠ Svítkov v Pardubicích" loading="lazy" onload="this.previousElementSibling.remove()">
         <div class="rfg-ov">
-          <h3>Průmyslový objekt</h3>
-          <span>VZT · Elektro · MaR · Sprinklery</span>
-        </div>
-      </div>
-
-      <div class="rfg-item" data-prof="vytapeni vzt zt elektro mar">
-        <div class="ri-skel" aria-hidden="true"></div>
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&h=740&q=80"
-             alt="Hotel &amp; wellness" loading="lazy" onload="this.previousElementSibling.remove()">
-        <div class="rfg-ov">
-          <h3>Hotel &amp; wellness</h3>
-          <span>Celý TZB rozsah · BIM</span>
+          <h3>Tělocvična ZŠ Svítkov · Pardubice</h3>
+          <span>VZT · ZTI</span>
         </div>
       </div>
 
@@ -190,11 +194,7 @@
       <div class="foot-brand">
         <a href="/" class="brand"><strong>TZB</strong>systems</a>
         <p>Projektová kancelář systémů TZB. Moderní přístup, BIM technologie, spolehlivá projekce.</p>
-        <p class="foot-id">TZBsystem s.r.o. · IČO: <span style="opacity:.7">[doplňte]</span> · Sídlo: <span style="opacity:.7">[doplňte]</span></p>
-        <div class="foot-soc">
-          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        </div>
+        <p class="foot-id">TZBsystems · IČO: 07841221 · Jungmannova 1020, 530 02 Pardubice · Neplátce DPH</p>
       </div>
       <div class="foot-col">
         <h4>Stránky</h4>
@@ -206,12 +206,12 @@
       <div class="foot-col">
         <h4>Kontakt</h4>
         <a href="mailto:info@tzbsystems.cz">info@tzbsystems.cz</a>
-        <a href="tel:+420000000000">+420 XXX XXX XXX</a>
-        <a href="#">Praha, Česká republika</a>
+        <a href="tel:+420777960025">+420 777 960 025</a>
+        <a href="https://maps.google.com/?q=Jungmannova+1020,+530+02+Pardubice" target="_blank" rel="noopener">Jungmannova 1020, 530 02 Pardubice</a>
       </div>
     </div>
     <div class="foot-bt">
-      <p>© 2026 TZBsystem s.r.o. Všechna práva vyhrazena.</p>
+      <p>© 2026 TZBsystems. Všechna práva vyhrazena.</p>
       <div class="foot-lg">
         <a href="/ochrana-osobnich-udaju">Ochrana osobních údajů</a>
         <a href="/podminky-pouziti">Podmínky použití</a>
@@ -221,7 +221,7 @@
 </footer>
 
 <div class="toast" id="toast" role="alert"></div>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="js/email.min.js"></script>
 <script src="js/app.js"></script>
 <script>
 (function(){
@@ -240,7 +240,7 @@
     history.replaceState(null, '', c.dataset.prof === 'all' ? location.pathname : '?profese=' + c.dataset.prof);
   }));
   const param = new URLSearchParams(location.search).get('profese');
-  const valid = ['vytapeni','vzt','zt','elektro','mar'];
+  const valid = ['vytapeni','vzt','zt','elektro'];
   if (param && valid.includes(param)) apply(param);
 })();
 </script>

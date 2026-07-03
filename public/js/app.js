@@ -1,9 +1,9 @@
 /* ── EmailJS init ──
-   Nahraďte 'YOUR_PUBLIC_KEY' vaším veřejným klíčem z emailjs.com → Account → API Keys
+   Public Key z emailjs.com → Account → API Keys
    Service ID:  service_85vcgzd
    Template ID: template_y5hj9l4
 */
-emailjs.init('YOUR_PUBLIC_KEY');
+if (typeof emailjs !== 'undefined') emailjs.init('QB-v70d8qxZu4beyy');
 
 /* ── Timestamp do skrytých polí ── */
 (function(){
@@ -89,6 +89,19 @@ function toast(msg, type='ok'){
 function doForm(e, msg){
   e.preventDefault();
   const form = e.target;
+
+  /* Honeypot – skryté pole „website" vyplní jen bot; tváříme se, že odesláno */
+  if(form.elements.website && form.elements.website.value){
+    form.reset();
+    toast(msg);
+    return;
+  }
+
+  if(typeof emailjs === 'undefined'){
+    toast('Odesílání se nepodařilo načíst. Napište nám prosím na info@tzbsystems.cz', 'err');
+    return;
+  }
+
   const btn = form.querySelector('.btn-s');
   const orig = btn.innerHTML;
   btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Odesílám…';

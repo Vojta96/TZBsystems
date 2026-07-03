@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 – Stránka nenalezena | TZBsystems</title>
+<meta name="description" content="Stránka nebyla nalezena.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#0D3B66">
+<link rel="icon" href="/img/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/inter-400-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-800-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/inter.css">
+<link rel="preload" href="/fa/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fa/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+.nf-code{font-size:clamp(5rem,14vw,9rem);font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--sky);opacity:.14;margin-bottom:-18px;user-select:none}
+.cta-box h1{font-size:clamp(1.6rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-.03em;color:var(--text-main);margin-bottom:16px}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Přeskočit na obsah</a>
+
+<!-- ─── MOBILE NAV ─── -->
+<nav class="mob-nav" id="mob">
+  <div class="mob-top">
+    <a href="/" class="brand" onclick="closeMob()" aria-label="TZBsystems – domů"><strong>TZB</strong>systems</a>
+    <button class="mob-close" id="mob-close" aria-label="Zavřít menu"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="mob-links">
+    <a href="/profese"   onclick="closeMob()"><span>Profese</span><i class="fa-solid fa-arrow-right"></i></a>
+    <a href="/reference" onclick="closeMob()"><span>Reference</span><i class="fa-solid fa-arrow-right"></i></a>
+    <a href="/kariera"   onclick="closeMob()"><span>Kariéra</span><i class="fa-solid fa-arrow-right"></i></a>
+    <a href="/#kontakt"  onclick="closeMob()"><span>Kontakt</span><i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+  <div class="mob-foot">
+    <a href="/#kontakt" class="mob-cta" onclick="closeMob()">Kontaktujte nás <i class="fa-solid fa-paper-plane"></i></a>
+    <div class="mob-contact">
+      <a href="mailto:info@tzbsystems.cz"><i class="fa-solid fa-envelope"></i> info@tzbsystems.cz</a>
+      <a href="tel:+420777960025"><i class="fa-solid fa-phone"></i> +420 777 960 025</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── HEADER ─── -->
+<header class="hdr s" id="hdr">
+  <a href="/" class="brand" aria-label="TZBsystems – domů"><strong>TZB</strong>systems</a>
+  <nav class="hdr-nav">
+    <a href="/profese">Profese</a>
+    <a href="/reference">Reference</a>
+    <a href="/kariera">Kariéra</a>
+    <a href="/#kontakt">Kontakt</a>
+    <a href="/#kontakt" class="cta">Kontaktujte nás</a>
+  </nav>
+  <button class="hdr-burger" id="burger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+</header>
+
+<main id="main">
+
+<!-- ─── 404 ─── -->
+<section class="cta-sec">
+  <div class="wrap">
+    <div class="glass cta-box">
+      <div class="nf-code" aria-hidden="true">404</div>
+      <span class="lbl">Chyba 404</span>
+      <h1>Stránka nenalezena</h1>
+      <p>Stránka, kterou hledáte, neexistuje nebo byla přesunuta. Zkuste to z úvodní stránky — nebo nám rovnou napište.</p>
+      <div class="cta-btns">
+        <a href="/" class="cta-btn-p"><i class="fa-solid fa-house"></i> Zpět na úvod</a>
+        <a href="/#kontakt" class="cta-btn-s"><i class="fa-solid fa-envelope"></i> Kontaktovat nás</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="wrap">
+    <div class="foot-bt" style="border-top:0">
+      <p>© 2026 TZBsystems. Všechna práva vyhrazena.</p>
+      <div class="foot-lg">
+        <a href="/ochrana-osobnich-udaju">Ochrana osobních údajů</a>
+        <a href="/podminky-pouziti">Podmínky použití</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

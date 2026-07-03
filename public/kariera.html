@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kariéra – volné pozice projektant TZB &amp; BIM | TZBsystem</title>
-<meta name="description" content="Přidejte se k mladé projektové kanceláři TZBsystem. Hledáme projektanty TZB a BIM specialisty. Moderní BIM prostředí, flexibilní práce, zajímavé projekty.">
+<title>Kariéra – volné pozice projektant TZB &amp; BIM | TZBsystems</title>
+<meta name="description" content="Přidejte se k mladé projektové kanceláři TZBsystems. Hledáme projektanty TZB a BIM specialisty. Moderní BIM prostředí, flexibilní práce, zajímavé projekty.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0D3B66">
 <link rel="canonical" href="https://tzbsystems.cz/kariera">
@@ -13,16 +13,20 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="cs_CZ">
-<meta property="og:site_name" content="TZBsystem s.r.o.">
-<meta property="og:title" content="Kariéra – TZBsystem">
+<meta property="og:site_name" content="TZBsystems">
+<meta property="og:title" content="Kariéra – TZBsystems">
 <meta property="og:description" content="Hledáme projektanty TZB a BIM specialisty. Moderní BIM prostředí, flexibilní práce, zajímavé projekty.">
 <meta property="og:url" content="https://tzbsystems.cz/kariera">
-<meta property="og:image" content="https://tzbsystems.cz/web-app-manifest-512x512.png">
+<meta property="og:image" content="https://tzbsystems.cz/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preload" href="/fonts/inter-400-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-800-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/inter.css">
+<link rel="preload" href="/fa/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fa/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -31,12 +35,23 @@
 
 <!-- ─── MOBILE NAV ─── -->
 <nav class="mob-nav" id="mob">
-  <button class="mob-close" id="mob-close" aria-label="Zavřít"><i class="fa-solid fa-xmark"></i></button>
-  <a href="/"          onclick="closeMob()">Domů</a>
-  <a href="/profese"   onclick="closeMob()">Profese</a>
-  <a href="/reference" onclick="closeMob()">Reference</a>
-  <a href="/kariera"   onclick="closeMob()">Kariéra</a>
-  <a href="/#kontakt"  onclick="closeMob()">Kontakt</a>
+  <div class="mob-top">
+    <a href="/" class="brand" onclick="closeMob()" aria-label="TZBsystems – domů"><strong>TZB</strong>systems</a>
+    <button class="mob-close" id="mob-close" aria-label="Zavřít menu"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="mob-links">
+    <a href="/profese"   onclick="closeMob()"><span>Profese</span><i class="fa-solid fa-arrow-right"></i></a>
+    <a href="/reference" onclick="closeMob()"><span>Reference</span><i class="fa-solid fa-arrow-right"></i></a>
+    <a href="/kariera"   onclick="closeMob()"><span>Kariéra</span><i class="fa-solid fa-arrow-right"></i></a>
+    <a href="/#kontakt"  onclick="closeMob()"><span>Kontakt</span><i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+  <div class="mob-foot">
+    <a href="/#kontakt" class="mob-cta" onclick="closeMob()">Kontaktujte nás <i class="fa-solid fa-paper-plane"></i></a>
+    <div class="mob-contact">
+      <a href="mailto:info@tzbsystems.cz"><i class="fa-solid fa-envelope"></i> info@tzbsystems.cz</a>
+      <a href="tel:+420777960025"><i class="fa-solid fa-phone"></i> +420 777 960 025</a>
+    </div>
+  </div>
 </nav>
 
 <!-- ─── HEADER ─── -->
@@ -58,7 +73,7 @@
 <section class="page-sec">
   <div class="wrap">
     <div data-r>
-      <span class="lbl">Proč TZBsystem</span>
+      <span class="lbl">Proč TZBsystems</span>
       <h1 class="sec-h">Co vás u nás čeká</h1>
       <p class="sec-p">Věříme, že dobré výsledky přichází od lidí, kteří mají podmínky pro dobrou práci.</p>
     </div>
@@ -67,7 +82,7 @@
       <div class="perk">
         <div class="perk-ico"><i class="fa-solid fa-cubes"></i></div>
         <h3>Čistý BIM od začátku</h3>
-        <p>Pracujeme výhradně v Autodesk Revit. Žádné CAD výkresy, žádné ruční překreslování. Moderní BIM workflow od prvního dne projektu.</p>
+        <p>Projektujeme primárně v Autodesk Revit. Moderní BIM workflow od prvního dne projektu, bez zbytečného ručního překreslování.</p>
       </div>
 
       <div class="perk">
@@ -121,7 +136,7 @@
           <p>Vedení projektů od konceptu po realizační dokumentaci. Zodpovědnost za TZB část, komunikace s investory a koordinátory stavby.</p>
           <div class="job-tags">
             <span class="job-tag">Revit / BIM</span>
-            <span class="job-tag">Praha</span>
+            <span class="job-tag">Pardubice</span>
             <span class="job-tag">Full-time</span>
             <span class="job-tag">Hybrid</span>
           </div>
@@ -136,7 +151,7 @@
           <div class="job-tags">
             <span class="job-tag">Revit</span>
             <span class="job-tag">IFC / BIM</span>
-            <span class="job-tag">Praha</span>
+            <span class="job-tag">Pardubice</span>
             <span class="job-tag">Full-time</span>
           </div>
         </div>
@@ -149,7 +164,7 @@
           <p>Vhodné i pro absolventy ČVUT / VUT. Zaučíme vás do BIM workflow, budete pracovat na skutečných projektech od prvního dne.</p>
           <div class="job-tags">
             <span class="job-tag">Absolvent OK</span>
-            <span class="job-tag">Praha</span>
+            <span class="job-tag">Pardubice</span>
             <span class="job-tag">Full-time</span>
             <span class="job-tag">Mentoring</span>
           </div>
@@ -172,7 +187,7 @@
         <div class="nabor-perks" style="margin-top:8px">
           <div class="np"><i class="fa-solid fa-check"></i> Žádná složitá HR procedura</div>
           <div class="np"><i class="fa-solid fa-check"></i> Reagujeme na každou přihlášku</div>
-          <div class="np"><i class="fa-solid fa-check"></i> Pohovor online nebo osobně v Praze</div>
+          <div class="np"><i class="fa-solid fa-check"></i> Pohovor online nebo osobně v Pardubicích</div>
           <div class="np"><i class="fa-solid fa-check"></i> Nástup dle dohody</div>
         </div>
       </div>
@@ -180,6 +195,7 @@
         <form onsubmit="doForm(event,'Přihláška odeslána — brzy se ozveme!')">
           <input type="hidden" name="time">
           <input type="hidden" name="form_type" value="kariera">
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
           <div class="fg">
             <label for="ka-name">Jméno a příjmení *</label>
             <input type="text" id="ka-name" name="user_name" class="fc" placeholder="Ing. Jan Novák" required>
@@ -227,11 +243,7 @@
       <div class="foot-brand">
         <a href="/" class="brand"><strong>TZB</strong>systems</a>
         <p>Projektová kancelář systémů TZB. Moderní přístup, BIM technologie, spolehlivá projekce.</p>
-        <p class="foot-id">TZBsystem s.r.o. · IČO: <span style="opacity:.7">[doplňte]</span> · Sídlo: <span style="opacity:.7">[doplňte]</span></p>
-        <div class="foot-soc">
-          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        </div>
+        <p class="foot-id">TZBsystems · IČO: 07841221 · Jungmannova 1020, 530 02 Pardubice · Neplátce DPH</p>
       </div>
       <div class="foot-col">
         <h4>Stránky</h4>
@@ -243,12 +255,12 @@
       <div class="foot-col">
         <h4>Kontakt</h4>
         <a href="mailto:info@tzbsystems.cz">info@tzbsystems.cz</a>
-        <a href="tel:+420000000000">+420 XXX XXX XXX</a>
-        <a href="#">Praha, Česká republika</a>
+        <a href="tel:+420777960025">+420 777 960 025</a>
+        <a href="https://maps.google.com/?q=Jungmannova+1020,+530+02+Pardubice" target="_blank" rel="noopener">Jungmannova 1020, 530 02 Pardubice</a>
       </div>
     </div>
     <div class="foot-bt">
-      <p>© 2026 TZBsystem s.r.o. Všechna práva vyhrazena.</p>
+      <p>© 2026 TZBsystems. Všechna práva vyhrazena.</p>
       <div class="foot-lg">
         <a href="/ochrana-osobnich-udaju">Ochrana osobních údajů</a>
         <a href="/podminky-pouziti">Podmínky použití</a>
@@ -258,7 +270,7 @@
 </footer>
 
 <div class="toast" id="toast" role="alert"></div>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="js/email.min.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

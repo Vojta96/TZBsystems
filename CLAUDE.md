@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static marketing website for **TZBsystem s.r.o.**, a Czech BIM/TZB engineering studio. The site is a single-page design in Czech targeting building services professionals.
+Static marketing website for **TZBsystems** (Ing. Vojtěch Procházka, OSVČ, IČO 07841221, Pardubice), a Czech BIM/TZB engineering studio. Czech-language site targeting building services professionals. Live at https://tzbsystems.cz.
+
+Terminology: the plumbing profession is always called **„Zdravotně-technické instalace"** (abbreviated **ZTI** in tight UI) — never „Sanita" or „Zdravotní technika". The five professions are Vytápění, Vzduchotechnika, ZTI, Elektro, PENB (no MaR). Brand is always **TZBsystems** (with s).
 
 ## Deployment
 
@@ -20,12 +22,16 @@ No build step — the `public/` directory is deployed directly.
 
 ## Architecture
 
-The current (`newlook-2`) branch consolidates the site into a single file:
+Multi-page static site (branch `newlook-2`):
 
-- **[public/index.html](public/index.html)** — entire site: all CSS is inlined in `<style>`, all JS is inlined in `<script>` at the bottom. Sections in order: Header → Hero → Revit/BIM → Profese → Reference → Nábor (hiring) → Kontakt → Footer.
-- **[public/img/](public/img/)** — images in `.webp` and `.avif` formats; cache-busted via Firebase headers (1-year immutable).
+- **[public/index.html](public/index.html)** — homepage: Header → Hero (arc of 5 professions) → Revit/BIM → Profese → Reference → Nábor → Kontakt → Footer.
+- **Subpages** — `profese.html`, `reference.html`, `kariera.html`, `ochrana-osobnich-udaju.html`, `podminky-pouziti.html`, `404.html`; clean URLs via rewrites in `firebase.json`.
+- **[public/css/style.css](public/css/style.css)** — all styles (shared by every page).
+- **[public/js/app.js](public/js/app.js)** — shared JS: EmailJS init, header scroll, mobile nav, scroll reveal, toast, hero arc carousel, `doForm()`.
+- **[public/img/](public/img/)** — images (`.webp`/`.avif`/`.jpg`); reference project photos live in `img/ref/`.
+- **Self-hosted assets** — Inter fonts (`/fonts/`), Font Awesome (`/fa/`), EmailJS SDK (`/js/email.min.js`). No third-party CDN requests (GDPR); keep it that way.
 
-Legacy files (`public/js/main.js`, `public/js/sendEmail.js`, `public/js/routing.js`) are from the old multi-page version and are no longer wired up in `index.html`.
+Source materials for reference projects (PDFs, photos, notes) are in the repo-root `reference/` folder — **outside** `public/`, so they are not deployed.
 
 ## Design System (CSS tokens in `:root`)
 
@@ -38,25 +44,23 @@ Legacy files (`public/js/main.js`, `public/js/sendEmail.js`, `public/js/routing.
 | `--glass` | `rgba(255,255,255,.72)` | Glassmorphism cards |
 | `--gap` | `clamp(80px,10vw,130px)` | Section vertical padding |
 
-Glassmorphism cards use the `.glass` utility class. Scroll-reveal uses `data-r` (single element) and `data-s` (staggered children) attributes toggled by an `IntersectionObserver`.
+Glassmorphism cards use the `.glass` utility class. Scroll-reveal uses `data-r` (single element) and `data-s` (staggered children) attributes toggled by an `IntersectionObserver`. The mobile nav markup (`.mob-top`/`.mob-links`/`.mob-foot`) must stay identical across all pages.
 
-## Inline JS (index.html)
+## Forms (EmailJS — live)
 
-Four small behaviors, all at bottom of `<body>`:
-1. **Header scroll** — adds class `.s` when `scrollY > 50` for the frosted glass effect.
-2. **Mobile nav** — burger button toggles `.mob-nav.open`.
-3. **Scroll reveal** — `IntersectionObserver` adds `.on` to `[data-r]` and `[data-s]` elements.
-4. **Form UX** — `doForm()` fakes a 1.3 s submit delay then shows a toast. Forms are **not wired to a backend** — real email sending needs to be implemented (EmailJS credentials exist in `public/js/sendEmail.js` from the old version).
+Both forms (kontakt on index, přihláška on index + kariera) send real e-mail via EmailJS from `js/app.js`: service `service_85vcgzd`, template `template_y5hj9l4`, public key in `app.js`. Template fields: `user_name`, `user_email`, `message`, `phone`, `position`, `portfolio`, `form_type` (kontakt/kariera), `time`.
 
-## Firebase Rewrites
+## Caching (firebase.json)
 
-`firebase.json` maps clean URLs to old `.html` pages (`/projektovani`, `/dotace`, `/aplikace`, `/kariera`). These pages no longer exist in the current branch but the rewrites are still configured.
+`/img/**`, `*.woff2` and `/fa/webfonts/**` are cached 1 year immutable — **renaming is required when changing such a file**. CSS (`/css/**`, `/fonts/*.css`, `/fa/css/**`) and `/js/**` are cached 30 days.
 
 ## Testing / Screenshots
 
-Playwright is installed (`package.json`) and used for visual testing:
+Playwright is installed (`package.json`):
 
 ```bash
 npm install              # install playwright
 npx playwright test      # run tests (if any test files exist)
 ```
+
+Form e2e test pattern: serve `public/` on localhost, fill the form, submit, assert `.toast.ok` appears (sends a real e-mail — mark it as a test).
