@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "build:css": "npx -y -p csso-cli csso public/css/style.css -o public/css/style.min.css"
+  },
   "dependencies": {
     "playwright": "^1.60.0"
   }

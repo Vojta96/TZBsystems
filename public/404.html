@@ -10,13 +10,21 @@
 <link rel="icon" href="/img/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preload" href="/fonts/inter-400-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/inter-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/inter-800-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/fonts/inter.css">
-<link rel="preload" href="/fa/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/fa/css/all.min.css">
-<link rel="stylesheet" href="/css/style.css">
+<link rel="preload" href="/fonts/inter-var-latin-v2.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-var-czext-v2.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fa/webfonts/fa-solid-900-subset.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Inter (CZ subset) + Font Awesome subset inline, aby neblokovaly vykreslování -->
+<style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/inter-var-latin-v2.woff2) format('woff2');unicode-range:U+0000-00FF,U+2013-2014,U+2018-201A,U+201C-201E,U+2026,U+2039-203A,U+20AC,U+2122}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/inter-var-czext-v2.woff2) format('woff2');unicode-range:U+0100-017F}
+@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:block;src:url(/fa/webfonts/fa-solid-900-subset.woff2) format("woff2")}
+.fa,.fa-solid,.fas{font-family:"Font Awesome 6 Free";font-weight:900;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:var(--fa-display,inline-block);font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}
+.fa:before,.fa-solid:before,.fas:before{content:var(--fa)}
+.fa-spin{animation:fa-spin var(--fa-animation-duration,2s) infinite linear}
+@keyframes fa-spin{0%{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.fa-arrow-down{--fa:"\f063"}.fa-arrow-right{--fa:"\f061"}.fa-bars{--fa:"\f0c9"}.fa-bolt{--fa:"\f0e7"}.fa-check{--fa:"\f00c"}.fa-clock{--fa:"\f017"}.fa-comments{--fa:"\f086"}.fa-cubes{--fa:"\f1b3"}.fa-drafting-compass{--fa:"\f568"}.fa-droplet{--fa:"\f043"}.fa-envelope{--fa:"\f0e0"}.fa-fan{--fa:"\f863"}.fa-fire-flame-curved{--fa:"\f7e4"}.fa-globe{--fa:"\f0ac"}.fa-graduation-cap{--fa:"\f19d"}.fa-house{--fa:"\f015"}.fa-images{--fa:"\f302"}.fa-laptop-code{--fa:"\f5fc"}.fa-leaf{--fa:"\f06c"}.fa-location-dot{--fa:"\f3c5"}.fa-paper-plane{--fa:"\f1d8"}.fa-phone{--fa:"\f095"}.fa-xmark{--fa:"\f00d"}.fa-spinner{--fa:"\f110"}
+</style>
+<link rel="stylesheet" href="/css/style.min.css">
 <style>
 .nf-code{font-size:clamp(5rem,14vw,9rem);font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--sky);opacity:.14;margin-bottom:-18px;user-select:none}
 .cta-box h1{font-size:clamp(1.6rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-.03em;color:var(--text-main);margin-bottom:16px}

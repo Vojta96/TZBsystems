@@ -323,7 +323,7 @@ body::before {
 
 .brand {
   font-size: 1.4rem;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--text-main);
   letter-spacing: -.02em;
   text-decoration: none;
@@ -344,7 +344,7 @@ body::before {
 
 .hdr-nav a {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   color: rgba(30, 41, 59, .65);
   text-decoration: none;
   transition: color .2s;
@@ -703,7 +703,7 @@ body::before {
   color: var(--sky);
   letter-spacing: .1em;
   text-transform: uppercase;
-  animation: fu .8s cubic-bezier(.22, 1, .36, 1) .1s both;
+  animation: fu .6s cubic-bezier(.22, 1, .36, 1) .05s both;
 }
 
 .hero-badge::before {
@@ -731,12 +731,12 @@ body::before {
 
 .hero-h1 {
   font-size: clamp(2rem, 5.5vw, 4rem);
-  font-weight: 900;
+  font-weight: 800;
   line-height: 1.0;
   letter-spacing: -.04em;
   margin-bottom: 20px;
   color: var(--text-main);
-  animation: fu .9s cubic-bezier(.22, 1, .36, 1) .28s both;
+  animation: fu .7s cubic-bezier(.22, 1, .36, 1) .15s both;
 }
 
 .hero-h1 em {
@@ -750,7 +750,7 @@ body::before {
   line-height: 1.8;
   max-width: 500px;
   margin: 0 auto 52px;
-  animation: fu .9s cubic-bezier(.22, 1, .36, 1) .44s both;
+  animation: fu .7s cubic-bezier(.22, 1, .36, 1) .25s both;
 }
 
 .hero-btn {
@@ -767,7 +767,7 @@ body::before {
   letter-spacing: .02em;
   transition: all .3s;
   box-shadow: 0 0 40px rgba(13, 59, 102, .2);
-  animation: fu .9s cubic-bezier(.22, 1, .36, 1) .58s both;
+  animation: fu .7s cubic-bezier(.22, 1, .36, 1) .35s both;
 }
 
 .hero-btn:hover {
@@ -788,7 +788,7 @@ body::before {
   gap: 8px;
   color: var(--dim);
   text-decoration: none;
-  animation: fu 1s ease 1.1s both;
+  animation: fu .7s ease .65s both;
   transition: color .25s, transform .25s;
 }
 
@@ -855,7 +855,7 @@ body::before {
   height: 310px;
   pointer-events: none;
   z-index: 2;
-  animation: fu .9s cubic-bezier(.22, 1, .36, 1) .85s both;
+  animation: fu .7s cubic-bezier(.22, 1, .36, 1) .5s both;
 }
 
 .arc-slot {
@@ -1061,7 +1061,7 @@ body::before {
   background: rgba(13, 59, 102, .07);
   border: 1px solid rgba(13, 59, 102, .18);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--sky);
 }
 
@@ -1818,7 +1818,7 @@ body::before {
 .ki-tx a,
 .ki-tx span {
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   color: rgba(30, 41, 59, .82);
   text-decoration: none;
   transition: color .2s;
@@ -2181,7 +2181,7 @@ footer {
 
 .dph h1 {
   font-size: clamp(2.4rem, 5.5vw, 4rem);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -.04em;
   color: #fff;
   line-height: 1.0;
@@ -2226,7 +2226,7 @@ footer {
 .stat strong {
   display: block;
   font-size: 2.6rem;
-  font-weight: 900;
+  font-weight: 800;
   color: #fff;
   letter-spacing: -.04em;
   line-height: 1;
@@ -2992,7 +2992,7 @@ footer {
 
 .page-banner h1 {
   font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -.04em;
   margin-bottom: 20px;
   color: var(--text-main);
