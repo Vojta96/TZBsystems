@@ -244,12 +244,14 @@ body::before {
   transition: opacity .85s cubic-bezier(.22, 1, .36, 1), transform .85s cubic-bezier(.22, 1, .36, 1)
 }
 
-[data-r="l"] {
-  transform: translateX(-44px)
-}
+@media(min-width:769px) {
+  [data-r="l"] {
+    transform: translateX(-44px)
+  }
 
-[data-r="r"] {
-  transform: translateX(44px)
+  [data-r="r"] {
+    transform: translateX(44px)
+  }
 }
 
 [data-r].on {
@@ -1407,12 +1409,13 @@ body::before {
 
 @media(max-width:600px) {
   .profese-grid {
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr;
+    gap: 12px
   }
 
   .profese-grid>.pc:nth-child(5) {
     grid-column: 1/-1;
-    margin: 0 auto
+    margin: 0
   }
 }
 
@@ -1497,6 +1500,37 @@ body::before {
   font-size: 13px;
   color: var(--muted);
   line-height: 1.6
+}
+
+@media(max-width:600px) {
+  .pc {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    grid-template-areas: "ico h3" "ico p";
+    column-gap: 18px;
+    row-gap: 3px;
+    padding: 18px 20px;
+    text-align: left;
+  }
+
+  .pc-ico {
+    grid-area: ico;
+    width: 56px;
+    height: 56px;
+    font-size: 22px;
+    align-self: center;
+  }
+
+  .pc h3 {
+    grid-area: h3;
+    align-self: end;
+  }
+
+  .pc p {
+    grid-area: p;
+    align-self: start;
+  }
 }
 
 .profese-more {
