@@ -2640,7 +2640,7 @@ footer {
 
 @media(max-width:760px) {
   .pe-nav {
-    grid-template-columns: 1fr 1fr
+    grid-template-columns: 1fr
   }
 
   .pe-panel {
@@ -2653,12 +2653,6 @@ footer {
 
   .pe-panel-body {
     padding: 32px 24px
-  }
-}
-
-@media(max-width:400px) {
-  .pe-nav {
-    grid-template-columns: 1fr
   }
 }
 
