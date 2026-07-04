@@ -493,7 +493,9 @@ function sendEmail(e) {
   const status = document.getElementById('form-status');
   btn.textContent = 'Odesílám...';
   btn.disabled = true;
-  emailjs.send('service_tzbsystems', 'template_contact', {
+  const now = new Date();
+  emailjs.send('service_85vcgzd', 'template_y5hj9l4', {
+    time: now.toLocaleString('cs-CZ'),
     name: document.getElementById('name').value,
     email: document.getElementById('email').value,
     phone: document.getElementById('phone').value,
