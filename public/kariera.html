@@ -344,7 +344,7 @@ function sendCareerEmail(e) {
   const btn = e.target.querySelector('button[type=submit]');
   const status = document.getElementById('career-status');
   btn.textContent = 'Odesílám...'; btn.disabled = true;
-  emailjs.send('service_tzbsystems', 'template_career', {
+  emailjs.send('service_85vcgzd', 'template_career', {
     name: document.getElementById('c-name').value,
     email: document.getElementById('c-email').value,
     phone: document.getElementById('c-phone').value,
